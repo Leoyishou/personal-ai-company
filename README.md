@@ -147,13 +147,18 @@ LLM（大语言模型）     +     图灵机（计算机）
 
 ## 快速开始
 
-### 前置要求
+### 前置要求：搭建你的「公司」
 
-- macOS（使用 launchd 做定时任务）
-- [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code) 已安装并登录
-- Python 3.8+
-- Telegram 账号
-- **[Amphetamine](https://apps.apple.com/app/amphetamine/id937984704)** - 防止 Mac 休眠（免费）
+| 你需要准备的 | 相当于张一鸣的... | 作用 |
+|-------------|------------------|------|
+| **Mac 电脑** | 办公大楼 | AI 助理 7×24 运行的物理载体 |
+| **[Amphetamine](https://apps.apple.com/app/amphetamine/id937984704)** | 大楼的电力系统 | 防止 Mac 休眠，确保永不断电（免费） |
+| **[Claude Code Max](https://claude.com/download)** | 校招预算 | 雇佣顶级 AI 人才的薪资（$100/月或$200/月） |
+| **[Telegram](https://telegram.org/)** | 飞书 | 你和 AI 助理的沟通渠道 |
+| **[滴答清单](https://dida365.com/)** | 你脑海里的想法 | AI 定期扫描，自动执行可执行的任务 |
+| **[X (Twitter)](https://x.com/)** | 海外公关部 | AI 帮你发推文、做海外声量 |
+| **[小红书](https://www.xiaohongshu.com/)** | 国内公关部 | AI 帮你发笔记、做国内声量 |
+| **股票账户** | 战投部的仓位 | AI 帮你监控持仓、分析研报（可选） |
 
 > **重要**：Mac 休眠后 launchd 服务会暂停。安装 Amphetamine 并设置「Indefinitely」保持唤醒，确保 AI 助理 24/7 在线。
 
