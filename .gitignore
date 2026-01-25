@@ -1,0 +1,41 @@
+# 环境配置（包含敏感信息）
+.env
+*.env.local
+
+# Session 文件
+*.session
+*.session-journal
+session/
+
+# 日志
+logs/
+*.log
+
+# 状态文件
+state.json
+
+# 执行结果
+results/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+.venv/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 临时文件
+*.tmp
+*.temp
