@@ -159,6 +159,10 @@ LLM（大语言模型）     +     图灵机（计算机）
 | **[X (Twitter)](https://x.com/)** | 海外公关部 | AI 帮你发推文、做海外声量 |
 | **[小红书](https://www.xiaohongshu.com/)** | 国内公关部 | AI 帮你发笔记、做国内声量 |
 | **股票账户** | 战投部的仓位 | AI 帮你监控持仓、分析研报（可选） |
+| **[Xcode](https://developer.apple.com/xcode/)** | 研发部的工位 | AI 帮你开发 iOS/Mac 应用 |
+| **[Apple Developer](https://developer.apple.com/)** | 研发部的上架资质 | AI 帮你把应用发布到 App Store（$99/年） |
+| **[Chrome 开发者](https://chrome.google.com/webstore/devconsole)** | 研发部的浏览器渠道 | AI 帮你开发和发布 Chrome 插件（$5 一次性） |
+| **Python / Node.js** | 研发部的工具链 | AI 写代码、跑脚本的基础环境 |
 
 > **重要**：Mac 休眠后 launchd 服务会暂停。安装 Amphetamine 并设置「Indefinitely」保持唤醒，确保 AI 助理 24/7 在线。
 
