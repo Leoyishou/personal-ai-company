@@ -106,21 +106,23 @@ LLM（大语言模型）     +     图灵机（计算机）
 │                      Personal AI Agent                           │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                  │
-│  【模式一：Telegram 监听器】实时响应                              │
-│  ├─ 你发消息 → AI 立即执行 → 回复结果                            │
-│  └─ 支持任意指令：发推、下载、调研、生成图片...                   │
-│                                                                  │
-│  【模式二：定时扫描器】每 30 分钟自动运行                         │
-│  ├─ 读取待办清单（滴答清单 / Todoist / Notion...）               │
-│  ├─ AI 判断哪些任务可自动执行                                    │
-│  ├─ 根据任务类型选择最优执行方式                                  │
-│  │   ├─ 发推文 → haiku (快速、省钱)                             │
-│  │   ├─ 发小红书 → haiku                                        │
-│  │   ├─ 下载视频 → haiku                                        │
-│  │   ├─ 调研分析 → opus (深度思考)                              │
-│  │   └─ 其他 → sonnet (通用)                                    │
-│  ├─ 执行任务，结果写回待办清单                                    │
-│  └─ Telegram 通知你执行结果                                      │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │  统一调度器 (scheduler.py) - 常驻运行                    │    │
+│  │  ├─ 监听 Telegram 消息 → 收到立即执行                    │    │
+│  │  ├─ 每 30 分钟扫描滴答清单 → 执行可自动化任务             │    │
+│  │  └─ 根据任务类型路由到不同模型                           │    │
+│  └─────────────────────────────────────────────────────────┘    │
+│                            │                                     │
+│                            ↓ 拉起子进程                          │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │  Claude Code 子进程                                       │    │
+│  │  ├─ haiku: 发推、发小红书、下载视频（快速、省钱）         │    │
+│  │  ├─ sonnet: 生成图片、通用任务                           │    │
+│  │  └─ opus: 深度调研、分析报告                             │    │
+│  └─────────────────────────────────────────────────────────┘    │
+│                            │                                     │
+│                            ↓                                     │
+│              执行结果 → Telegram 通知 / 写回待办清单              │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -170,7 +172,7 @@ nano .env
 launchctl list | grep personal-ai
 
 # 查看日志
-tail -f ~/.claude/skills/personal-assistant/logs/telegram_listener.log
+tail -f ~/.claude/skills/personal-assistant/logs/scheduler.log
 ```
 
 ---
@@ -257,18 +259,17 @@ XHS_COOKIE=...
 ```
 ~/.claude/
 ├── skills/personal-assistant/
-│   ├── SKILL.md              # 调度器核心逻辑
+│   ├── SKILL.md              # 定时扫描任务判断逻辑
 │   ├── state.json            # 已处理任务记录
-│   ├── scripts/              # Telegram 脚本
+│   ├── scripts/
+│   │   └── scheduler.py      # 统一调度器（核心）
 │   └── logs/                 # 日志
 │
 ├── services/personal-assistant/
-│   ├── run.sh                # 定时任务脚本
-│   └── run_listener.sh       # 监听器脚本
+│   └── run_scheduler.sh      # 调度器启动脚本
 │
 ~/Library/LaunchAgents/
-├── com.claude.personal-assistant.plist   # 定时扫描
-└── com.claude.telegram-listener.plist    # 实时监听
+└── com.claude.personal-ai-agent.plist    # launchd 服务配置
 ```
 
 ---
@@ -279,15 +280,19 @@ XHS_COOKIE=...
 # 查看服务状态
 launchctl list | grep personal-ai
 
-# 重启监听器
-launchctl stop com.claude.telegram-listener
-launchctl start com.claude.telegram-listener
-
-# 手动触发扫描
-claude -p "/personal-assistant" --dangerously-skip-permissions
+# 重启服务
+launchctl stop com.claude.personal-ai-agent
+launchctl start com.claude.personal-ai-agent
 
 # 查看日志
-tail -f ~/.claude/skills/personal-assistant/logs/telegram_listener.log
+tail -f ~/.claude/skills/personal-assistant/logs/scheduler.log
+
+# 卸载服务
+launchctl unload ~/Library/LaunchAgents/com.claude.personal-ai-agent.plist
+
+# 重新加载（修改配置后）
+launchctl unload ~/Library/LaunchAgents/com.claude.personal-ai-agent.plist
+launchctl load ~/Library/LaunchAgents/com.claude.personal-ai-agent.plist
 ```
 
 ---

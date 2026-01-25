@@ -1,10 +1,10 @@
 #!/bin/bash
-# Personal AI Scheduler 安装脚本
+# Personal AI Agent 安装脚本
 
 set -e
 
 echo "=========================================="
-echo "  Personal AI Scheduler 安装程序"
+echo "  Personal AI Agent 安装程序"
 echo "=========================================="
 echo ""
 
@@ -96,14 +96,17 @@ echo ""
 echo "Step 4: 复制核心文件..."
 
 cp skills/SKILL.md ~/.claude/skills/personal-assistant/
-cp scripts/send_telegram.py ~/.claude/skills/personal-assistant/scripts/
-cp scripts/telegram_listener.py ~/.claude/skills/personal-assistant/scripts/
+cp scripts/scheduler.py ~/.claude/skills/personal-assistant/scripts/
 cp scripts/telegram_login.py ~/.claude/skills/personal-assistant/scripts/
 
-# 替换配置值
-sed -i '' "s/API_ID = '.*'/API_ID = '$TELEGRAM_API_ID'/" ~/.claude/skills/personal-assistant/scripts/*.py
-sed -i '' "s/API_HASH = '.*'/API_HASH = '$TELEGRAM_API_HASH'/" ~/.claude/skills/personal-assistant/scripts/*.py
-sed -i '' "s/PHONE = '.*'/PHONE = '$TELEGRAM_PHONE'/" ~/.claude/skills/personal-assistant/scripts/*.py
+# 替换配置值 (scheduler.py)
+sed -i '' "s/API_ID = '.*'/API_ID = '$TELEGRAM_API_ID'/" ~/.claude/skills/personal-assistant/scripts/scheduler.py
+sed -i '' "s/API_HASH = '.*'/API_HASH = '$TELEGRAM_API_HASH'/" ~/.claude/skills/personal-assistant/scripts/scheduler.py
+
+# 替换配置值 (telegram_login.py)
+sed -i '' "s/API_ID = '.*'/API_ID = '$TELEGRAM_API_ID'/" ~/.claude/skills/personal-assistant/scripts/telegram_login.py
+sed -i '' "s/API_HASH = '.*'/API_HASH = '$TELEGRAM_API_HASH'/" ~/.claude/skills/personal-assistant/scripts/telegram_login.py
+sed -i '' "s/PHONE = '.*'/PHONE = '$TELEGRAM_PHONE'/" ~/.claude/skills/personal-assistant/scripts/telegram_login.py
 
 chmod +x ~/.claude/skills/personal-assistant/scripts/*.py
 
@@ -122,33 +125,22 @@ echo "Step 6: 创建启动脚本..."
 # 获取 Python 路径
 PYTHON_PATH=$(which python3)
 
-cat > ~/.claude/services/personal-assistant/run.sh << EOF
+cat > ~/.claude/services/personal-assistant/run_scheduler.sh << EOF
 #!/bin/bash
-# 定时扫描器启动脚本
+# Personal AI Agent - 统一调度器启动脚本
 
-export FNM_DIR="\$HOME/.local/share/fnm"
-export PATH="\$FNM_DIR/node-versions/v22.16.0/installation/bin:\$PATH"
-
-echo "=== \$(date '+%Y-%m-%d %H:%M:%S') 开始执行 ===" >> ~/.claude/services/personal-assistant/stdout.log
-
-cd ~/.claude/skills/personal-assistant
-claude -p "/personal-assistant" --dangerously-skip-permissions 2>&1 | tee -a ~/.claude/services/personal-assistant/stdout.log
-
-echo "=== \$(date '+%Y-%m-%d %H:%M:%S') 执行完成 ===" >> ~/.claude/services/personal-assistant/stdout.log
-EOF
-
-cat > ~/.claude/services/personal-assistant/run_listener.sh << EOF
-#!/bin/bash
-# Telegram 监听器启动脚本
-
+# 使用系统 Python (需要有 telethon)
 PYTHON="$PYTHON_PATH"
+
+# 日志
 LOG_DIR="\$HOME/.claude/skills/personal-assistant/logs"
 mkdir -p "\$LOG_DIR"
 
-echo "=== \$(date '+%Y-%m-%d %H:%M:%S') 启动 Telegram 监听器 ===" >> "\$LOG_DIR/telegram_listener.log"
+echo "=== \$(date '+%Y-%m-%d %H:%M:%S') 启动统一调度器 ===" >> "\$LOG_DIR/scheduler.log"
 
+# 运行调度器
 cd ~/.claude/skills/personal-assistant
-\$PYTHON scripts/telegram_listener.py 2>&1 | tee -a "\$LOG_DIR/telegram_listener.log"
+\$PYTHON scripts/scheduler.py 2>&1 | tee -a "\$LOG_DIR/scheduler.log"
 EOF
 
 chmod +x ~/.claude/services/personal-assistant/*.sh
@@ -159,53 +151,29 @@ echo ""
 # Step 7: 创建 launchd 配置
 echo "Step 7: 创建 launchd 服务..."
 
-SCAN_INTERVAL=${SCAN_INTERVAL:-1800}
 USER_HOME=$HOME
 
-cat > ~/Library/LaunchAgents/com.claude.personal-assistant.plist << EOF
+# 统一调度器服务（KeepAlive，永久运行）
+cat > ~/Library/LaunchAgents/com.claude.personal-ai-agent.plist << EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.claude.personal-assistant</string>
+    <string>com.claude.personal-ai-agent</string>
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>
-        <string>$USER_HOME/.claude/services/personal-assistant/run.sh</string>
-    </array>
-    <key>StartInterval</key>
-    <integer>$SCAN_INTERVAL</integer>
-    <key>StandardOutPath</key>
-    <string>$USER_HOME/.claude/services/personal-assistant/launchd.log</string>
-    <key>StandardErrorPath</key>
-    <string>$USER_HOME/.claude/services/personal-assistant/launchd.log</string>
-    <key>RunAtLoad</key>
-    <true/>
-</dict>
-</plist>
-EOF
-
-cat > ~/Library/LaunchAgents/com.claude.telegram-listener.plist << EOF
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>Label</key>
-    <string>com.claude.telegram-listener</string>
-    <key>ProgramArguments</key>
-    <array>
-        <string>/bin/bash</string>
-        <string>$USER_HOME/.claude/services/personal-assistant/run_listener.sh</string>
+        <string>$USER_HOME/.claude/services/personal-assistant/run_scheduler.sh</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
     <key>KeepAlive</key>
     <true/>
     <key>StandardOutPath</key>
-    <string>$USER_HOME/.claude/services/personal-assistant/listener_stdout.log</string>
+    <string>$USER_HOME/.claude/services/personal-assistant/scheduler_stdout.log</string>
     <key>StandardErrorPath</key>
-    <string>$USER_HOME/.claude/services/personal-assistant/listener_stderr.log</string>
+    <string>$USER_HOME/.claude/services/personal-assistant/scheduler_stderr.log</string>
     <key>ThrottleInterval</key>
     <integer>10</integer>
 </dict>
@@ -232,8 +200,12 @@ echo ""
 # Step 9: 加载服务
 echo "Step 9: 加载服务..."
 
-launchctl load ~/Library/LaunchAgents/com.claude.personal-assistant.plist 2>/dev/null || true
-launchctl load ~/Library/LaunchAgents/com.claude.telegram-listener.plist 2>/dev/null || true
+# 先卸载旧服务（如果存在）
+launchctl unload ~/Library/LaunchAgents/com.claude.personal-assistant.plist 2>/dev/null || true
+launchctl unload ~/Library/LaunchAgents/com.claude.telegram-listener.plist 2>/dev/null || true
+
+# 加载新的统一调度器服务
+launchctl load ~/Library/LaunchAgents/com.claude.personal-ai-agent.plist 2>/dev/null || true
 
 sleep 3
 
@@ -243,40 +215,30 @@ echo ""
 # Step 10: 验证
 echo "Step 10: 验证安装..."
 
-if launchctl list | grep -q "com.claude.personal-assistant"; then
-    echo -e "${GREEN}✓${NC} 定时扫描服务运行中"
+if launchctl list | grep -q "com.claude.personal-ai-agent"; then
+    echo -e "${GREEN}✓${NC} 统一调度器服务运行中"
 else
-    echo -e "${RED}✗${NC} 定时扫描服务未运行"
-fi
-
-if launchctl list | grep -q "com.claude.telegram-listener"; then
-    echo -e "${GREEN}✓${NC} Telegram 监听服务运行中"
-else
-    echo -e "${RED}✗${NC} Telegram 监听服务未运行"
+    echo -e "${RED}✗${NC} 统一调度器服务未运行"
 fi
 
 echo ""
 
-# Step 11: 发送测试通知
-echo "Step 11: 发送测试通知..."
-python3 ~/.claude/skills/personal-assistant/scripts/send_telegram.py "Personal AI Scheduler 安装成功！发送消息即可触发 AI 执行。"
-
-echo ""
 echo "=========================================="
 echo -e "${GREEN}  安装完成！${NC}"
 echo "=========================================="
 echo ""
-echo "使用方式："
-echo "  1. 在滴答清单添加任务，等待 AI 自动执行"
-echo "  2. 在 Telegram Saved Messages 发消息触发 AI"
+echo "工作模式："
+echo "  1. Telegram 发消息 → AI 立即执行"
+echo "  2. 滴答清单添加任务 → 每 30 分钟自动扫描执行"
 echo ""
 echo "管理命令："
 echo "  # 查看服务状态"
 echo "  launchctl list | grep personal-ai"
 echo ""
 echo "  # 查看日志"
-echo "  tail -f ~/.claude/skills/personal-assistant/logs/telegram_listener.log"
+echo "  tail -f ~/.claude/skills/personal-assistant/logs/scheduler.log"
 echo ""
-echo "  # 手动触发扫描"
-echo "  claude -p \"/personal-assistant\" --dangerously-skip-permissions"
+echo "  # 重启服务"
+echo "  launchctl stop com.claude.personal-ai-agent"
+echo "  launchctl start com.claude.personal-ai-agent"
 echo ""
