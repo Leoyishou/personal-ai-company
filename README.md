@@ -20,9 +20,9 @@
 │   └─→ 🤖 CEO 助理 (有状态，永久驻留)                              │
 │        │                                                         │
 │        ├─→ 📢🎬 内容与公关部：素材收集→内容创作→提交审批           │
-│        ├─→ 🔬 战投部：行业调研、竞品分析、深度研究                 │
+│        ├─→ 🔬 战投部：深度调研、竞品分析、持仓分析                 │
 │        ├─→ 🕵️ 情报分析部：线索追踪、内容提取、深度分析            │
-│        ├─→ 📊 运营部：数据监控、持仓管理、每日复盘                 │
+│        ├─→ 📊 运营部：数据监控、任务管理、每日复盘                 │
 │        │                                                         │
 │        └─→ 🏢 事业部：从 0 到 1 打造产品                          │
 │             ├─→ 📦 产品部：痛点挖掘、需求分析                     │
@@ -69,9 +69,9 @@
 |-----|------|------|-------------|
 | 🤖 **CEO 助理** | sonnet | 调度各部门、汇报结果、Telegram 通信 | `personal-assistant` |
 | 📢🎬 **内容与公关部** | sonnet | 素材收集→内容创作→提交审批 | `social-media-download`, `social-media-publish`, `nanobanana-draw` |
-| 🔬 **战投部** | opus | 深度调研、竞品分析、行业研究 | `perplexity-research`, `research-by-reddit`, `pain-point-research` |
+| 🔬 **战投部** | opus | 深度调研、竞品分析、持仓分析 | `perplexity-research`, `research-by-reddit`, `futu-trades`, `KOL-info-collect` |
 | 🕵️ **情报分析部** | sonnet | 线索追踪、内容提取、深度分析 | `social-media-download`, `perplexity-research`, Firecrawl MCP |
-| 📊 **运营部** | haiku | 数据监控、任务管理、每日复盘 | `futu-trades`, `daily-review`, `dida-auto-worker`, `KOL-info-collect` |
+| 📊 **运营部** | haiku | 数据监控、任务管理、每日复盘 | `daily-review`, `dida-auto-worker` |
 | 🏢 **AI 事业部** | sonnet | 从 0 到 1 打造 AI 产品（统筹产品+研发） | `ui-ux-pro-max` |
 | ├─ 📦 产品部 | opus | 痛点挖掘、需求分析、产品定义 | `pain-point-research`, `research-by-reddit`, `perplexity-research` |
 | └─ 💻 研发部 | sonnet | 写代码、Supabase、发布上线 | `eas-testflight`, Supabase MCP |
@@ -434,14 +434,17 @@ SUPABASE_ACCESS_TOKEN=...
 ### 9.3 战投部
 
 ```
+# 持仓分析
+查看我的持仓
+最近交易记录
+分析一下我持仓的 NVDA
+
 # 行业调研
 调研一下 AI 视频赛道
-分析一下 React 19 新特性
 研究一下竞品 xxx
 
-# 用户研究（结合 Reddit）
-这个方向有没有真实需求
-用户对 xxx 产品有什么痛点
+# KOL 情报
+获取勃勃群最近的聊天记录
 ```
 
 ### 9.4 事业部
@@ -455,13 +458,12 @@ SUPABASE_ACCESS_TOKEN=...
 ### 9.5 运营部
 
 ```
-# 持仓监控
-查一下我的持仓
-最近交易记录
-今天股票怎么样
+# 每日复盘
+今日复盘
+看看我今天干了啥
 
-# KOL 情报
-获取勃勃群最近的聊天记录
+# 任务管理
+滴答清单有什么任务
 ```
 
 ---
