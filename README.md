@@ -68,7 +68,7 @@
 | 部门 | 模型 | 职责 | 核心能力 |
 |-----|------|------|---------|
 | 📢🎬 **内容与公关部** | sonnet | 素材收集→内容创作→提交审批 | social-media-download, nanobanana-draw, perplexity-research |
-| 🔬 **战投部** | opus | 行业调研、竞品分析、投资研报 | perplexity-research, research-by-reddit, WebSearch |
+| 🔬 **战投部** | opus | 行业调研、竞品分析、**持仓分析** | perplexity-research, research-by-reddit, futu-trades |
 | 🕵️ **情报分析部** | sonnet | 线索追踪、内容提取、深度分析 | social-media-download, firecrawl, perplexity-research |
 | 📊 **运营部** | haiku/opus | 数据监控、任务管理、**每日复盘** | futu-trades, mcp__dida365__*, daily-review, mcp__supabase__* |
 | 🏢 **事业部** | sonnet | 从 0 到 1 打造产品 | 统筹产品部和研发部 |
@@ -414,6 +414,12 @@ SUPABASE_ACCESS_TOKEN=...
 ### 9.3 战投部
 
 ```
+# 投资分析
+查看我的持仓
+最近交易记录
+分析一下我持仓的 NVDA
+
+# 行业调研
 调研一下 AI 视频赛道
 分析一下 React 19 新特性
 研究一下竞品 xxx
