@@ -20,9 +20,9 @@
 │   └─→ 🤖 CEO 助理 (有状态，永久驻留)                              │
 │        │                                                         │
 │        ├─→ 📢🎬 内容与公关部：素材收集→内容创作→提交审批           │
-│        ├─→ 🔬 战投部：行业调研、竞品分析、投资研报                 │
+│        ├─→ 🔬 战投部：行业调研、竞品分析、深度研究                 │
 │        ├─→ 🕵️ 情报分析部：线索追踪、内容提取、深度分析            │
-│        ├─→ 📊 运营部：数据监控、任务管理、流程自动化               │
+│        ├─→ 📊 运营部：数据监控、持仓管理、每日复盘                 │
 │        │                                                         │
 │        └─→ 🏢 事业部：从 0 到 1 打造产品                          │
 │             ├─→ 📦 产品部：痛点挖掘、需求分析                     │
@@ -67,14 +67,14 @@
 
 | 部门 | 模型 | 职责 | 挂载 Skills |
 |-----|------|------|-------------|
-| 🤖 **CEO 助理** | sonnet | 调度各部门、汇报结果 | `personal-assistant`, `chat2CEO` |
-| 📢🎬 **内容与公关部** | sonnet | 素材收集→内容创作→发布 | `social-media-download`, `social-media-publish`, `nanobanana-draw`, `remove-bg` |
-| 🔬 **战投部** | opus | 行业调研、竞品分析、持仓分析 | `research-by-reddit`, `futu-trades`, `KOL-info-collect` |
-| 🕵️ **情报分析部** | sonnet | 线索追踪、内容提取、深度分析 | `social-media-download` |
-| 📊 **运营部** | haiku/opus | 数据监控、任务管理、每日复盘 | `daily-review`, `dida365-pomodoro`, `dida-auto-worker` |
-| 🏢 **AI 事业部** | sonnet | 从 0 到 1 打造 AI 产品 | `ui-ux-pro-max` |
-| ├─ 📦 产品部 | opus | 痛点挖掘、需求分析 | `pain-point-research`, `research-by-reddit` |
-| └─ 💻 研发部 | sonnet | 写代码、部署上线 | `eas-testflight` |
+| 🤖 **CEO 助理** | sonnet | 调度各部门、汇报结果、Telegram 通信 | `personal-assistant` |
+| 📢🎬 **内容与公关部** | sonnet | 素材收集→内容创作→提交审批 | `social-media-download`, `social-media-publish`, `nanobanana-draw` |
+| 🔬 **战投部** | opus | 深度调研、竞品分析、行业研究 | `perplexity-research`, `research-by-reddit`, `pain-point-research` |
+| 🕵️ **情报分析部** | sonnet | 线索追踪、内容提取、深度分析 | `social-media-download`, `perplexity-research`, Firecrawl MCP |
+| 📊 **运营部** | haiku | 数据监控、任务管理、每日复盘 | `futu-trades`, `daily-review`, `dida-auto-worker`, `KOL-info-collect` |
+| 🏢 **AI 事业部** | sonnet | 从 0 到 1 打造 AI 产品（统筹产品+研发） | `ui-ux-pro-max` |
+| ├─ 📦 产品部 | opus | 痛点挖掘、需求分析、产品定义 | `pain-point-research`, `research-by-reddit`, `perplexity-research` |
+| └─ 💻 研发部 | sonnet | 写代码、Supabase、发布上线 | `eas-testflight`, Supabase MCP |
 
 ### 2.3 通用能力 (所有部门可用)
 
@@ -88,9 +88,10 @@
 
 ### 2.4 权限限制
 
-| 能力 | 限制 |
-|------|------|
-| `chat2CEO` (Telegram 通信) | **仅 CEO 助理可用**，其他 Agent 禁止 |
+| 能力 | 限制 | 原因 |
+|------|------|------|
+| Telegram 通信 | **仅 CEO 助理可用** | CEO 助理是唯一有状态服务，维护与 CEO 的持续对话上下文 |
+| 内容发布 | **需 CEO 审批** | 发布权在 CEO 手里，避免 AI 自作主张 |
 
 ### 2.5 审批机制
 
@@ -433,15 +434,14 @@ SUPABASE_ACCESS_TOKEN=...
 ### 9.3 战投部
 
 ```
-# 投资分析
-查看我的持仓
-最近交易记录
-分析一下我持仓的 NVDA
-
 # 行业调研
 调研一下 AI 视频赛道
 分析一下 React 19 新特性
 研究一下竞品 xxx
+
+# 用户研究（结合 Reddit）
+这个方向有没有真实需求
+用户对 xxx 产品有什么痛点
 ```
 
 ### 9.4 事业部
@@ -455,8 +455,13 @@ SUPABASE_ACCESS_TOKEN=...
 ### 9.5 运营部
 
 ```
+# 持仓监控
 查一下我的持仓
+最近交易记录
 今天股票怎么样
+
+# KOL 情报
+获取勃勃群最近的聊天记录
 ```
 
 ---
