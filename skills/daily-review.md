@@ -296,12 +296,34 @@ python3 ~/.claude/skills/personal-assistant/scripts/send_telegram.py "✅ 今日
 
 ## 配置项
 
-需要在 `~/.claude/CLAUDE.md` 或环境变量中配置：
+已在 `~/.claude/CLAUDE.md` 中配置：
 
 ```
-SUPABASE_PROJECT_ID=ebgmmkaxuhawfrwryzia
-NOTION_DAILY_REVIEW_DB_ID=xxx  # 需要创建对应的 Notion 数据库
+SUPABASE_PROJECT_ID=your_project_id
+NOTION_API_KEY=your_notion_api_key  # 从 CLAUDE.md 读取
+NOTION_PERSONAL_REVIEW_DB_ID=your_database_id  # Personal Review 数据库
 ODYSSEY_PATH=~/odyssey  # 第二大脑路径
+```
+
+### Notion 写入示例
+
+```bash
+curl -X POST "https://api.notion.com/v1/pages" \
+  -H "Authorization: Bearer $NOTION_API_KEY" \
+  -H "Notion-Version: 2022-06-28" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "parent": {"database_id": "2f47f9bf-d164-81a2-886f-de01e398ac38"},
+    "properties": {
+      "Name": {"title": [{"text": {"content": "{date} Personal Review"}}]},
+      "Date": {"date": {"start": "{date}"}},
+      "Pages": {"number": {total_pages}},
+      "Duration (min)": {"number": {duration}},
+      "OKR Focus": {"rich_text": [{"text": {"content": "{okr_summary}"}}]},
+      "Summary": {"rich_text": [{"text": {"content": "{one_line_summary}"}}]}
+    },
+    "children": [... blocks ...]
+  }'
 ```
 
 ---
