@@ -348,8 +348,8 @@ Task(
 
 ```bash
 # Step 1: 克隆公司模板
-git clone https://github.com/Leoyishou/personal-ai-agent.git
-cd personal-ai-agent
+git clone https://github.com/Leoyishou/personal-ai-company.git
+cd personal-ai-company
 
 # Step 2: 复制配置
 cp .env.example .env
@@ -363,6 +363,8 @@ nano .env
 # Step 5: 验证运行
 launchctl list | grep personal-ai
 ```
+
+**详细安装指南**：请参考 [SETUP.md](./SETUP.md)
 
 ---
 
@@ -459,7 +461,66 @@ SUPABASE_ACCESS_TOKEN=...
 
 ---
 
-## 十、运维命令
+## 十、实战案例
+
+### Case 1: AI 行程规划产品
+
+**场景**：想做一个 AI 行程规划产品，从想法到产品验证的全流程。
+
+```
+你：做一个 AI 行程规划的产品
+
+CEO 助理：收到。交给事业部处理。
+
+事业部：启动产品调研流程。
+
+    📦 产品部（痛点调研）：
+    → 调用 pain-point-research 技能
+    → 在 Reddit 搜索 "travel planning frustration", "trip itinerary AI"
+    → 分析 2000+ 帖子，提取高频痛点
+
+    调研结果：
+    - 🔥 痛点 #1: "花 3 天做攻略，到了发现根本走不完"
+    - 🔥 痛点 #2: "AI 推荐的都是网红店，完全不考虑我的口味"
+    - 🔥 痛点 #3: "突然下雨/闭馆，整个行程全乱了"
+
+    📦 产品部（需求定义）：
+    核心功能：动态行程重规划（根据实时情况调整）
+    差异化：个人偏好学习 + 本地人视角
+
+    🔬 战投部（竞品分析）：
+    → 调用 perplexity-research 分析竞品
+    → Wanderlog: 偏静态规划
+    → TripIt: 偏商务出行
+    → 机会点：个人旅行的动态规划是空白
+
+    💻 研发部（原型开发）：
+    → 使用 ui-ux-pro-max 设计界面
+    → 基于 Supabase 搭建后端
+    → 准备提交 TestFlight
+
+事业部汇报：
+✅ 痛点验证完成，有真实需求
+✅ 竞品分析完成，发现差异化空间
+✅ 原型已完成，待 CEO 审阅
+
+你：看一下原型
+CEO 助理：[展示 UI 截图和演示链接]
+
+你：不错，提交 TestFlight
+CEO 助理：收到，研发部正在打包...
+```
+
+**这个案例展示了**：
+- 事业部如何协调产品部和研发部
+- 产品部如何用 Skills 做痛点调研
+- 战投部如何做竞品分析
+- 研发部如何快速出原型
+- CEO 只需要做决策，不用执行
+
+---
+
+## 十一、运维命令
 
 ```bash
 # 查看公司运行状态
@@ -483,7 +544,7 @@ launchctl unload ~/Library/LaunchAgents/com.claude.personal-ai-dashboard.plist
 
 ---
 
-## 十一、扩展公司
+## 十二、扩展公司
 
 ### 11.1 成立新部门
 
@@ -518,7 +579,7 @@ model: sonnet
 
 ---
 
-## 十二、贡献
+## 十三、贡献
 
 欢迎 PR！特别是：
 - 支持更多任务系统（Todoist, Notion, Things）

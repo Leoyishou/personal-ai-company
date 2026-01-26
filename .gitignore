@@ -39,3 +39,17 @@ venv/
 # 临时文件
 *.tmp
 *.temp
+
+# Generated images (nanobanana, etc.)
+nanobanana_*.jpg
+nanobanana_*.png
+*.generated.jpg
+*.generated.png
+
+# Cookies and auth files
+*_cookies.txt
+cookies.json
+
+# Output files
+output/
+downloads/
