@@ -4,6 +4,16 @@
 
 ---
 
+## 零、这家公司的目的只有为你赚钱
+
+如纳瓦尔所说三种杠杆：
+1. 公关部负责将你的灵感变为社媒内容，提高你的互联网影响力
+2. AI 事业部负责将你的 idea 变为产品，找到 1000 个愿意付费的用户
+3. 战投部负责管理你的投资，事件驱动，获得汇报。
+
+![image.png|1500](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2026%2F01%2F26%2F23-05-37-e5d4536b32a92f574a4947fef3a36d1b-202601262305085-2248c2.png)
+
+
 ## 一、全员 AI，只有老板是人
 
 你拥有一家公司。
@@ -31,7 +41,25 @@
 │     全员 AI，7×24 在线，永不请假，随叫随到                        │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
+
+| 你需要准备的 | 公司类比 | 作用 |
+|-------------|---------|------|
+| **Mac 电脑** | 办公大楼 | 公司 7×24 运转的物理载体 |
+| **[Amphetamine](https://apps.apple.com/app/amphetamine/id937984704)** | 大楼电力系统 | 防止 Mac 休眠，确保永不断电（免费） |
+| **[Claude Code Max](https://claude.ai/download)** | 校招预算 | 雇佣 AI 员工的薪资（$100/月或$200/月） |
+| **[Telegram](https://telegram.org/)** | 飞书 | 你和公司的沟通渠道 |
+| **[滴答清单](https://dida365.com/)** | CEO 的想法池 | 公司定期扫描，自动执行可执行的任务 |
+| **[Supabase](https://supabase.com/)** | 后端团队 + DBA | 数据库、认证、存储，后端基建一站式搞定 |
+| **[OpenRouter](https://openrouter.ai/)** | 外脑顾问团 | 按需调用 GPT-4o、Gemini 等多模型 |
+| **[Perplexity API](https://docs.perplexity.ai/)** | 外聘智库 | 深度调研、实时信息检索 |
+| **[X Developer](https://developer.x.com/)** | 官方微博 | 发推、互动的公关渠道 |
+| **[小红书 Cookie](https://xiaohongshu.com/)** | 官方小红书 | 图文/视频发布的公关渠道 |
+| **[火山引擎](https://console.volcengine.com/speech/app)** | 速记员 | 语音转文字（ASR）、文字转语音（TTS） |
+| **Python 3.10+ / Node.js 18+** | 工厂流水线 | Skills 和 MCP 的运行环境 |
+
+> **重要**：Mac 休眠后 launchd 服务会暂停。安装 Amphetamine 并设置「Indefinitely」保持唤醒，确保公司 24/7 在线。
 
 **你的工作方式变了**：
 
@@ -40,7 +68,8 @@
 | 自己写推文 | 下达指令："发一条关于 AI 趋势的推" |
 | 自己做调研 | 下达指令："调研一下 AI 视频赛道" |
 | 自己剪视频 | 下达指令："把这个素材做成短视频" |
-| 自己追踪线索 | 下达指令："扒一扒这个公司" |
+| 自己追踪线索 | 下达指令："扒一扒这个事件" |
+| 自己开发产品 | 下达指令："做一个 AI 行程助手的产品" |
 | 凡事亲力亲为 | **只做决策，执行交给 AI** |
 
 ---
@@ -67,14 +96,15 @@
 
 | 部门 | 模型 | 职责 | 挂载 Skills |
 |-----|------|------|-------------|
-| 🤖 **CEO 助理** | sonnet | 调度各部门、汇报结果、Telegram 通信 | `personal-assistant` |
-| 📢🎬 **内容与公关部** | sonnet | 素材收集→内容创作→提交审批 | `social-media-download`, `social-media-publish`, `nanobanana-draw` |
-| 🔬 **战投部** | opus | 深度调研、竞品分析、持仓分析 | `perplexity-research`, `research-by-reddit`, `futu-trades`, `KOL-info-collect` |
-| 🕵️ **情报分析部** | sonnet | 线索追踪、内容提取、深度分析 | `social-media-download`, `perplexity-research`, Firecrawl MCP |
-| 📊 **运营部** | haiku | 数据监控、任务管理、每日复盘 | `daily-review`, `dida-auto-worker` |
-| 🏢 **AI 事业部** | sonnet | 从 0 到 1 打造 AI 产品（统筹产品+研发） | `ui-ux-pro-max` |
-| ├─ 📦 产品部 | opus | 痛点挖掘、需求分析、产品定义 | `pain-point-research`, `research-by-reddit`, `perplexity-research` |
-| └─ 💻 研发部 | sonnet | 写代码、Supabase、发布上线 | `eas-testflight`, Supabase MCP |
+| ◆ **CEO 助理** | sonnet | 调度各部门、汇报结果、Telegram 通信 | `personal-assistant` |
+| ◇ **内容与公关部** | sonnet | 素材收集→内容创作→提交审批 | `social-media-download`, `social-media-publish`, `nanobanana-draw` |
+| ◈ **战投部** | opus | 深度调研、持仓分析、交易复盘、投资建议 | `perplexity-research`, `research-by-reddit`, `futu-trades`, `KOL-info-collect` |
+| ○ **情报分析部** | sonnet | 线索追踪、内容提取、深度分析 | `social-media-download`, `perplexity-research`, Firecrawl MCP |
+| ◎ **运营部** | haiku | 数据监控、任务管理、每日复盘 | `daily-review`, `dida-auto-worker` |
+| ▣ **AI 事业部** | sonnet | 从 0 到 1 打造 AI 产品（统筹产品+研发） | `ui-ux-pro-max` |
+| ├─ △ 产品部 | opus | 痛点挖掘、需求分析、产品定义 | `pain-point-research`, `research-by-reddit`, `perplexity-research` |
+| └─ ⌘ 研发部 | sonnet | 写代码、Supabase、发布上线 | `eas-testflight`, Supabase MCP |
+
 
 ### 2.3 通用能力 (所有部门可用)
 
@@ -93,32 +123,7 @@
 | Telegram 通信 | **仅 CEO 助理可用** | CEO 助理是唯一有状态服务，维护与 CEO 的持续对话上下文 |
 | 内容发布 | **需 CEO 审批** | 发布权在 CEO 手里，避免 AI 自作主张 |
 
-### 2.5 审批机制
 
-**内容与公关部没有独立发布权限**，必须提交草稿给 CEO 审批：
-
-```
-内容与公关部创作内容
-        │
-        ▼
-   📝 提交草稿
-        │
-        ▼
-  CEO 助理呈报给 CEO
-        │
-        ▼
-   CEO（你）审阅
-        │
-   ┌────┴────┐
-   ▼         ▼
- 「发」    「改 xxx」
-   │         │
-   ▼         ▼
-CEO 助理    返回修改
-执行发布
-```
-
----
 
 ## 三、公司运营模式
 
@@ -149,51 +154,19 @@ CEO 助理：✅ 已发布 https://x.com/...
 ```
 CEO 助理：老板，各部门汇报：
 
-    📢🎬 内容与公关部：
-    📝 待审批 1 项：
-    - 推文草稿：今天学到的 3 个技巧
+    🤖🗺️ AI 事业部：
+    🚧 产品立项中 1 项：
+    - AI 行程助手（根据老板最新需求，已经开始设计产品方案，马上给出 MVP）
 
     🕵️ 情报分析部完成 1 项：
-    ✅ 分析报告：xxx 公司背景调查
-
-    ⏭️ 跳过 1 项（需要更多信息）：
-    - "洗稿发小红书" → 洗哪篇内容？
+    ✅ 分析报告：xxx 事件背景调查
 ```
 
 ### 3.3 模式三：每日复盘 (Daily Review)
 
-每晚 **23:00**，运营部自动执行深度复盘：
+老板，你今天工作了8个小时，阅读了什么内容？其中有哪些是你可能没注意到的？
 
-```
-运营部：📊 今日复盘完成
-
-2026-01-26
-
-> 今天主要在优化 AI 公司基础设施，托福学习时间偏少
-
-🎯 OKR 进展:
-- O6 智能化: 65% ████████░░ (Supabase + Agent 开发)
-- O7 托福: 15% ██░░░░░░░░ (仅碎片阅读)
-- ⚠️ 无归属: 20%
-
-💡 关键洞察:
-1. 技术债优先：连续 3 天在做基础设施，托福被挤压
-2. 深度时间不足：今天深度阅读 < 30 分钟
-
-📝 明日建议:
-- 上午固定 1h 托福听力，不被打断
-
-详细报告已写入 Notion
-```
-
-**数据来源**：
-- Supabase: `browsing_records`, `agent_sessions`
-- 本地: `~/odyssey` 第二大脑（OKR、进行中项目）
-
-**分析维度**：
-- OKR 对齐度：今天的活动贡献了哪个目标？
-- 时间分配：深度工作 vs 碎片浏览
-- 趋势预警：和昨天/上周对比
+今天公司里的 agent 吗？完成了什么什么目标？有什么什么需要你去额外注意的？
 
 ---
 
@@ -215,7 +188,8 @@ CEO 助理：老板，各部门汇报：
 
 ### 5.1 有状态 vs 无状态
 
-**整个公司只有一个有状态服务——CEO 助理**，其他都是无状态的临时工。
+**整个公司只有一个有状态服务——CEO 助理**，其他都是无状态的。
+而且只有 CEO 助理有通过 telegram 和 CEO 互动的权利。这样能保证所有的信息都不是单向的。因为 CEO 朱莉是一个常驻在 Mac 上且拥有最高权限的 agent，可以实时被 CEO 调度。
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -242,7 +216,7 @@ CEO 助理：老板，各部门汇报：
 │                                                                  │
 │  ├─ 内容与公关部 (sonnet): 创作内容 → 执行完即销毁                 │
 │  ├─ 情报分析部 (sonnet): 线索追踪 → 执行完即销毁                   │
-│  ├─ 战投部 (opus): 深度调研 → 执行完即销毁                        │
+│  ├─ 战投部 (opus): 交易策略 → 执行完即销毁                        │
 │  ├─ 运营部 (haiku): 数据查询 → 执行完即销毁                       │
 │  └─ 事业部 (sonnet): 统筹产品和研发 → 执行完即销毁                 │
 │       ├─ 产品部 (opus): 痛点调研 → 执行完即销毁                   │
@@ -253,7 +227,7 @@ CEO 助理：老板，各部门汇报：
 
 ### 5.2 调度代码示例
 
-CEO 助理通过 `Task` 工具拉起各部门：
+CEO 助理通过 cc 内置的 `Task` 工具拉起各部门的 SubAgent
 
 ```python
 # CEO 助理调度内容与公关部
@@ -278,7 +252,7 @@ Task(
   你是事业部的负责人。
   请阅读部门职责：~/.claude/agents/departments/business-unit.md
 
-  任务：老板想做一个 AI 写作助手
+  任务：老板想做一个 AI 旅行助手
 
   你需要先调度产品部做调研，再调度研发部做开发
   """
@@ -342,6 +316,7 @@ Task(
 | **[Telegram](https://telegram.org/)** | 飞书 | 你和公司的沟通渠道 |
 | **[滴答清单](https://dida365.com/)** | CEO 脑海里的想法 | 公司定期扫描，自动执行可执行的任务 |
 | **[Supabase](https://supabase.com/)** | 后端研发 + DBA + OPS | 数据库、认证、存储，后端基础设施一站式搞定 |
+
 
 > **重要**：Mac 休眠后 launchd 服务会暂停。安装 Amphetamine 并设置「Indefinitely」保持唤醒，确保公司 24/7 在线。
 
