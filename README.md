@@ -70,7 +70,7 @@
 | 📢🎬 **内容与公关部** | sonnet | 素材收集→内容创作→提交审批 | social-media-download, nanobanana-draw, perplexity-research |
 | 🔬 **战投部** | opus | 行业调研、竞品分析、投资研报 | perplexity-research, research-by-reddit, WebSearch |
 | 🕵️ **情报分析部** | sonnet | 线索追踪、内容提取、深度分析 | social-media-download, firecrawl, perplexity-research |
-| 📊 **运营部** | haiku | 数据监控、任务管理、持仓查询 | futu-trades, mcp__dida365__*, telegram-bobo |
+| 📊 **运营部** | haiku/opus | 数据监控、任务管理、**每日复盘** | futu-trades, mcp__dida365__*, daily-review, mcp__supabase__* |
 | 🏢 **事业部** | sonnet | 从 0 到 1 打造产品 | 统筹产品部和研发部 |
 | 📦 **产品部** | opus | 痛点挖掘、需求分析、产品定义 | pain-point-research, research-by-reddit |
 | 💻 **研发部** | sonnet | 写代码、数据库、部署上线 | eas-testflight, mcp__supabase__* |
@@ -141,6 +141,41 @@ CEO 助理：老板，各部门汇报：
     ⏭️ 跳过 1 项（需要更多信息）：
     - "洗稿发小红书" → 洗哪篇内容？
 ```
+
+### 3.3 模式三：每日复盘 (Daily Review)
+
+每晚 **23:00**，运营部自动执行深度复盘：
+
+```
+运营部：📊 今日复盘完成
+
+2026-01-26
+
+> 今天主要在优化 AI 公司基础设施，托福学习时间偏少
+
+🎯 OKR 进展:
+- O6 智能化: 65% ████████░░ (Supabase + Agent 开发)
+- O7 托福: 15% ██░░░░░░░░ (仅碎片阅读)
+- ⚠️ 无归属: 20%
+
+💡 关键洞察:
+1. 技术债优先：连续 3 天在做基础设施，托福被挤压
+2. 深度时间不足：今天深度阅读 < 30 分钟
+
+📝 明日建议:
+- 上午固定 1h 托福听力，不被打断
+
+详细报告已写入 Notion
+```
+
+**数据来源**：
+- Supabase: `browsing_records`, `agent_sessions`
+- 本地: `~/odyssey` 第二大脑（OKR、进行中项目）
+
+**分析维度**：
+- OKR 对齐度：今天的活动贡献了哪个目标？
+- 时间分配：深度工作 vs 碎片浏览
+- 趋势预警：和昨天/上周对比
 
 ---
 

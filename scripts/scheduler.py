@@ -42,6 +42,10 @@ SCAN_INTERVAL = 30 * 60  # 30 分钟
 
 # Claude 执行超时（秒）
 CLAUDE_TIMEOUT = 300  # 5 分钟
+CLAUDE_TIMEOUT_LONG = 600  # 10 分钟（用于 daily review 等复杂任务）
+
+# 定时任务配置
+DAILY_REVIEW_HOUR = 23  # 每晚 23:00 运行 daily review
 
 # 确保目录存在
 os.makedirs(LOG_DIR, exist_ok=True)
@@ -234,6 +238,132 @@ async def handle_telegram_message(client, message: str) -> str:
 # 模式二：定时扫描滴答清单
 # ============================================
 
+async def run_daily_review(client):
+    """
+    每日复盘 - 运营部核心任务
+
+    深度分析今天的行为数据，对齐 OKR，生成个性化洞察
+    """
+    log("=" * 40)
+    log("开始每日复盘...")
+    log("=" * 40)
+
+    await send_telegram(client, "🔄 开始生成今日复盘...")
+
+    prompt = """/daily-review
+
+请执行完整的每日复盘流程：
+
+## 数据源
+1. **Supabase 数据**（用 mcp__supabase__execute_sql）
+   - browsing_records: 今日浏览记录
+   - agent_sessions: 今日 Agent 交互
+   - agent_messages: 工具使用详情
+
+2. **本地 Context**（用 Read 工具）
+   - ~/odyssey/4 复盘/2025/2025-2026 战略屋.md（OKR 目标）
+   - ~/odyssey/1 一切皆项目/进行中/（当前项目列表）
+
+## 分析维度
+
+### 1. 目标对齐度
+把今天的活动归类到 OKR：
+- O1 职业基建（技术学习、代码开发）
+- O2 健康运维（运动、健康相关）
+- O3 产品目标（Viva 等产品工作）
+- O5 个人品牌（内容创作、社媒）
+- O6 智能化升级（AI 工具、自动化）
+- O7 托福/英语（语言学习）
+- ⚠️ 无法归类（注意力黑洞）
+
+### 2. 时间分配
+- 各 OKR 的时间占比
+- 深度工作 vs 碎片浏览
+- 高价值活动 vs 低价值消耗
+
+### 3. 知识增量
+- 今天接触的新概念/关键词
+- 可以关联到知识库的哪些已有概念
+
+### 4. 执行偏差
+- 如果有滴答清单数据，对比计划 vs 实际
+
+### 5. 趋势预警（如果有历史数据）
+- 和昨天/上周对比
+
+## 输出要求
+
+生成结构化报告，包含：
+1. 📊 今日概览（一句话总结 + 3 个核心数字）
+2. 🎯 OKR 进展（哪些目标有推进，哪些停滞）
+3. 💡 关键洞察（2-3 条个性化观察）
+4. ⚠️ 注意事项（如果有偏离轨道的迹象）
+5. 📝 明日建议（1-2 条 actionable）
+
+## 写入位置
+
+1. **Supabase**:
+   - 表名: daily_personal_reviews
+   - 字段: review_date, okr_alignment, time_distribution, insights, raw_report
+
+2. **Notion**:
+   - 创建新页面到 Daily Review 数据库
+   - 包含完整报告 + 可视化
+
+完成后发 Telegram 通知老板。
+"""
+
+    try:
+        result = await run_claude_long(prompt, 'opus')
+        log(f"每日复盘完成，输出 {len(result)} 字符")
+
+        # 截断过长结果
+        summary = result[:3000] if len(result) > 3000 else result
+        await send_telegram(client, f"✅ 今日复盘完成\n\n{summary}")
+
+    except Exception as e:
+        log(f"每日复盘失败: {e}")
+        await send_telegram(client, f"❌ 今日复盘失败: {e}")
+
+
+async def run_claude_long(prompt: str, model: str = 'opus') -> str:
+    """
+    运行 Claude Code 子进程（长时间任务版本）
+    """
+    log(f"启动 Claude 长任务 ({model}): {prompt[:80]}...")
+
+    try:
+        env = os.environ.copy()
+        fnm_path = os.path.expanduser('~/.local/share/fnm/node-versions/v22.16.0/installation/bin')
+        if os.path.exists(fnm_path):
+            env['PATH'] = f"{fnm_path}:{env.get('PATH', '')}"
+
+        cmd = ['claude', '-p', prompt, '--dangerously-skip-permissions', '--model', model]
+
+        result = subprocess.run(
+            cmd,
+            capture_output=True,
+            text=True,
+            timeout=CLAUDE_TIMEOUT_LONG,
+            env=env,
+            cwd=os.path.expanduser('~')  # 从 home 目录运行，方便访问 odyssey
+        )
+
+        output = result.stdout.strip()
+        if result.returncode != 0 and result.stderr:
+            output += f"\n\n错误: {result.stderr.strip()}"
+
+        log(f"Claude 长任务完成，输出 {len(output)} 字符")
+        return output if output else "执行完成，无输出"
+
+    except subprocess.TimeoutExpired:
+        log(f"Claude 长任务超时 ({CLAUDE_TIMEOUT_LONG}秒)")
+        return f"执行超时（{CLAUDE_TIMEOUT_LONG // 60}分钟限制）"
+    except Exception as e:
+        log(f"Claude 长任务失败: {e}")
+        return f"执行失败: {e}"
+
+
 async def scan_dida_tasks(client):
     """
     扫描滴答清单，执行可自动化的任务
@@ -329,16 +459,28 @@ async def main():
 
     log("开始监听 Telegram 消息...")
     log(f"定时扫描间隔: {SCAN_INTERVAL // 60} 分钟")
+    log(f"每日复盘时间: {DAILY_REVIEW_HOUR}:00")
+
+    # 记录今天是否已运行过 daily review
+    last_review_date = None
 
     # 主循环：定时扫描
     while True:
         try:
-            # 检查是否需要扫描
             now = datetime.now()
+
+            # 检查是否需要扫描滴答清单
             if (now - last_scan).total_seconds() >= SCAN_INTERVAL:
                 log("触发定时扫描...")
                 await scan_dida_tasks(client)
                 last_scan = now
+
+            # 检查是否需要运行 daily review（每天 23:00）
+            today = now.date()
+            if now.hour == DAILY_REVIEW_HOUR and last_review_date != today:
+                log(f"触发每日复盘 ({DAILY_REVIEW_HOUR}:00)...")
+                await run_daily_review(client)
+                last_review_date = today
 
             # 处理 Telegram 事件
             await asyncio.sleep(1)
