@@ -1,0 +1,60 @@
+{
+  "manifest_version": 3,
+  "name": "ModelHop",
+  "version": "1.0.0",
+  "description": "Forward prompts between AI models in 1 click. Hop from ChatGPT to Claude or Gemini instantly.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://chat.openai.com/*",
+    "https://claude.ai/*",
+    "https://gemini.google.com/*",
+    "https://openrouter.ai/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*"
+      ],
+      "js": ["platforms/chatgpt.js", "content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://claude.ai/*"
+      ],
+      "js": ["platforms/claude.js", "content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://gemini.google.com/*"
+      ],
+      "js": ["platforms/gemini.js", "content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+    },
+    "default_title": "ModelHop"
+  }
+}

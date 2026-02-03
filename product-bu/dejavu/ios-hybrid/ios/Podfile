@@ -1,0 +1,19 @@
+platform :ios, '14.0'
+use_frameworks! :linkage => :static
+
+require_relative '../ReactNative/node_modules/react-native/scripts/react_native_pods'
+require_relative '../ReactNative/node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+target 'DejavuHybrid' do
+  config = use_native_modules!
+
+  use_react_native!(
+    :path => '../ReactNative/node_modules/react-native',
+    :hermes_enabled => true
+  )
+end
+
+post_install do |installer|
+  react_native_post_install(installer)
+end
+

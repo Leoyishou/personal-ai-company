@@ -1,0 +1,11 @@
+{
+  "name": "dejavu-hybrid-rn",
+  "private": true,
+  "version": "0.0.1",
+  "main": "index.js",
+  "dependencies": {
+    "react": "18.2.0",
+    "react-native": "0.73.6"
+  }
+}
+

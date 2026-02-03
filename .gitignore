@@ -1,103 +1,53 @@
-# =============================================
-# Environment & Secrets
-# =============================================
-.env
-.env.*
-*.env.local
-secrets.env
-!env.example
-
-# =============================================
-# Session & State Files
-# =============================================
-*.session
-*.session-journal
-session/
-state.json
-ceo-session.json
-pet-position.json
-
-# =============================================
-# Logs
-# =============================================
-logs/
-*.log
-
-# =============================================
-# Results & Outputs
-# =============================================
-results/
-output/
-downloads/
-drafts/
-
-# =============================================
-# Python
-# =============================================
-__pycache__/
-*.py[cod]
-*$py.class
-.Python
-venv/
-.venv/
-*.pyc
-
-# =============================================
-# Node.js
-# =============================================
-node_modules/
-package-lock.json
-pnpm-lock.yaml
-
-# =============================================
 # macOS
-# =============================================
 .DS_Store
 .AppleDouble
 .LSOverride
 
-# =============================================
-# IDE
-# =============================================
-.idea/
-.vscode/
-*.swp
-*.swo
+# Node
+node_modules/
+*.log
 
-# =============================================
-# Temp Files
-# =============================================
+# Python
+__pycache__/
+*.pyc
+.env
+
+# Temporary files
 *.tmp
 *.temp
 
-# =============================================
-# Generated Images
-# =============================================
-nanobanana_*.jpg
-nanobanana_*.png
-*.generated.jpg
-*.generated.png
-
-# =============================================
-# Auth & Cookies
-# =============================================
-*_cookies.txt
-cookies.json
+# Secrets
+secrets.env
 *.pem
 *.key
+credentials.*
 
-# =============================================
-# Supabase Local
-# =============================================
-supabase/.branches/
-supabase/.temp/
+# Local cache
+*.cache
+cache/
 
-# =============================================
-# User-specific data (will be excluded from commits)
-# =============================================
-.claude/agents/ceo-assistant/session/
-.claude/agents/ceo-assistant/logs/
-.claude/agents/xhs-account-ops/publications/
-.claude/agents/xhs-account-ops/evaluations/
-.claude/agents/xhs-account-ops/contents/
-.claude/agents/xhs-account-ops/ideas/
+# Inbox and Archive (private)
+inbox/
+archive/
+
+# Old repo directory
+personal-ai-company/
+
+# IDE
+.idea/
+.vscode/
+
+# Build outputs
+dist/
+build/
+
+# Large binary files
+*.mp4
+*.mov
+*.avi
+*.mp3
+*.wav
+# 产品代码仓库（独立 git）
+product-bu/VoiceType/
+product-bu/viva/
+product-bu/ModelHop/

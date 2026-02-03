@@ -1,0 +1,15 @@
+ICON PLACEHOLDER
+
+To complete the extension, you need to convert the SVG icons to PNG:
+
+1. icon16.png (16x16 pixels)
+2. icon48.png (48x48 pixels)  
+3. icon128.png (128x128 pixels)
+
+You can use any tool like:
+- Figma
+- Adobe Illustrator
+- Online SVG to PNG converter
+- ImageMagick: `convert icon16.svg icon16.png`
+
+The SVG files in this folder can be used as templates.

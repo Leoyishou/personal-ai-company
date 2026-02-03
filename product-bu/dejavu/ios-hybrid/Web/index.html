@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dejavu Hybrid – H5</title>
+    <style>
+      body { font-family: -apple-system, system-ui, Segoe UI, Roboto, sans-serif; margin: 0; }
+      main { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+      .card { text-align: center; padding: 32px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+      h1 { margin: 0 0 16px; font-size: 28px; }
+      button { font-size: 18px; padding: 10px 20px; border-radius: 12px; border: 1px solid #ccc; background: #f7f7f7; margin: 0 6px; }
+      button:active { transform: translateY(1px); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="card">
+        <h1>Dejavu Hybrid – H5</h1>
+        <p>两种方式：纯 H5 播放 或 调用原生播放</p>
+        <p>
+          <button id="toggle-h5">H5: Play</button>
+          <button id="toggle-native">Native: Toggle</button>
+        </p>
+        <audio id="audio" preload="none" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+      </div>
+    </main>
+    <script>
+      const btnH5 = document.getElementById('toggle-h5');
+      const btnNative = document.getElementById('toggle-native');
+      const audio = document.getElementById('audio');
+      let playing = false;
+
+      btnH5.addEventListener('click', async () => {
+        try {
+          if (!playing) {
+            await audio.play();
+            playing = true;
+            btnH5.textContent = 'H5: Pause';
+          } else {
+            audio.pause();
+            playing = false;
+            btnH5.textContent = 'H5: Play';
+          }
+        } catch (e) {
+          alert('Playback failed: ' + e);
+        }
+      });
+
+      btnNative.addEventListener('click', () => {
+        if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.audio) {
+          window.webkit.messageHandlers.audio.postMessage('toggle');
+        } else {
+          alert('Native bridge not available.');
+        }
+      });
+    </script>
+  </body>
+  </html>
+
