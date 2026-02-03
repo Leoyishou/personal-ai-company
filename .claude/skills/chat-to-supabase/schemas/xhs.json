@@ -1,0 +1,85 @@
+{
+  "project_id": "zyojjyyfxywfhmwhyciw",
+  "project_name": "xhs",
+  "tables": {
+    "contents": {
+      "description": "内容表 - 存储生成的内容",
+      "columns": {
+        "id": "uuid (PK)",
+        "user_id": "uuid (FK)",
+        "task_id": "uuid (FK)",
+        "platform": "text - 发布平台",
+        "title": "text - 标题",
+        "body": "text - 正文",
+        "tags": "jsonb - 标签",
+        "meta": "jsonb - 元数据",
+        "version": "integer - 版本号",
+        "created_at": "timestamptz",
+        "updated_at": "timestamptz"
+      }
+    },
+    "events": {
+      "description": "事件表 - 记录用户操作事件",
+      "columns": {
+        "id": "uuid (PK)",
+        "user_id": "uuid (FK)",
+        "task_id": "uuid (FK)",
+        "type": "text - 事件类型",
+        "payload": "jsonb - 事件数据",
+        "created_at": "timestamptz"
+      }
+    },
+    "generation_tasks": {
+      "description": "生成任务表 - AI内容生成任务",
+      "columns": {
+        "id": "uuid (PK)",
+        "user_id": "uuid (FK)",
+        "idea_id": "uuid - 灵感ID",
+        "idea_text": "text - 灵感文本",
+        "text_model": "text - 文本模型",
+        "image_model": "text - 图片模型",
+        "text_style": "text - 文本风格",
+        "image_style": "text - 图片风格",
+        "status": "text - 状态",
+        "error": "text - 错误信息",
+        "is_draft": "boolean - 是否草稿",
+        "is_published": "boolean - 是否已发布",
+        "published_at": "timestamptz - 发布时间",
+        "draft_version": "integer - 草稿版本",
+        "last_saved_at": "timestamptz - 最后保存时间",
+        "image_count": "integer - 图片数量",
+        "created_at": "timestamptz",
+        "updated_at": "timestamptz"
+      }
+    },
+    "images": {
+      "description": "图片表 - 存储生成的图片",
+      "columns": {
+        "id": "uuid (PK)",
+        "user_id": "uuid (FK)",
+        "task_id": "uuid (FK)",
+        "kind": "text - 图片类型",
+        "url": "text - 图片URL",
+        "prompt": "text - 生成提示词",
+        "meta": "jsonb - 元数据",
+        "created_at": "timestamptz"
+      }
+    },
+    "ipublish_users": {
+      "description": "用户表",
+      "columns": {
+        "id": "bigint (PK)",
+        "username": "varchar - 用户名",
+        "sub": "varchar - OAuth subject",
+        "email": "varchar - 邮箱",
+        "phone": "varchar - 手机号",
+        "password_hash": "varchar - 密码哈希",
+        "avatar_url": "varchar - 头像URL",
+        "level": "smallint - 用户等级",
+        "deleted": "smallint - 删除标记",
+        "created_at": "timestamptz",
+        "updated_at": "timestamptz"
+      }
+    }
+  }
+}

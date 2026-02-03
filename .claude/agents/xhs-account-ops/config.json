@@ -1,0 +1,40 @@
+{
+  "account": {
+    "platform": "xiaohongshu",
+    "name": "待配置"
+  },
+  "content_rules": {
+    "max_body_length": 1000,
+    "max_title_length": 20,
+    "max_tags": 10,
+    "image_ratio": "3:4",
+    "image_size": "1080x1440"
+  },
+  "tracking": {
+    "checkpoints": ["D0", "D1", "D7", "D30"],
+    "scoring": {
+      "weights": {
+        "likes": 1,
+        "comments": 3,
+        "collects": 2
+      },
+      "grades": {
+        "A": ">200%",
+        "B": "120-200%",
+        "C": "80-120%",
+        "D": "50-80%",
+        "F": "<50%"
+      }
+    }
+  },
+  "directories": {
+    "ideas": "ideas/",
+    "series": "series/",
+    "contents": "contents/",
+    "publications": "publications/",
+    "evaluations": "evaluations/",
+    "research": "research/",
+    "analytics": "analytics/"
+  },
+  "updated_at": "2026-02-02"
+}

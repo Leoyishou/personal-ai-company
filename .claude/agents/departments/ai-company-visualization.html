@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Company 部门与技能架构图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .architecture {
+            display: grid;
+            gap: 30px;
+        }
+
+        /* CEO层级 */
+        .ceo-level {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .ceo-box {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%);
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        /* 核心能力层 */
+        .core-capabilities {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .core-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #667eea;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .capability-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .capability-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .capability-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .capability-card li {
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.95rem;
+        }
+
+        .capability-card li:last-child {
+            border-bottom: none;
+        }
+
+        /* 部门网格 */
+        .departments-section {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .departments-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #764ba2;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        .departments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 25px;
+        }
+
+        .department-card {
+            background: white;
+            border: 3px solid #eee;
+            border-radius: 15px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .department-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border-color: #667eea;
+        }
+
+        .department-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .department-icon {
+            font-size: 2rem;
+        }
+
+        .department-info h3 {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .department-model {
+            display: inline-block;
+            padding: 3px 8px;
+            background: #f0f0f0;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .department-model.opus {
+            background: #FFE66D;
+            color: #333;
+        }
+
+        .department-model.sonnet {
+            background: #A8E6CF;
+            color: #333;
+        }
+
+        .skills-section {
+            margin-top: 15px;
+        }
+
+        .skills-title {
+            font-size: 1rem;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 12px;
+            background: #f5f5f5;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #555;
+            transition: all 0.2s ease;
+        }
+
+        .skill-badge:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+            transform: scale(1.05);
+        }
+
+        .skill-badge.core {
+            background: #FFE66D;
+            border-color: #FFD93D;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .skill-badge.core:hover {
+            background: #FFD93D;
+        }
+
+        /* 协作流程 */
+        .collaboration-section {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .collaboration-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #667eea;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        .workflow-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .workflow-card {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .workflow-card h4 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .workflow-step {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .workflow-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-arrow {
+            color: #667eea;
+            font-size: 1.2rem;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .departments-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .capabilities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .workflow-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 动画 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .department-card {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .capability-card {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        /* 更新时间 */
+        .update-time {
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏢 AI Company 架构图</h1>
+        <p class="subtitle">智能部门协作 · 统一技能体系 · 2026年1月更新</p>
+
+        <div class="architecture">
+            <!-- CEO层级 -->
+            <div class="ceo-level">
+                <div class="ceo-box">
+                    👔 CEO Assistant
+                </div>
+                <p style="margin-top: 15px; color: #666;">统筹协调所有部门，智能任务分发</p>
+            </div>
+
+            <!-- 核心通用能力 -->
+            <div class="core-capabilities">
+                <h2 class="core-title">🛠️ 核心通用能力</h2>
+                <div class="capabilities-grid">
+                    <div class="capability-card">
+                        <h3>🌐 WebFetchPlus</h3>
+                        <ul>
+                            <li>Twitter/X内容获取 (TwitterAPI.io)</li>
+                            <li>社交媒体下载 (抖音/B站/小红书)</li>
+                            <li>智能URL识别与路由</li>
+                            <li>批量抓取处理</li>
+                            <li>Firecrawl集成</li>
+                        </ul>
+                    </div>
+                    <div class="capability-card">
+                        <h3>🔍 Research</h3>
+                        <ul>
+                            <li>8种调研模式 (技术/市场/竞品等)</li>
+                            <li>专业分析框架 (SWOT/Porter/PEST)</li>
+                            <li>4级调研深度 (5分钟-60分钟)</li>
+                            <li>结构化报告生成</li>
+                            <li>智能洞见提取</li>
+                        </ul>
+                    </div>
+                    <div class="capability-card">
+                        <h3>📊 基础工具集</h3>
+                        <ul>
+                            <li>WebSearch - 网络搜索</li>
+                            <li>WebFetch - 网页抓取</li>
+                            <li>MCP Tools - 平台集成</li>
+                            <li>File Operations - 文件操作</li>
+                            <li>Data Processing - 数据处理</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 部门网格 -->
+            <div class="departments-section">
+                <h2 class="departments-title">🏛️ 专业部门</h2>
+                <div class="departments-grid">
+                    <!-- 情报部 -->
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">🕵️</div>
+                            <div class="department-info">
+                                <h3>Intelligence Department</h3>
+                                <span class="department-model sonnet">Sonnet</span>
+                            </div>
+                        </div>
+                        <p style="color: #666; margin-bottom: 15px;">信息收集 · 竞争情报 · 威胁监测</p>
+                        <div class="skills-section">
+                            <div class="skills-title">专属技能:</div>
+                            <div class="skills-list">
+                                <span class="skill-badge core">🌐 webfetch-plus</span>
+                                <span class="skill-badge core">🔍 research</span>
+                                <span class="skill-badge">📱 social-media-download</span>
+                                <span class="skill-badge">🔎 perplexity-research</span>
+                                <span class="skill-badge">🔥 firecrawl</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 战投部 -->
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">🔬</div>
+                            <div class="department-info">
+                                <h3>Research Department</h3>
+                                <span class="department-model opus">Opus</span>
+                            </div>
+                        </div>
+                        <p style="color: #666; margin-bottom: 15px;">深度调研 · 投资分析 · 技术评估</p>
+                        <div class="skills-section">
+                            <div class="skills-title">专属技能:</div>
+                            <div class="skills-list">
+                                <span class="skill-badge core">🔍 research</span>
+                                <span class="skill-badge core">🌐 webfetch-plus</span>
+                                <span class="skill-badge">🔎 perplexity-research</span>
+                                <span class="skill-badge">💬 research-by-reddit</span>
+                                <span class="skill-badge">🎯 pain-point-research</span>
+                                <span class="skill-badge">📈 futu-trades</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 产品部 -->
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">📱</div>
+                            <div class="department-info">
+                                <h3>Product Department</h3>
+                                <span class="department-model sonnet">Sonnet</span>
+                            </div>
+                        </div>
+                        <p style="color: #666; margin-bottom: 15px;">产品规划 · 用户研究 · 功能设计</p>
+                        <div class="skills-section">
+                            <div class="skills-title">专属技能:</div>
+                            <div class="skills-list">
+                                <span class="skill-badge core">🔍 research</span>
+                                <span class="skill-badge core">🌐 webfetch-plus</span>
+                                <span class="skill-badge">🎯 pain-point-research</span>
+                                <span class="skill-badge">📊 data-analysis</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 开发部 -->
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">💻</div>
+                            <div class="department-info">
+                                <h3>Dev Department</h3>
+                                <span class="department-model sonnet">Sonnet</span>
+                            </div>
+                        </div>
+                        <p style="color: #666; margin-bottom: 15px;">软件开发 · 系统架构 · 技术实现</p>
+                        <div class="skills-section">
+                            <div class="skills-title">专属技能:</div>
+                            <div class="skills-list">
+                                <span class="skill-badge">🔍 research</span>
+                                <span class="skill-badge">🌐 webfetch-plus</span>
+                                <span class="skill-badge">💻 code-generation</span>
+                                <span class="skill-badge">🔧 debugging</span>
+                                <span class="skill-badge">📦 deployment</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 内容与公关部 -->
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">🎨</div>
+                            <div class="department-info">
+                                <h3>Content & PR Department</h3>
+                                <span class="department-model sonnet">Sonnet</span>
+                            </div>
+                        </div>
+                        <p style="color: #666; margin-bottom: 15px;">内容创作 · 品牌传播 · 社媒运营</p>
+                        <div class="skills-section">
+                            <div class="skills-title">专属技能:</div>
+                            <div class="skills-list">
+                                <span class="skill-badge core">🌐 webfetch-plus</span>
+                                <span class="skill-badge">📱 social-media-publish</span>
+                                <span class="skill-badge">📹 biliup-publish</span>
+                                <span class="skill-badge">🎨 nanobanana-draw</span>
+                                <span class="skill-badge">🎵 volc-tts</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 运营部 -->
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">🚀</div>
+                            <div class="department-info">
+                                <h3>Operations Department</h3>
+                                <span class="department-model sonnet">Sonnet</span>
+                            </div>
+                        </div>
+                        <p style="color: #666; margin-bottom: 15px;">运营管理 · 数据分析 · 用户增长</p>
+                        <div class="skills-section">
+                            <div class="skills-title">专属技能:</div>
+                            <div class="skills-list">
+                                <span class="skill-badge">🔍 research</span>
+                                <span class="skill-badge">🌐 webfetch-plus</span>
+                                <span class="skill-badge">📊 data-analysis</span>
+                                <span class="skill-badge">📈 growth-hacking</span>
+                                <span class="skill-badge">🤖 automation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 商务部 -->
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">💼</div>
+                            <div class="department-info">
+                                <h3>Business Unit</h3>
+                                <span class="department-model sonnet">Sonnet</span>
+                            </div>
+                        </div>
+                        <p style="color: #666; margin-bottom: 15px;">商业拓展 · 合作洽谈 · 客户管理</p>
+                        <div class="skills-section">
+                            <div class="skills-title">专属技能:</div>
+                            <div class="skills-list">
+                                <span class="skill-badge core">🔍 research</span>
+                                <span class="skill-badge">🌐 webfetch-plus</span>
+                                <span class="skill-badge">📊 market-analysis</span>
+                                <span class="skill-badge">🤝 relationship-management</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 协作流程 -->
+            <div class="collaboration-section">
+                <h2 class="collaboration-title">🔄 部门协作流程</h2>
+                <div class="workflow-container">
+                    <div class="workflow-card">
+                        <h4>情报驱动决策</h4>
+                        <div class="workflow-step">
+                            <span>🕵️ Intelligence</span>
+                            <span class="step-arrow">→</span>
+                            <span>收集情报</span>
+                        </div>
+                        <div class="workflow-step">
+                            <span>🔬 Research</span>
+                            <span class="step-arrow">→</span>
+                            <span>深度分析</span>
+                        </div>
+                        <div class="workflow-step">
+                            <span>🏢 各部门</span>
+                            <span class="step-arrow">→</span>
+                            <span>执行决策</span>
+                        </div>
+                    </div>
+
+                    <div class="workflow-card">
+                        <h4>产品开发流程</h4>
+                        <div class="workflow-step">
+                            <span>📱 Product</span>
+                            <span class="step-arrow">→</span>
+                            <span>需求定义</span>
+                        </div>
+                        <div class="workflow-step">
+                            <span>🔬 Research</span>
+                            <span class="step-arrow">→</span>
+                            <span>技术调研</span>
+                        </div>
+                        <div class="workflow-step">
+                            <span>💻 Dev</span>
+                            <span class="step-arrow">→</span>
+                            <span>开发实现</span>
+                        </div>
+                        <div class="workflow-step">
+                            <span>🚀 Operations</span>
+                            <span class="step-arrow">→</span>
+                            <span>上线运营</span>
+                        </div>
+                    </div>
+
+                    <div class="workflow-card">
+                        <h4>市场推广流程</h4>
+                        <div class="workflow-step">
+                            <span>🕵️ Intelligence</span>
+                            <span class="step-arrow">→</span>
+                            <span>市场洞察</span>
+                        </div>
+                        <div class="workflow-step">
+                            <span>🎨 Content&PR</span>
+                            <span class="step-arrow">→</span>
+                            <span>内容创作</span>
+                        </div>
+                        <div class="workflow-step">
+                            <span>🚀 Operations</span>
+                            <span class="step-arrow">→</span>
+                            <span>推广执行</span>
+                        </div>
+                        <div class="workflow-step">
+                            <span>💼 Business</span>
+                            <span class="step-arrow">→</span>
+                            <span>商业变现</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 技能统计 -->
+            <div class="core-capabilities" style="margin-top: 30px;">
+                <h2 class="core-title">📊 技能使用矩阵</h2>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr style="background: #f5f5f5;">
+                            <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">部门</th>
+                            <th style="padding: 12px; text-align: center; border: 1px solid #ddd;">WebFetchPlus</th>
+                            <th style="padding: 12px; text-align: center; border: 1px solid #ddd;">Research</th>
+                            <th style="padding: 12px; text-align: center; border: 1px solid #ddd;">Social-Media</th>
+                            <th style="padding: 12px; text-align: center; border: 1px solid #ddd;">其他专属</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid #ddd;">🕵️ Intelligence</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">⭐⭐⭐</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">⭐⭐⭐</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">⭐⭐</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">监测工具</td>
+                        </tr>
+                        <tr style="background: #fafafa;">
+                            <td style="padding: 12px; border: 1px solid #ddd;">🔬 Research</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">⭐⭐</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">⭐⭐⭐</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">⭐</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">投资工具</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid #ddd;">📱 Product</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">⭐⭐</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">⭐⭐⭐</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">⭐⭐</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">设计工具</td>
+                        </tr>
+                        <tr style="background: #fafafa;">
+                            <td style="padding: 12px; border: 1px solid #ddd;">💻 Dev</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">⭐</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">⭐⭐</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">-</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">IDE/Git</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid #ddd;">🎨 Content&PR</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">⭐⭐⭐</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">⭐</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">⭐⭐⭐</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">创作工具</td>
+                        </tr>
+                        <tr style="background: #fafafa;">
+                            <td style="padding: 12px; border: 1px solid #ddd;">🚀 Operations</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">⭐⭐</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">⭐⭐</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">⭐⭐</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">分析工具</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid #ddd;">💼 Business</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">⭐⭐</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">⭐⭐⭐</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">⭐</td>
+                            <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">CRM工具</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <p class="update-time">更新时间: 2026年1月28日 | 版本: v2.0</p>
+    </div>
+
+    <script>
+        // 添加交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 部门卡片点击效果
+            const departmentCards = document.querySelectorAll('.department-card');
+            departmentCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // 可以添加更多交互，比如展开详细信息
+                    console.log('Department clicked:', this.querySelector('h3').textContent);
+                });
+            });
+
+            // 技能徽章hover效果已通过CSS实现
+
+            // 添加页面加载动画
+            const cards = document.querySelectorAll('.department-card, .capability-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+
+        // 打印版本信息
+        console.log(`
+        ╔══════════════════════════════════════╗
+        ║     AI Company Architecture v2.0     ║
+        ║     Updated: 2026-01-28             ║
+        ║     Powered by Claude                ║
+        ╚══════════════════════════════════════╝
+
+        Core Capabilities:
+        - WebFetchPlus: Smart web scraping with TwitterAPI.io
+        - Research: 8 modes professional research framework
+        - 7 Departments with specialized skills
+        `);
+    </script>
+</body>
+</html>

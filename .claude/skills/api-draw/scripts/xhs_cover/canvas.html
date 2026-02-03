@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小红书封面画布</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 30px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .canvas-wrapper {
+            flex-shrink: 0;
+        }
+        .canvas-label {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .canvas {
+            width: 360px;
+            height: 480px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .region {
+            position: absolute;
+            left: 0;
+            right: 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            border: 2px dashed transparent;
+        }
+        .region:hover {
+            border-color: #ff6b6b;
+            background: rgba(255,107,107,0.05);
+        }
+        .region.active {
+            border-color: #ff6b6b;
+            background: rgba(255,107,107,0.1);
+        }
+        .region-image {
+            top: 0;
+            height: 60%;
+            background: #fafafa;
+        }
+        .region-text {
+            top: 60%;
+            height: 40%;
+            background: #fff;
+            border-top: 1px solid #eee;
+        }
+        .region-placeholder {
+            color: #999;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+        }
+        .region-placeholder .icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+        .region-content {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: none;
+        }
+        .region-content.visible {
+            display: block;
+        }
+        .region-text-content {
+            padding: 15px;
+            text-align: center;
+            display: none;
+        }
+        .region-text-content.visible {
+            display: block;
+        }
+        .region-text-content h2 {
+            font-size: 20px;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .region-text-content p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        .region-text-content .tags {
+            font-size: 12px;
+            color: #888;
+        }
+        .divider {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 60%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff6b6b, transparent);
+        }
+        .panel {
+            flex: 1;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .panel h3 {
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #ff6b6b;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: #ff6b6b;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #ff5252;
+        }
+        .btn-primary:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #666;
+            margin-left: 10px;
+        }
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+        .style-options {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .style-option {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+        .style-option:hover {
+            border-color: #ff6b6b;
+        }
+        .style-option.selected {
+            background: #ff6b6b;
+            color: white;
+            border-color: #ff6b6b;
+        }
+        .loading {
+            display: none;
+            align-items: center;
+            gap: 10px;
+            color: #666;
+            margin-top: 10px;
+        }
+        .loading.visible {
+            display: flex;
+        }
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ddd;
+            border-top-color: #ff6b6b;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .actions {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        .status {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 13px;
+            display: none;
+        }
+        .status.success {
+            display: block;
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+        .status.error {
+            display: block;
+            background: #ffebee;
+            color: #c62828;
+        }
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <h1>小红书封面画布</h1>
+    <p style="text-align:center;color:#666;margin-bottom:20px;">点击区域填充内容 | 尺寸: 1080 x 1440 (3:4)</p>
+
+    <div class="container">
+        <div class="canvas-wrapper">
+            <div class="canvas-label">预览 (缩放 1:3)</div>
+            <div class="canvas" id="canvas">
+                <div class="region region-image" id="region-image" onclick="selectRegion('image')">
+                    <div class="region-placeholder" id="placeholder-image">
+                        <div class="icon">🖼️</div>
+                        <div>点击添加图片<br><small>AI 生图 / 上传</small></div>
+                    </div>
+                    <img class="region-content" id="content-image" />
+                </div>
+                <div class="divider"></div>
+                <div class="region region-text" id="region-text" onclick="selectRegion('text')">
+                    <div class="region-placeholder" id="placeholder-text">
+                        <div class="icon">✍️</div>
+                        <div>点击添加文字<br><small>标题 / 副标题 / 标签</small></div>
+                    </div>
+                    <div class="region-text-content" id="content-text">
+                        <h2 id="display-title"></h2>
+                        <p id="display-subtitle"></p>
+                        <div class="tags" id="display-tags"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <!-- 图片区域面板 -->
+            <div id="panel-image">
+                <h3>🖼️ 图片区域 (上方 60%)</h3>
+
+                <div class="form-group">
+                    <label>生成方式</label>
+                    <select id="image-mode" onchange="toggleImageMode()">
+                        <option value="generate">AI 生图</option>
+                        <option value="upload">上传图片</option>
+                    </select>
+                </div>
+
+                <div id="generate-options">
+                    <div class="form-group">
+                        <label>图片描述 (Prompt)</label>
+                        <textarea id="image-prompt" placeholder="例如：一个可爱的机器人助手，白色背景，简洁线条风格"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>风格</label>
+                        <div class="style-options">
+                            <div class="style-option selected" data-style="手绘白板" onclick="selectStyle(this)">手绘白板</div>
+                            <div class="style-option" data-style="线刻肖像" onclick="selectStyle(this)">线刻肖像</div>
+                            <div class="style-option" data-style="板书插画" onclick="selectStyle(this)">板书插画</div>
+                            <div class="style-option" data-style="学霸笔记" onclick="selectStyle(this)">学霸笔记</div>
+                            <div class="style-option" data-style="对比漫画" onclick="selectStyle(this)">对比漫画</div>
+                            <div class="style-option" data-style="原始风格" onclick="selectStyle(this)">原始风格</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="ref-image-group" style="display:none;">
+                        <label>参考图片（线刻肖像需要）</label>
+                        <input type="file" id="ref-image-file" accept="image/*" />
+                        <small style="color:#888;">上传人物照片，AI 将转换为线刻风格</small>
+                    </div>
+                </div>
+
+                <div id="upload-options" class="hidden">
+                    <div class="form-group">
+                        <label>选择图片</label>
+                        <input type="file" id="image-file" accept="image/*" onchange="handleFileSelect()" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="remove-bg" /> 自动抠图（去除白色背景）
+                    </label>
+                </div>
+
+                <div>
+                    <button class="btn btn-primary" id="btn-generate" onclick="generateImage()">生成图片</button>
+                    <button class="btn btn-secondary" onclick="selectRegion('text')">下一步: 文字</button>
+                </div>
+
+                <div class="loading" id="loading-image">
+                    <div class="spinner"></div>
+                    <span>正在生成图片...</span>
+                </div>
+            </div>
+
+            <!-- 文字区域面板 -->
+            <div id="panel-text" class="hidden">
+                <h3>✍️ 文字区域 (下方 40%)</h3>
+
+                <div class="form-group">
+                    <label>标题</label>
+                    <input type="text" id="text-title" placeholder="输入主标题..." oninput="updateTextPreview()" />
+                </div>
+
+                <div class="form-group">
+                    <label>副标题</label>
+                    <input type="text" id="text-subtitle" placeholder="输入副标题（可选）..." oninput="updateTextPreview()" />
+                </div>
+
+                <div class="form-group">
+                    <label>标签</label>
+                    <input type="text" id="text-tags" placeholder="#标签1 #标签2" oninput="updateTextPreview()" />
+                </div>
+
+                <div>
+                    <button class="btn btn-secondary" onclick="selectRegion('image')">上一步: 图片</button>
+                    <button class="btn btn-primary" onclick="generateCover()" style="margin-left:10px;">生成封面</button>
+                </div>
+            </div>
+
+            <div class="actions">
+                <h3>📤 导出</h3>
+                <button class="btn btn-primary" onclick="exportCover()" id="btn-export" disabled>导出封面 (PNG)</button>
+                <div class="status" id="status"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 服务端地址
+        const API_BASE = 'http://localhost:7861';
+
+        // 状态
+        let currentRegion = 'image';
+        let selectedStyle = '手绘白板';
+        let imageData = null;
+        let coverGenerated = false;
+
+        function selectRegion(region) {
+            currentRegion = region;
+
+            // 更新区域高亮
+            document.querySelectorAll('.region').forEach(el => el.classList.remove('active'));
+            document.getElementById('region-' + region).classList.add('active');
+
+            // 切换面板
+            document.getElementById('panel-image').classList.toggle('hidden', region !== 'image');
+            document.getElementById('panel-text').classList.toggle('hidden', region !== 'text');
+        }
+
+        function selectStyle(el) {
+            document.querySelectorAll('.style-option').forEach(opt => opt.classList.remove('selected'));
+            el.classList.add('selected');
+            selectedStyle = el.dataset.style;
+
+            // 线刻肖像需要参考图
+            const refGroup = document.getElementById('ref-image-group');
+            if (selectedStyle === '线刻肖像') {
+                refGroup.style.display = 'block';
+            } else {
+                refGroup.style.display = 'none';
+            }
+        }
+
+        function toggleImageMode() {
+            const mode = document.getElementById('image-mode').value;
+            document.getElementById('generate-options').classList.toggle('hidden', mode !== 'generate');
+            document.getElementById('upload-options').classList.toggle('hidden', mode !== 'upload');
+            document.getElementById('btn-generate').textContent = mode === 'generate' ? '生成图片' : '确认上传';
+        }
+
+        function handleFileSelect() {
+            const file = document.getElementById('image-file').files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    showImage(e.target.result);
+                    imageData = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function showImage(src) {
+            const img = document.getElementById('content-image');
+            img.src = src;
+            img.classList.add('visible');
+            document.getElementById('placeholder-image').classList.add('hidden');
+        }
+
+        function updateTextPreview() {
+            const title = document.getElementById('text-title').value;
+            const subtitle = document.getElementById('text-subtitle').value;
+            const tags = document.getElementById('text-tags').value;
+
+            if (title || subtitle || tags) {
+                document.getElementById('display-title').textContent = title;
+                document.getElementById('display-subtitle').textContent = subtitle;
+                document.getElementById('display-tags').textContent = tags;
+                document.getElementById('content-text').classList.add('visible');
+                document.getElementById('placeholder-text').classList.add('hidden');
+            } else {
+                document.getElementById('content-text').classList.remove('visible');
+                document.getElementById('placeholder-text').classList.remove('hidden');
+            }
+        }
+
+        async function generateImage() {
+            const mode = document.getElementById('image-mode').value;
+
+            if (mode === 'upload') {
+                // 上传模式，图片已经在 handleFileSelect 中处理
+                showStatus('图片已上传', 'success');
+                return;
+            }
+
+            const prompt = document.getElementById('image-prompt').value;
+            if (!prompt) {
+                showStatus('请输入图片描述', 'error');
+                return;
+            }
+
+            // 线刻肖像需要参考图
+            let refImageBase64 = null;
+            if (selectedStyle === '线刻肖像') {
+                const refFile = document.getElementById('ref-image-file').files[0];
+                if (refFile) {
+                    refImageBase64 = await fileToBase64(refFile);
+                }
+            }
+
+            // 显示加载状态
+            document.getElementById('loading-image').classList.add('visible');
+            document.getElementById('btn-generate').disabled = true;
+            showStatus('正在生成图片，请稍候...', 'success');
+
+            try {
+                const response = await fetch(API_BASE + '/generate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        prompt: prompt,
+                        style: selectedStyle,
+                        remove_bg: document.getElementById('remove-bg').checked,
+                        ref_image: refImageBase64
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showImage(result.image_url);
+                    imageData = result.image_path;
+                    showStatus('图片生成成功', 'success');
+                } else {
+                    showStatus('生成失败: ' + result.error, 'error');
+                }
+            } catch (error) {
+                showStatus('请求失败: ' + error.message, 'error');
+            } finally {
+                document.getElementById('loading-image').classList.remove('visible');
+                document.getElementById('btn-generate').disabled = false;
+            }
+        }
+
+        function fileToBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        }
+
+        async function generateCover() {
+            const title = document.getElementById('text-title').value;
+
+            if (!title) {
+                showStatus('请输入标题', 'error');
+                return;
+            }
+
+            try {
+                const response = await fetch(API_BASE + '/render', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        template: 'hero',
+                        image: imageData,
+                        title: title,
+                        subtitle: document.getElementById('text-subtitle').value,
+                        tags: document.getElementById('text-tags').value
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    coverGenerated = true;
+                    document.getElementById('btn-export').disabled = false;
+                    showStatus('封面生成成功: ' + result.output, 'success');
+
+                    // 更新预览
+                    if (result.preview_url) {
+                        // 可以更新整个画布预览
+                    }
+                } else {
+                    showStatus('生成失败: ' + result.error, 'error');
+                }
+            } catch (error) {
+                showStatus('请求失败: ' + error.message, 'error');
+            }
+        }
+
+        async function exportCover() {
+            try {
+                const response = await fetch(API_BASE + '/export', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        destination: '~/Desktop/xhs_cover.png'
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showStatus('已导出到: ' + result.path, 'success');
+                } else {
+                    showStatus('导出失败: ' + result.error, 'error');
+                }
+            } catch (error) {
+                showStatus('请求失败: ' + error.message, 'error');
+            }
+        }
+
+        function showStatus(message, type) {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = 'status ' + type;
+        }
+
+        // 初始化
+        selectRegion('image');
+    </script>
+</body>
+</html>

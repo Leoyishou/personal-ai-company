@@ -1,0 +1,76 @@
+# Claude Code Global Configuration
+
+## Basic Information
+
+- Location: [Your City]
+- New project path: `~/usr/pac`
+- Proxy tool: [Your proxy if needed]
+
+## Modular Rules
+
+@~/.claude/rules/security.md
+@~/.claude/rules/workflow.md
+@~/.claude/rules/coding-style.md
+@~/.claude/rules/profile.md
+
+## Knowledge Base
+
+**Obsidian Vault**: `[Your Obsidian path]`
+
+**Deep Expertise Areas** (customize based on your background):
+- [Domain 1]
+- [Domain 2]
+- [Domain 3]
+
+## Credential Management
+
+**IMPORTANT**: All API keys are stored in `~/.claude/secrets.env`, never hardcode in files.
+
+Load method: `source ~/.claude/secrets.env`
+
+## Common Paths
+
+| Usage | Path |
+|-------|------|
+| Skills | `~/.claude/skills/` |
+| Agents | `~/.claude/agents/` |
+| Rules | `~/.claude/rules/` |
+
+## Account Information
+
+| Platform | Account |
+|----------|---------|
+| GitHub | [your-username] |
+| X/Twitter | [your-handle] |
+
+## Supabase Projects
+
+### Local Supabase (Recommended for Development)
+
+| Config | Value |
+|--------|-------|
+| API URL | `http://127.0.0.1:54321` |
+| Studio | `http://127.0.0.1:54323` |
+| DB Port | `54322` |
+
+**Start**: Run `supabase start` in any Supabase project
+
+### Cloud Supabase
+
+| Project | URL |
+|---------|-----|
+| [Project Name] | `https://xxx.supabase.co` |
+
+## Project Standards
+
+### Inbox Projects
+
+For significant work, create projects in `~/usr/pac/[bu-name]/` with `sessionInfo.md`:
+
+```markdown
+# Session Info
+
+- **Session ID**: <cc session id>
+- **Created**: <date>
+- **Purpose**: <brief description>
+```

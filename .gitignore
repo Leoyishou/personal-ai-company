@@ -1,55 +1,103 @@
-# 环境配置（包含敏感信息）
+# =============================================
+# Environment & Secrets
+# =============================================
 .env
+.env.*
 *.env.local
+secrets.env
+!env.example
 
-# Session 文件
+# =============================================
+# Session & State Files
+# =============================================
 *.session
 *.session-journal
 session/
+state.json
+ceo-session.json
+pet-position.json
 
-# 日志
+# =============================================
+# Logs
+# =============================================
 logs/
 *.log
 
-# 状态文件
-state.json
-
-# 执行结果
+# =============================================
+# Results & Outputs
+# =============================================
 results/
+output/
+downloads/
+drafts/
 
+# =============================================
 # Python
+# =============================================
 __pycache__/
 *.py[cod]
 *$py.class
 .Python
 venv/
 .venv/
+*.pyc
 
+# =============================================
+# Node.js
+# =============================================
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+
+# =============================================
 # macOS
+# =============================================
 .DS_Store
 .AppleDouble
 .LSOverride
 
+# =============================================
 # IDE
+# =============================================
 .idea/
 .vscode/
 *.swp
 *.swo
 
-# 临时文件
+# =============================================
+# Temp Files
+# =============================================
 *.tmp
 *.temp
 
-# Generated images (nanobanana, etc.)
+# =============================================
+# Generated Images
+# =============================================
 nanobanana_*.jpg
 nanobanana_*.png
 *.generated.jpg
 *.generated.png
 
-# Cookies and auth files
+# =============================================
+# Auth & Cookies
+# =============================================
 *_cookies.txt
 cookies.json
+*.pem
+*.key
 
-# Output files
-output/
-downloads/
+# =============================================
+# Supabase Local
+# =============================================
+supabase/.branches/
+supabase/.temp/
+
+# =============================================
+# User-specific data (will be excluded from commits)
+# =============================================
+.claude/agents/ceo-assistant/session/
+.claude/agents/ceo-assistant/logs/
+.claude/agents/xhs-account-ops/publications/
+.claude/agents/xhs-account-ops/evaluations/
+.claude/agents/xhs-account-ops/contents/
+.claude/agents/xhs-account-ops/ideas/
