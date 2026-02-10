@@ -60,6 +60,16 @@
 
 ---
 
+## CC Mission Control
+
+> CEO 的实时看板，一眼掌握全公司运转状态
+
+![CC Mission Control](assets/cc-mission-control.png)
+
+自动从 Claude Code Sessions 中提取任务，按部门分类展示。包含后台服务监控、Skills 管理、成本追踪等模块。
+
+---
+
 ## 三、PMO：公司管理中枢
 
 > PMO (Project Management Office) 是 CEO 的眼睛，自动追踪各事业部产出
