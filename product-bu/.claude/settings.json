@@ -1,0 +1,27 @@
+{
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true,
+    "superpowers@superpowers-marketplace": true
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/usr/pac/pmo/hooks/superpowers-tracker.js",
+            "timeout": 30,
+            "statusMessage": "PMO tracking..."
+          },
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/usr/pac/product-bu/hooks/pmo-report-test.js",
+            "timeout": 30,
+            "statusMessage": "Test report..."
+          }
+        ]
+      }
+    ]
+  }
+}

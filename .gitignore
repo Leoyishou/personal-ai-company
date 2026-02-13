@@ -47,6 +47,27 @@ build/
 *.avi
 *.mp3
 *.wav
+
+# Generated output (content pipeline)
+**/output/
+
+# Login QR codes and sensitive screenshots
+*_login_qrcode.png
+**/xiaohongshu_login_qrcode.png
+
+# Cookies (sensitive)
+**/cookies.json
+
+# Obsidian vault (separate repo)
+odyssey/
+
+# Temp screenshots
+product-bu/appstore-login.png
+product-bu/daily-tab-full.png
+
+# Standalone docs (belong in Obsidian)
+个人数据洞见系统研究报告.md
+
 # 产品代码仓库（独立 git）
 product-bu/VoiceType/
 product-bu/viva/

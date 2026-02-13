@@ -3,22 +3,17 @@
  * PMO Session End Hook
  *
  * 触发时机：SessionEnd
- * 职责：启动 PMO Agent 做 session 总结
+ * 职责：spawn PMO Agent 后台分析 session 并创建 Linear Issue
+ *
+ * PMO Agent 使用 Pro 订阅认证（移除 ANTHROPIC_API_KEY）
  */
 
-const { spawn } = require('child_process');
 const fs = require('fs');
-const path = require('path');
+const { spawn } = require('child_process');
 
 const CONFIG = {
-  MIN_TRANSCRIPT_LINES: 10,
-  WORK_DIR: path.join(process.env.HOME, 'usr/pac/pmo'),
-  TEMP_DIR: path.join(process.env.HOME, '.claude/temp')
+  MIN_TRANSCRIPT_LINES: 10
 };
-
-if (!fs.existsSync(CONFIG.TEMP_DIR)) {
-  fs.mkdirSync(CONFIG.TEMP_DIR, { recursive: true });
-}
 
 async function readInput() {
   return new Promise((resolve) => {
@@ -35,7 +30,7 @@ async function readInput() {
   });
 }
 
-function extractSummary(transcriptPath, maxLines = 100) {
+function extractSummary(transcriptPath, maxLines = 50) {
   if (!fs.existsSync(transcriptPath)) return null;
 
   const content = fs.readFileSync(transcriptPath, 'utf8');
@@ -48,17 +43,65 @@ function extractSummary(transcriptPath, maxLines = 100) {
     try {
       const entry = JSON.parse(line);
       if (entry.type === 'user' && entry.message?.content) {
-        messages.push(`User: ${entry.message.content.substring(0, 500)}`);
+        messages.push(`User: ${entry.message.content.substring(0, 300)}`);
       } else if (entry.type === 'assistant' && entry.message?.content) {
         const text = Array.isArray(entry.message.content)
           ? entry.message.content.filter(c => c.type === 'text').map(c => c.text).join(' ')
           : entry.message.content;
-        if (text) messages.push(`Assistant: ${text.substring(0, 500)}`);
+        if (text) messages.push(`Assistant: ${text.substring(0, 300)}`);
       }
     } catch (e) {}
   }
 
-  return messages.join('\n\n');
+  return messages.slice(0, 20).join('\n\n');
+}
+
+function detectBu(cwd) {
+  if (!cwd) return 'unknown';
+  if (cwd.includes('product-bu')) return 'product';
+  if (cwd.includes('content-bu')) return 'content';
+  if (cwd.includes('investment-bu')) return 'investment';
+  if (cwd.includes('pmo')) return 'pmo';
+  return 'unknown';
+}
+
+/**
+ * 触发 PMO Agent 后台分析 session
+ * 移除 ANTHROPIC_API_KEY，使用 Pro 订阅认证
+ */
+function spawnPmoAgent(eventData) {
+  // 移除 ANTHROPIC_API_KEY，让 claude 使用 Pro 订阅认证
+  const { ANTHROPIC_API_KEY, ...cleanEnv } = process.env;
+
+  const prompt = `处理 session_end 事件，根据 CLAUDE.md 规则判断是否需要创建 Linear Issue：
+
+事件数据：
+${JSON.stringify(eventData, null, 2)}
+
+请：
+1. 分析 session 摘要，判断是否值得创建 Issue
+2. 如果值得，根据 cwd 判断归属事业部
+3. 调用 Linear API 创建或更新 Issue
+4. 返回处理结果`;
+
+  try {
+    const child = spawn('claude', [
+      '--dangerously-skip-permissions',
+      '--print',
+      '-p', prompt
+    ], {
+      cwd: '/Users/liuyishou/usr/pac/pmo',
+      detached: true,
+      stdio: 'ignore',
+      env: cleanEnv  // 使用 Pro 订阅，不传 API key
+    });
+
+    child.unref();
+    return true;
+  } catch (err) {
+    // spawn 失败静默处理
+    return false;
+  }
 }
 
 async function main() {
@@ -76,41 +119,25 @@ async function main() {
     return;
   }
 
-  // 写入临时文件
-  const tempFile = path.join(CONFIG.TEMP_DIR, `pmo-task-${Date.now()}.json`);
-  fs.writeFileSync(tempFile, JSON.stringify({
-    session_id,
-    transcript_path,
-    transcript_summary: summary,
-    cwd,
-    reason,
-    timestamp: new Date().toISOString()
-  }, null, 2));
+  const bu = detectBu(cwd);
 
-  // 启动 PMO Agent
-  const prompt = `执行 PMO 任务：分析 session 并上报到 Linear。
-Session 数据文件：${tempFile}
-按 CLAUDE.md 中的指令执行。`;
-
-  const claude = spawn('claude', ['-p', prompt, '--dangerously-skip-permissions'], {
-    cwd: CONFIG.WORK_DIR,
-    detached: true,
-    stdio: ['ignore', 'pipe', 'pipe'],
-    env: { ...process.env, CLAUDE_SKIP_SESSION_END_HOOK: '1' }
+  // 直接 spawn PMO Agent 分析
+  const agentSpawned = spawnPmoAgent({
+    type: 'session_end',
+    bu,
+    sessionId: session_id,
+    data: {
+      summary: summary.substring(0, 2000),
+      cwd,
+      transcript_path,
+      reason
+    }
   });
 
-  claude.unref();
-
-  const logFile = path.join(CONFIG.TEMP_DIR, `pmo-log-${Date.now()}.txt`);
-  const logStream = fs.createWriteStream(logFile);
-  claude.stdout.pipe(logStream);
-  claude.stderr.pipe(logStream);
-
   console.log(JSON.stringify({
-    result: 'spawned',
-    message: 'PMO Agent started',
-    taskFile: tempFile,
-    logFile
+    result: agentSpawned ? 'agent_spawned' : 'spawn_failed',
+    session_id,
+    bu
   }));
 }
 

@@ -29,7 +29,7 @@
 
 | 产品 | 状态 | 说明 |
 |------|------|------|
-| Viva | WIP | 英语学习 App |
+| 无痛英语 (Viva) | WIP | 英语学习 App |
 | VoiceType | WIP | 语音输入 |
 | ModelHop | Published | 模型切换 |
 | Dejavu | Polish | 记忆增强 |

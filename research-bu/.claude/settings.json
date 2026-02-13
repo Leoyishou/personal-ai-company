@@ -1,0 +1,20 @@
+{
+  "enabledPlugins": {
+    "superpowers@superpowers-marketplace": true
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/usr/pac/pmo/hooks/superpowers-tracker.js",
+            "timeout": 30,
+            "statusMessage": "PMO tracking..."
+          }
+        ]
+      }
+    ]
+  }
+}

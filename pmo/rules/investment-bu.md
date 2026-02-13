@@ -53,11 +53,22 @@
 
 **标题格式**：`【MMdd-HH】交易：{股票} {方向}`
 
-**Description 模板**：
+**Description 模板（轻量摘要）**：
 
 ```markdown
 sessionId: <session_id>
 
+## 摘要
+<标的> <方向> <数量>股 @ $<价格>
+
+## 仓位变化
+- 交易前: xx%
+- 交易后: xx%
+```
+
+**Document: 交易决策**（通过 `doc-create --issue I-xx` 创建）：
+
+```markdown
 ## 交易信息
 - **标的**: {股票代码} {股票名}
 - **方向**: 买入/卖出
@@ -68,10 +79,6 @@ sessionId: <session_id>
 ## 决策依据
 <为什么做这笔交易>
 
-## 仓位变化
-- 交易前: xx%
-- 交易后: xx%
-
 ## 后续计划
 - 止盈: $xxx
 - 止损: $xxx
@@ -81,11 +88,21 @@ sessionId: <session_id>
 
 **标题格式**：`【MMdd-HH】调研：{主题}`
 
-**Description 模板**：
+**Description 模板（轻量摘要）**：
 
 ```markdown
 sessionId: <session_id>
 
+## 摘要
+<一句话核心结论>
+
+## 投资建议
+- 行动: 买入/持有/观望/卖出
+```
+
+**Document: 调研报告**（通过 `doc-create --issue I-xx` 创建）：
+
+```markdown
 ## 调研主题
 <研究什么>
 
@@ -163,26 +180,26 @@ mutation {
 
 ## 八、Session 总结模板
 
-Session 结束时，追加到 Issue description：
+Session 结束时，通过 `doc-create --issue I-xx` 创建 Document（而非追加到 description）：
+
+**Document 标题**：`Session 总结: <投资主题>`
 
 ```markdown
-## Session 总结
-
-### 研究/操作概要
+## 研究/操作概要
 - 关注标的: ...
 - 主要结论: ...
 - 执行动作: ...
 
-### 信息来源
+## 信息来源
 - 公开信息: ...
 - 第三方分析: ...
 - 自有模型: ...
 
-### 风险提示
+## 风险提示
 - 已识别风险: ...
 - 对冲措施: ...
 
-### 下一步
+## 下一步
 - 待观察: ...
 - 待执行: ...
 ```

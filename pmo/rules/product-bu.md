@@ -49,7 +49,8 @@ mutation {
 | 前端 | 前端开发 |
 | 后端 | 后端开发 |
 | 测试 | 测试 |
-| 发布 | 部署上线 |
+| 发布 | 构建、部署上线 |
+| 上架 | App Store / Play Store 元数据填写、截图上传、提交审核 |
 
 ### 3.2 端类型（可选）
 
@@ -75,18 +76,29 @@ issueCreate(input: {
 })
 ```
 
-### 4.2 Description 模板
+### 4.2 Description 模板（轻量摘要）
 
 ```markdown
 sessionId: <session_id>
 
-## 任务描述
-<具体要做什么>
+## 摘要
+<一句话描述做什么>
 
 ## Git 信息
 - Branch: `feat/P-xx-description`
-- Worktree: `~/usr/projects/worktrees/{project}/P-xx`
 - PR: （待创建）
+```
+
+### 4.3 Document: 实施计划/技术决策
+
+通过 `doc-create --issue P-xx` 创建，详细内容独立存放：
+
+```markdown
+## 任务描述
+<具体要做什么>
+
+## 技术方案
+<选型、架构决策>
 
 ## 测试要求
 - [ ] 自动化测试
@@ -94,6 +106,7 @@ sessionId: <session_id>
 
 ## 相关链接
 - 本地目录: file:///path/to/project
+- Worktree: `~/usr/projects/worktrees/{project}/P-xx`
 - GitHub: https://github.com/xxx
 ```
 
@@ -268,26 +281,26 @@ def needs_manual_test(issue):
 
 ## 十、Session 总结模板
 
-Session 结束时，追加到 Issue description：
+Session 结束时，通过 `doc-create --issue P-xx` 创建 Document（而非追加到 description）：
+
+**Document 标题**：`Session 总结: <功能主题>`
 
 ```markdown
-## Session 总结
-
-### 完成内容
+## 完成内容
 - 功能：<做了什么>
 - 涉及文件：<主要改动的文件列表>
 - 代码行数：+XX / -XX
 
-### 技术决策
+## 技术决策
 | 问题 | 方案 | 为什么 |
 |------|------|--------|
 | ... | ... | ... |
 
-### 遗留问题
+## 遗留问题
 - [ ] TODO: ...
 - [ ] 技术债：...
 
-### 测试状态
+## 测试状态
 - 单元测试：通过/未覆盖
 - 集成测试：...
 - 需人工验证：...
