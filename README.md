@@ -264,6 +264,9 @@ pmo/
 ### 6.1 进入事业部
 
 ```bash
+# PMO（项目管理办公室）
+cd ~/usr/pac/pmo && claude --dangerously-skip-permissions
+
 # 产品事业部
 cd ~/usr/pac/product-bu && claude --dangerously-skip-permissions
 
