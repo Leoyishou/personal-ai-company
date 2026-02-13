@@ -141,6 +141,63 @@ pmo/
 
 规则修改即生效，无需改代码。
 
+### 3.5 Session 监控方法论
+
+PMO 的核心哲学：**CEO 不需要主动汇报，公司应该自己知道发生了什么。**
+
+每一次 Claude Code Session 就是一次"员工上班"。PMO 通过两层机制捕获所有产出：
+
+- **事件驱动（Hooks）**：Session 中触发关键动作（发布、部署、交易）时，Hook 实时上报到 Linear
+- **轮询兜底（Scanner）**：每 5 分钟扫描一次新 Session，确保没有遗漏的工作
+
+```
+Session 产生
+    ↓
+┌─────────────────────────────────┐
+│  Hook 层（实时）                 │  发布/部署/交易 → 立即上报
+│  Scanner 层（每 5 分钟）         │  兜底扫描 → 自动分类入库
+└─────────────────────────────────┘
+    ↓
+Linear Issue（按事业部归类）
+    ↓
+Daily Report（每日汇总）
+    ↓
+Weekly/Monthly Insight（周期复盘）
+```
+
+这样 CEO 打开 Linear 或 Dashboard，就能看到整家公司今天做了什么、这周产出多少、哪个方向推进最快。
+
+### 3.6 7x24 自动化运转
+
+公司不只在 CEO 在线时运转。通过 Cron、LaunchAgent 和常驻服务，实现真正的 7x24：
+
+**定时任务**
+
+| 时间 | 任务 | 说明 |
+|------|------|------|
+| 每 5 分钟 | Session Scanner | 扫描 CC 新 Session 并入库 |
+| 每 30 分钟 | Personal Assistant | 扫描滴答清单，自动执行可代劳任务 |
+| 每 2h (08-22) | Telegram Fetch | 拉取 Telegram 消息（投资群等） |
+| 23:00 | Daily Agent Report | 生成每日 Agent 工作日报 |
+| 23:00 | Claude Export | 导出 Claude 对话记录 |
+| 23:05 | Projects-Odyssey Sync | 同步项目数据到 Obsidian 笔记库 |
+| 23:15 | Daily Insight | 生成个人每日洞见 |
+| 23:55 | Daily Report | 生成综合日报 Dashboard |
+| 03:00 | Lakehouse Sync | 同步 Supabase 数据到本地 DuckDB |
+| 每周日 22:00 | Weekly Insight | 生成周度洞见报告 |
+| 每月 1 号 21:00 | Monthly Insight | 生成月度洞见报告 |
+
+**常驻服务**
+
+| 服务 | 说明 |
+|------|------|
+| CC Dashboard | Mission Control 面板 (port 8888) |
+| Xiaohongshu MCP | 小红书 MCP 服务 |
+| Telegram Listener | Telegram 实时消息监听 |
+| Personal AI Agent | CEO 助理 Agent 后台进程 |
+
+CEO 睡觉时，公司仍在：扫描新 Session、拉取情报、同步数据。CEO 醒来时，日报已生成，待办已整理。
+
 ---
 
 ## 四、四大事业部
