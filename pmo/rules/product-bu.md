@@ -84,6 +84,9 @@ sessionId: <session_id>
 ## 摘要
 <一句话描述做什么>
 
+## Done Criteria
+- [ ] <具体的完成标准，如：功能可用、测试通过、可部署>
+
 ## Git 信息
 - Branch: `feat/P-xx-description`
 - PR: （待创建）
