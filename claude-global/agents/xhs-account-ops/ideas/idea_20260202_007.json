@@ -1,0 +1,26 @@
+{
+  "id": "idea_20260202_007",
+  "type": "series",
+  "series_id": "bilibili-up",
+  "series_subject": "科技美学",
+
+  "hook": "给百万畅销书画插画的数码博主",
+  "angle": "91那先生，直播老司机人设",
+  "notes": "画家跨界，反差强",
+
+  "research": {
+    "dimensions": {
+      "人设反差": "严肃数码测评人，实际是给《藏獒》画全本插画的画家",
+      "经典语录": "测完抑郁了",
+      "老粉梗": "91那先生、三大未解之谜、小米200股股东",
+      "隐藏技能": "iPad绘画多次获奖"
+    },
+    "sources": ["B站", "微博"],
+    "researched_at": "2026-02-02"
+  },
+
+  "status": "researched",
+  "created_at": "2026-02-02T10:00:00+08:00",
+  "updated_at": "2026-02-02T12:00:00+08:00",
+  "created_by": "research-agent"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "4",
+  "subject": "生成最终报告",
+  "description": "整合转录文本和调研结果，生成完整的洞察报告",
+  "activeForm": "生成报告中",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

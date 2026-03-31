@@ -1,0 +1,9 @@
+{
+  "id": "1",
+  "subject": "修复 viva App Store 拒绝问题",
+  "description": "三个问题：1) 图标空白 2) 缺少 Sign in with Apple 3) 无演示账号",
+  "activeForm": "修复 App Store 拒绝问题",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "3",
+  "subject": "Perplexity 深度调研",
+  "description": "基于转录文本，使用 Perplexity Research 调研翁家翌的背景、访谈内容、关键观点",
+  "activeForm": "调研中",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

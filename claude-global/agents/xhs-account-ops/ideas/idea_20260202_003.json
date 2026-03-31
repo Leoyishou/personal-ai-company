@@ -1,0 +1,26 @@
+{
+  "id": "idea_20260202_003",
+  "type": "series",
+  "series_id": "bilibili-up",
+  "series_subject": "何同学",
+
+  "hook": "600播放到采访库克，中间隔了一个没来的女同学",
+  "angle": "天选之子 vs 赛博丁真争议",
+  "notes": "争议点可以带来讨论",
+
+  "research": {
+    "dimensions": {
+      "人设反差": "天选之子，但被质疑'赛博丁真'",
+      "经典语录": "其实挺没意思的",
+      "老粉梗": "AirDesk、女同学（未出现的初心）",
+      "隐藏技能": "北邮211出身，采访库克/苹果高层"
+    },
+    "sources": ["B站", "微博", "知乎"],
+    "researched_at": "2026-02-02"
+  },
+
+  "status": "researched",
+  "created_at": "2026-02-02T10:00:00+08:00",
+  "updated_at": "2026-02-02T12:00:00+08:00",
+  "created_by": "research-agent"
+}

@@ -1,0 +1,238 @@
+{
+  "projects": [
+    {
+      "id": 2,
+      "name": "Viva",
+      "department": "product",
+      "description": "英语学习 App，词汇听力一体化",
+      "linear_project_id": "50deb7b2-f67b-4dd4-b7e9-7809dd4229c0",
+      "local_path": "/Users/liuyishou/usr/projects/wip/viva",
+      "github_repo": "xxx",
+      "keywords": ["viva", "英语", "词汇", "学习app", "vocab", "听力"],
+      "status": "active"
+    },
+    {
+      "id": 3,
+      "name": "Vocab Highlighter",
+      "department": "product",
+      "description": "浏览器生词高亮插件（已合并到 Viva，使用「插件端」Label）",
+      "parent_id": 2,
+      "local_path": "/Users/liuyishou/usr/projects/vocab-highlighter",
+      "github_repo": null,
+      "keywords": ["highlighter", "高亮", "插件", "浏览器"],
+      "status": "merged",
+      "merged_to": 2,
+      "merged_note": "作为 Viva 的插件端，使用 Label「插件端」区分"
+    },
+    {
+      "id": 1,
+      "name": "CC Mission Control",
+      "department": "product",
+      "description": "Claude Code Dashboard，任务流可视化",
+      "local_path": "/Users/liuyishou/usr/projects/cc-mission-control",
+      "github_repo": null,
+      "keywords": ["dashboard", "任务流", "可视化", "pmo"],
+      "status": "planning"
+    },
+    {
+      "id": 4,
+      "name": "投资 Dashboard",
+      "department": "product",
+      "description": "投资组合可视化，持仓追踪",
+      "local_path": null,
+      "github_repo": null,
+      "keywords": ["投资", "持仓", "收益", "股票", "portfolio"],
+      "status": "idea"
+    },
+    {
+      "id": 5,
+      "name": "知识库产品",
+      "department": "product",
+      "description": "Obsidian 笔记变现产品",
+      "local_path": null,
+      "github_repo": null,
+      "keywords": ["知识库", "obsidian", "笔记", "变现"],
+      "status": "idea"
+    },
+    {
+      "id": 7,
+      "name": "Personal AI Company",
+      "department": "product",
+      "description": "Session 数据分析相关项目",
+      "linear_project_id": "0f097776-6875-41a5-8f74-79eeeeada791",
+      "local_path": null,
+      "github_repo": null,
+      "keywords": ["session", "数据分析", "session数据", "会话分析", "personal ai"],
+      "status": "active"
+    },
+    {
+      "id": 10,
+      "name": "n张图系列",
+      "department": "content",
+      "description": "图文科普内容系列",
+      "linear_project_id": "d6a1d29d-7bca-42c5-8779-71467fa97e5c",
+      "keywords": ["n张图", "图文", "科普", "对比"],
+      "status": "active"
+    },
+    {
+      "id": 11,
+      "name": "人物语录系列",
+      "department": "content",
+      "description": "名人名言配图系列",
+      "linear_project_id": "3a246550-a979-416e-8810-1c094fcc810c",
+      "keywords": ["语录", "名言", "人物", "quote"],
+      "status": "active"
+    },
+    {
+      "id": 12,
+      "name": "技术科普系列",
+      "department": "content",
+      "description": "编程/AI 技术科普",
+      "linear_project_id": "b422ae73-64d5-42b1-9458-1992285877b2",
+      "keywords": ["技术", "科普", "编程", "AI"],
+      "status": "active"
+    },
+    {
+      "id": 14,
+      "name": "知乎高赞系列",
+      "department": "content",
+      "description": "知乎高赞回答改编为小红书图文内容",
+      "linear_project_id": "ad9a0ea3-a156-4f80-b37c-840f5e50e204",
+      "keywords": ["知乎", "高赞", "zhihu", "万赞"],
+      "status": "active"
+    },
+    {
+      "id": 15,
+      "name": "HOPICO系列",
+      "department": "content",
+      "description": "B站百大UP主HOPICO(周扬)的语录/内容系列，小红书发布",
+      "linear_project_id": "f50fd96f-dc21-4714-b71a-8500a037f28e",
+      "keywords": ["hopico", "周扬", "HOPICO", "河马"],
+      "status": "active"
+    },
+    {
+      "id": 16,
+      "name": "人物介绍系列",
+      "department": "content",
+      "description": "图文形式介绍知名人物的生平、成就和思想",
+      "linear_project_id": "f694688a-e8f2-49ff-9c89-cfb004f714a4",
+      "keywords": ["人物介绍", "人物", "介绍", "生平", "传记", "biography", "profile"],
+      "status": "active"
+    },
+    {
+      "id": 13,
+      "name": "随机探索系列",
+      "department": "content",
+      "description": "兜底系列，不属于其他系列的内容",
+      "keywords": ["探索", "随机", "杂谈", "其他"],
+      "is_fallback": true,
+      "status": "active"
+    },
+    {
+      "id": 9,
+      "name": "Obsidian Groq Copilot",
+      "department": "product",
+      "description": "Obsidian AI 写作助手插件，基于 Groq API 快速 AI 补全",
+      "linear_project_id": "d96685b0-21e1-4a20-b953-cc33eae3d31b",
+      "local_path": "/Users/liuyishou/usr/pac/product-bu/inbox/obsidian-groq-copilot",
+      "github_repo": "https://github.com/Leoyishou/obsidian-groq-copilot",
+      "keywords": ["obsidian", "groq", "copilot", "插件", "AI写作", "补全"],
+      "status": "active"
+    },
+    {
+      "id": 8,
+      "name": "Sight Singing",
+      "department": "product",
+      "description": "视唱练习工具 - MusicXML 简谱播放器",
+      "linear_project_id": "4bea991c-8be8-4b9f-8edc-67741145916d",
+      "local_path": "/Users/liuyishou/usr/pac/product-bu/inbox/sight-singing",
+      "github_repo": null,
+      "keywords": ["简谱", "视唱", "sight-singing", "musicxml", "乐谱", "播放器", "jianpu"],
+      "status": "active"
+    },
+    {
+      "id": 6,
+      "name": "小红书封面系统",
+      "department": "content",
+      "description": "小红书封面自动化生成工具",
+      "local_path": null,
+      "github_repo": null,
+      "keywords": ["小红书", "封面", "xhs", "模板"],
+      "status": "active"
+    }
+  ],
+  "linear_teams": {
+    "product": {
+      "id": "fcaf8084-612e-43e2-b4e4-fe81ae523627",
+      "name": "产品事业部",
+      "key": "P",
+      "states": {
+        "Backlog": "52220171-86ac-4a6a-83af-24ec12d55f51",
+        "Todo": "d430a64c-e7c1-465b-a086-7fb8397941e1",
+        "In Progress": "53054e6e-1ca5-4b0d-b5c2-283ff2841ab4",
+        "In Review": "d8125aeb-6451-4da7-971c-b24581025d2a",
+        "待人工测试": "db66771b-185b-464e-beb1-dd11d54f44f9",
+        "待发布": "177fe624-d3a6-4378-b3a3-b5b7a4246a7a",
+        "Done": "05f950b5-1121-44e2-b60c-cdf923df4b28",
+        "Canceled": "44127748-5d2c-41ca-85c7-c5ecb435df89"
+      },
+      "labels": {
+        "产品思路": "1ba8f8d3-a567-4b4c-9a66-7073c7830f9b",
+        "设计": "5bde2dff-0b13-42d9-b0fb-c9481a6c4ca9",
+        "前端": "cef79327-91d8-40e1-a179-e31ce1cbed45",
+        "后端": "d2b97270-ad71-4421-af7b-f65e2c125226",
+        "测试": "08529871-1a70-4724-a690-6790c10c40ef",
+        "发布": "8a102b53-46c2-4f5a-af09-219dc3e27661",
+        "App端": "f7f8cd4b-797b-473e-98c0-b623c4a3994e",
+        "插件端": "3fe463cd-3222-44ab-9522-a3b61955e946",
+        "Web端": "7c94ad86-94f0-46d8-a3bf-4781d901f223",
+        "需人工测试": "b991ec74-3731-4579-a72e-5f455dc98f97",
+        "GUI测试": "84771a94-d8b9-4bf5-888c-ce27d4bfe407",
+        "自动化测试": "8c6aff25-fdbd-4093-906b-ed61c07b0269"
+      }
+    },
+    "content": {
+      "id": "4bb065b8-982f-4a44-830d-8d88fe8c9828",
+      "name": "内容事业部",
+      "key": "C",
+      "labels": {
+        "灵感": "7be8f7f1-b476-4c27-87e4-e4b36fc2e6cb",
+        "做图": "5a95aaa6-ce9a-4871-81ef-1dcce2bbc3e7",
+        "文案": "be0f8c2e-7054-490f-84c1-f95212c07ef2",
+        "策划": "c6bc346c-6b50-4a35-a49e-ce902c1cc59f",
+        "发布": "b4fa7209-3d42-4cdb-98c0-ee2742dd647a",
+        "后评估": "072feefc-4d30-4522-af7d-ba6448ec960f"
+      }
+    }
+  },
+  "git_workflow": {
+    "branch_naming": {
+      "pattern": "{type}/{issue-key}-{short-description}",
+      "examples": [
+        "feat/P-15-viva-splash-screen",
+        "fix/P-16-audio-background-play",
+        "refactor/P-11-session-analysis"
+      ],
+      "types": ["feat", "fix", "refactor", "docs", "test", "chore"]
+    },
+    "worktree_convention": {
+      "base_path": "~/usr/projects/worktrees",
+      "naming": "{project}/{issue-key}",
+      "examples": [
+        "~/usr/projects/worktrees/viva/P-15",
+        "~/usr/projects/worktrees/viva/P-16"
+      ]
+    },
+    "commit_message": {
+      "pattern": "{type}({scope}): {description} [{issue-key}]",
+      "examples": [
+        "feat(splash): add animated logo [P-15]",
+        "fix(audio): enable background playback [P-16]"
+      ]
+    },
+    "pr_template": {
+      "title": "[{issue-key}] {description}",
+      "body_includes": ["Linear issue link", "Test checklist", "Screenshots if GUI"]
+    }
+  }
+}

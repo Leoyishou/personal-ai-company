@@ -1,0 +1,25 @@
+{
+  "id": "bilibili-up",
+  "name": "B站UP主介绍",
+  "description": "挖掘UP主老粉才知道的梗，制作反差型内容",
+  "status": "active",
+
+  "content_template": {
+    "style": "反差揭秘",
+    "image_styles": ["线刻肖像", "手绘白板"],
+    "typical_tags": ["B站宝藏UP主", "反差感"]
+  },
+
+  "research_template": {
+    "dimensions": ["人设反差", "经典语录", "老粉梗", "隐藏技能"],
+    "search_patterns": ["{name} 名场面", "{name} 梗 老粉"]
+  },
+
+  "stats": {
+    "idea_count": 7,
+    "published_count": 1,
+    "avg_engagement": 0
+  },
+
+  "created_at": "2026-02-02"
+}

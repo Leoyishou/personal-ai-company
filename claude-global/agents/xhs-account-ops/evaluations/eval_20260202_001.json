@@ -1,0 +1,30 @@
+{
+  "id": "eval_20260202_001",
+  "publication_id": "pub_20260202_001",
+
+  "metrics": {
+    "D0": {
+      "recorded_at": "2026-02-02T15:30:00+08:00",
+      "likes": 0,
+      "comments": 0,
+      "collects": 0,
+      "views": 0
+    },
+    "D1": null,
+    "D7": null,
+    "D30": null
+  },
+
+  "tracking_status": {
+    "D1_due": "2026-02-03T15:30:00+08:00",
+    "D1_done": false,
+    "D7_due": "2026-02-09T15:30:00+08:00",
+    "D7_done": false,
+    "D30_due": "2026-03-04T15:30:00+08:00",
+    "D30_done": false
+  },
+
+  "result": null,
+
+  "learnings": null
+}

@@ -1,0 +1,13 @@
+{
+  "name": "instant-video-publisher",
+  "version": "1.0.0",
+  "description": "极速视频发布 - 录完即发",
+  "type": "module",
+  "scripts": {
+    "start": "bun run server.ts",
+    "dev": "bun --watch run server.ts"
+  },
+  "dependencies": {
+    "hono": "^4.0.0"
+  }
+}

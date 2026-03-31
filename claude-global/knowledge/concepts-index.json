@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "title": "第二大脑知识索引",
+    "generated_at": "2026-02-02",
+    "base_path": "/Users/liuyishou/usr/odyssey/2 第二大脑/1 概念",
+    "expertise_levels": {
+      "aware": "0-5 篇笔记",
+      "learning": "6-20 篇笔记",
+      "proficient": "21-50 篇笔记",
+      "deep": "50+ 篇笔记"
+    }
+  },
+  "summary": {
+    "total_notes": 2196,
+    "total_domains": 7,
+    "top_domains": [
+      { "name": "4 信息与模式", "notes": 1239, "expertise": "deep" },
+      { "name": "1 社会与文明", "notes": 477, "expertise": "deep" },
+      { "name": "2 抽象与价值", "notes": 191, "expertise": "deep" },
+      { "name": "5 存在的基本层次", "notes": 120, "expertise": "deep" },
+      { "name": "通识", "notes": 71, "expertise": "deep" }
+    ]
+  },
+  "domains": {
+    "CS/人工智能": {
+      "path": "4 信息与模式/CS/人工智能",
+      "notes_count": 449,
+      "expertise_level": "deep",
+      "key_topics": ["大模型", "Agent", "RAG", "Transformer", "微调", "向量检索"]
+    },
+    "CS/软件工程": {
+      "path": "4 信息与模式/CS/软件工程",
+      "notes_count": 237,
+      "expertise_level": "deep",
+      "key_topics": ["微服务", "分布式", "Spring Boot", "架构设计"]
+    },
+    "CS/编程语言": {
+      "path": "4 信息与模式/CS/编程语言",
+      "notes_count": 211,
+      "expertise_level": "deep",
+      "key_topics": ["Java", "Python", "TypeScript", "Rust"]
+    },
+    "CS/操作系统": {
+      "path": "4 信息与模式/CS/操作系统",
+      "notes_count": 84,
+      "expertise_level": "deep",
+      "key_topics": ["Linux", "进程", "内存", "文件系统"]
+    },
+    "CS/数据": {
+      "path": "4 信息与模式/CS/数据",
+      "notes_count": 47,
+      "expertise_level": "proficient",
+      "key_topics": ["数据库", "ElasticSearch", "数据分析"]
+    },
+    "CS/网络": {
+      "path": "4 信息与模式/CS/网络",
+      "notes_count": 45,
+      "expertise_level": "proficient",
+      "key_topics": ["HTTP", "TCP/IP", "网络安全"]
+    },
+    "CS/分布式系统": {
+      "path": "4 信息与模式/CS/分布式系统",
+      "notes_count": 20,
+      "expertise_level": "learning",
+      "key_topics": ["一致性", "分布式事务", "消息队列"]
+    },
+    "经济/投资": {
+      "path": "1 社会与文明/经济/投资",
+      "notes_count": 94,
+      "expertise_level": "deep",
+      "key_topics": ["仓位思维", "海外配置", "美股", "加密货币"]
+    },
+    "经济/商业": {
+      "path": "1 社会与文明/经济/商业",
+      "notes_count": 60,
+      "expertise_level": "deep",
+      "key_topics": ["商业模式", "创业", "产品"]
+    },
+    "互联网": {
+      "path": "1 社会与文明/互联网",
+      "notes_count": 71,
+      "expertise_level": "deep",
+      "key_topics": ["产品经理", "电商", "面试"]
+    },
+    "数学": {
+      "path": "2 抽象与价值/数学",
+      "notes_count": 133,
+      "expertise_level": "deep",
+      "key_topics": ["线性代数", "概率论", "微积分"]
+    },
+    "语言/英语": {
+      "path": "4 信息与模式/语言",
+      "notes_count": 76,
+      "expertise_level": "deep",
+      "key_topics": ["托福", "词汇", "听力", "口语"]
+    },
+    "生命科学/运动": {
+      "path": "5 存在的基本层次/生命科学、生物学/运动",
+      "notes_count": 64,
+      "expertise_level": "deep",
+      "key_topics": ["篮球", "投篮", "健身"]
+    },
+    "艺术/设计": {
+      "path": "2 抽象与价值/艺术 & 创意产业",
+      "notes_count": 36,
+      "expertise_level": "proficient",
+      "key_topics": ["UX", "UI", "视觉设计"]
+    },
+    "哲学": {
+      "path": "0 终极概念/哲学",
+      "notes_count": 17,
+      "expertise_level": "learning",
+      "key_topics": ["分析哲学", "自然哲学", "理性主义"]
+    },
+    "心理学": {
+      "path": "3 意识与心智/心理学",
+      "notes_count": 14,
+      "expertise_level": "learning",
+      "key_topics": ["认知", "情绪", "行为"]
+    },
+    "管理学": {
+      "path": "1 社会与文明/商学、管理学",
+      "notes_count": 32,
+      "expertise_level": "proficient",
+      "key_topics": ["团队管理", "OKR", "决策"]
+    }
+  }
+}

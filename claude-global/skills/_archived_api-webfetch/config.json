@@ -1,0 +1,68 @@
+{
+  "twitter_api_key": "new1_0a63d55aad214ca990884b2b6637419f",
+  "firecrawl_api_key": "",
+  "proxy": null,
+  "timeout": 30,
+  "max_retries": 3,
+  "save_path": "~/webfetch_downloads",
+  "debug": false,
+  "strategies": {
+    "twitter": {
+      "enabled": true,
+      "api_base": "https://api.twitterapi.io",
+      "rate_limit": {
+        "requests_per_minute": 60,
+        "requests_per_hour": 1000
+      }
+    },
+    "firecrawl": {
+      "enabled": false,
+      "api_base": "https://api.firecrawl.dev",
+      "features": {
+        "extract_markdown": true,
+        "extract_structured_data": true,
+        "screenshot": false
+      }
+    },
+    "douyin": {
+      "enabled": true,
+      "use_cookies": true,
+      "cookies_path": "~/.claude/douyin_cookies.txt",
+      "download_video": true,
+      "download_audio": true,
+      "download_cover": true
+    },
+    "bilibili": {
+      "enabled": false,
+      "quality": "highest",
+      "download_danmaku": false
+    },
+    "xiaohongshu": {
+      "enabled": false,
+      "use_cookies": true
+    },
+    "youtube": {
+      "enabled": false,
+      "quality": "best",
+      "format": "mp4"
+    }
+  },
+  "cache": {
+    "enabled": true,
+    "ttl_seconds": 3600,
+    "max_size_mb": 100,
+    "cache_dir": "~/.claude/cache/webfetch"
+  },
+  "output": {
+    "format": "json",
+    "pretty_print": true,
+    "include_metadata": true,
+    "max_content_length": 10000
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "~/.claude/logs/webfetch-plus.log",
+    "rotate_size_mb": 10,
+    "keep_days": 7
+  }
+}

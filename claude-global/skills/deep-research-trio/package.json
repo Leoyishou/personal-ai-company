@@ -1,0 +1,16 @@
+{
+  "name": "deep-research-trio",
+  "version": "1.0.0",
+  "description": "Parallel Deep Research across Gemini, ChatGPT, and Claude",
+  "main": "run.js",
+  "scripts": {
+    "start": "node run.js",
+    "status": "node run.js status",
+    "setup": "npm install && npx playwright install chromium"
+  },
+  "dependencies": {
+    "playwright": "^1.40.0"
+  },
+  "author": "Personal AI Company",
+  "license": "MIT"
+}

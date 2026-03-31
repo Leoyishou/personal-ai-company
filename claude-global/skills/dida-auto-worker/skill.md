@@ -1,0 +1,185 @@
+---
+name: dida-auto-worker
+description: "滴答清单自动执行器 - 扫描任务列表，自动完成可代劳的任务。"
+---
+
+# Dida Auto Worker Skill
+
+自动扫描滴答清单任务，识别可自动完成的任务并执行。
+
+## 触发方式
+
+用户说：
+- "扫一下滴答清单"
+- "帮我处理滴答任务"
+- "看看有什么能帮我做的"
+- "/dida" 或 "/dida-auto"
+
+## 执行流程
+
+### 1. 获取任务列表
+
+调用 `mcp__dida365__list_tasks` 获取未完成任务（limit 50）。
+
+### 2. AI 自主判断任务类型
+
+对每个任务，根据标题和描述判断是否可自动完成。**可自动完成的任务类型**：
+
+#### A. 调研类
+特征：
+- 标题含"调研"、"了解"、"研究"、"对比"、"选型"
+- 想知道某个技术/工具/方案是什么、怎么用、哪个好
+- 问句形式的任务
+
+处理方式：使用 WebSearch + WebFetch 收集信息，生成调研报告
+
+#### B. 内容分析类
+特征：
+- 包含链接（知乎、小红书、B站、YouTube、X/Twitter、播客等）
+- 标题含"分析"、"总结"、"看看这个"
+- 想让 AI 帮忙消化某个内容
+
+处理方式：
+- 视频链接：调用 video-downloader-skill 下载，转文字后分析
+- 文章/帖子：用 WebFetch 抓取内容，生成摘要/分析
+- 播客：下载音频，转文字总结
+
+#### C. 写 Demo 类
+特征：
+- 标题含"写一个"、"demo"、"示例"、"试试"、"实现"
+- 明确描述了要实现什么功能
+- 技术性任务
+
+处理方式：直接在本地生成代码文件
+
+#### D. 简单执行类
+特征：
+- 标题含"下载"、"保存"、"爬取"
+- 有明确的输入和输出
+
+处理方式：直接执行并保存结果
+
+#### E. 纯英文内容 - 单词学习
+特征：
+- 任务标题/描述是纯英文（或大部分英文）
+- 可能是英文文章、推文、技术文档等
+
+处理方式：
+1. **识别生词**：分析文本，找出非常用词（排除 top 5000 常用词）
+2. **提取上下文**：保留单词所在的完整句子
+3. **写入单词库**：调用 `mcp__supabase__execute_sql` 写入 PersonalDigitalCenter 的 `english_vocabulary` 表
+   ```sql
+   INSERT INTO english_vocabulary (word, context, source, definition)
+   VALUES ('word', '原句', '任务来源', '释义')
+   ON CONFLICT (word) DO NOTHING;
+   ```
+4. **汇报学习成果**：告知识别了多少生词，已加入学习队列
+
+**判断"生词"的标准**：
+- 不在 top 5000 常用词列表中
+- 不是专有名词（人名、地名、公司名）
+- 不是纯技术术语（API、SDK、JSON 等）
+- 单词长度 > 3
+
+**Supabase 配置**：
+- Project ID: `mwvsdfalfqblbqwnyqpn`
+- 表名: `english_vocabulary`
+
+### 3. 不自动处理的任务
+
+- 纯笔记/记录类（无明确动作）
+- 需要用户决策的任务
+- 涉及个人隐私/敏感操作
+- 需要登录特定账号才能完成的
+- 重复性任务（有 repeatFlag 的循环提醒）
+
+### 4. 执行与输出
+
+**输出规则**：
+- 简短结果：直接更新到任务描述
+- 代码/大文件：保存到 `~/usr/projects/inbox/dida-outputs/<日期>/<任务ID>/`
+- 在任务描述中附上文件路径
+
+**执行确认**：
+- 扫描完成后，先列出识别到的可处理任务
+- 等用户确认后再批量执行
+- 或用户可以选择"全部自动执行"
+
+### 5. 结果汇报
+
+执行完成后输出汇总：
+```
+已完成 X 个任务：
+1. [任务标题] - [简要结果]
+2. ...
+
+待查看文件：
+- ~/usr/projects/inbox/dida-outputs/2026-01-25/xxx/report.md
+```
+
+## 使用示例
+
+```
+用户: 扫一下滴答清单
+
+Claude: 扫描到 50 个任务，其中 8 个可以自动处理：
+
+【调研类】
+1. "如何让大模型稳定输出JSON格式" → 可搜索分析
+2. "ASR 技术对比" → 可生成调研报告
+
+【内容分析类】
+3. "https://www.zhihu.com/question/xxx" → 可抓取分析
+4. "叮咚买菜播客" → 可下载转文字
+
+【写 Demo 类】
+5. "写一个工具遍历滴答清单" → 可直接实现
+
+要我处理哪些？输入编号或"全部"
+```
+
+## 配置
+
+输出目录：`~/usr/projects/inbox/dida-outputs/`
+
+## dida365 API 已知坑
+
+### `createdTime` 字段为 null
+
+`mcp__dida365__list_tasks` 返回的任务中，`createdTime` 字段始终为 null（API 不返回此字段）。
+
+**解决方案**：任务 ID 是 MongoDB ObjectID，前 4 字节（8 个十六进制字符）即 Unix 时间戳，可直接解码获取创建时间。
+
+```python
+from datetime import datetime, timezone, timedelta
+
+def decode_oid_time(oid: str, tz_offset_hours: int = 8) -> datetime:
+    """从 MongoDB ObjectID 解码创建时间"""
+    tz = timezone(timedelta(hours=tz_offset_hours))
+    ts = int(oid[:8], 16)  # 取前 8 位十六进制 → uint32 Unix timestamp
+    return datetime.fromtimestamp(ts, tz=tz)
+
+# 示例：'696a240a...' → 1768563722 → 2026-01-16 19:42 (上海时间)
+```
+
+验证：`696a240a` → `int('696a240a', 16)` = 1768563722 → 2026-01-16 19:42 上海时间，与滴答清单 UI 显示一致。
+
+### tag 过滤不支持
+
+`list_tasks` 不支持按 tag 过滤，需要在 Python 侧手动过滤：
+
+```python
+tagged = [t for t in tasks if 'target-tag' in t.get('tags', [])]
+```
+
+### 大量任务场景
+
+`list_tasks` 结果可能超出 token 限制。处理方式：将结果保存为临时文件，用 `cat | python3 -c` 管道解析：
+
+```bash
+cat /tmp/tasks.json | python3 -c "
+import sys, json
+tasks = json.load(sys.stdin)
+# ... 过滤和分析
+"
+```

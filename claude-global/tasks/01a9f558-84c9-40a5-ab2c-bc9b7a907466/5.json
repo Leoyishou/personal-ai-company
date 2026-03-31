@@ -1,0 +1,9 @@
+{
+  "id": "5",
+  "subject": "Test daily-insight script",
+  "description": "Run daily-insight.mjs with today's date to verify it works end-to-end",
+  "activeForm": "Testing daily-insight",
+  "status": "in_progress",
+  "blocks": [],
+  "blockedBy": []
+}

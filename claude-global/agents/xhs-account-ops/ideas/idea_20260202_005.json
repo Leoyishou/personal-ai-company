@@ -1,0 +1,26 @@
+{
+  "id": "idea_20260202_005",
+  "type": "series",
+  "series_id": "bilibili-up",
+  "series_subject": "手工耿",
+
+  "hook": "妈妈央视吐槽：不是说没用，是真没用",
+  "angle": "废柴网红 vs 三代焊工世家",
+  "notes": "央视名场面，全网出圈",
+
+  "research": {
+    "dimensions": {
+      "人设反差": "发明废物，实际三代焊工世家",
+      "经典语录": "没用是真没用",
+      "老粉梗": "刑部尚书、危险发明、菜刀手机壳",
+      "隐藏技能": "作品被多国博物馆收藏"
+    },
+    "sources": ["B站", "央视", "抖音"],
+    "researched_at": "2026-02-02"
+  },
+
+  "status": "researched",
+  "created_at": "2026-02-02T10:00:00+08:00",
+  "updated_at": "2026-02-02T12:00:00+08:00",
+  "created_by": "research-agent"
+}

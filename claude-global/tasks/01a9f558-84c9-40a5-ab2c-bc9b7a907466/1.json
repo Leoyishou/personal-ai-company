@@ -1,0 +1,9 @@
+{
+  "id": "1",
+  "subject": "Create daily-insight.mjs script",
+  "description": "Create ~/.claude/scripts/daily-insight.mjs that collects agent sessions + Odyssey changes, generates OKR-based AI insight, saves to Supabase + Notion, appends to Odyssey weekly file",
+  "activeForm": "Creating daily-insight.mjs",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

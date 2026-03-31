@@ -1,0 +1,10 @@
+{
+  "sessions": {
+    "feedly": {
+      "pid": 44549,
+      "wsEndpoint": "ws://localhost:49753/a2222e4c644ed381d8202ffbef7fd97f",
+      "mode": "normal",
+      "createdAt": "2026-02-20T08:06:43.088Z"
+    }
+  }
+}

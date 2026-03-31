@@ -1,0 +1,27 @@
+[
+  {
+    "index": 1,
+    "start": "0:00",
+    "title": "引言"
+  },
+  {
+    "index": 2,
+    "start": "1:30",
+    "title": "背景介绍"
+  },
+  {
+    "index": 3,
+    "start": "3:00",
+    "title": "核心内容"
+  },
+  {
+    "index": 4,
+    "start": "6:00",
+    "title": "案例演示"
+  },
+  {
+    "index": 5,
+    "start": "8:30",
+    "title": "总结"
+  }
+]

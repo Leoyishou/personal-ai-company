@@ -1,0 +1,215 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/.claude/hooks/file-protection/index.js",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/.claude/hooks/git-linear-sync/index.js",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/.claude/hooks/xhs-publish-tracker/index.js",
+            "timeout": 15
+          },
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/usr/pac/product-bu/hooks/pmo-report-git.js",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/usr/pac/content-bu/hooks/pmo-report-bilibili.js",
+            "timeout": 15
+          }
+        ]
+      },
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/.claude/hooks/skill-tracker/index.js",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/usr/pac/content-bu/hooks/pmo-report-xhs.js",
+            "timeout": 15
+          },
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/.claude/hooks/cc-dashboard-tracker/index.js skill",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/usr/pac/pmo/hooks/superpowers-tracker.js",
+            "timeout": 30
+          },
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/usr/pac/product-bu/hooks/pmo-report-testflight.js",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/usr/pac/product-bu/hooks/pmo-report-vercel.js",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/usr/pac/content-bu/hooks/pmo-report-x.js",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/usr/pac/investment-bu/hooks/pmo-report-trade.js",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/usr/pac/investment-bu/hooks/pmo-report-research.js",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/usr/pac/product-bu/hooks/pmo-test-hook.js",
+            "timeout": 15
+          },
+          {
+            "type": "command",
+            "command": "node \"/Users/liuyishou/work/xuxiake/xuxiake/rins_hooks/hooks/auto-commit/index.js\"",
+            "timeout": 30
+          },
+          {
+            "type": "command",
+            "command": "node \"/Users/liuyishou/work/xuxiake/xuxiake/rins_hooks/hooks/code-formatter/index.js\"",
+            "timeout": 30
+          },
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/.claude/hooks/console-log-check/index.js",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/.claude/hooks/ts-check/index.js",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/.claude/hooks/mac-notification/index.js",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/liuyishou/.claude/hooks/stop-hook.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/.claude/hooks/session-learning/index.js",
+            "timeout": 15
+          },
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/usr/pac/pmo/pmo-session-end.js",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/.claude/hooks/pre-compact/index.js",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/.claude/hooks/subagent-tracker/index.js start",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/.claude/hooks/cc-dashboard-tracker/index.js subagent-start",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/.claude/hooks/subagent-tracker/index.js stop",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "node /Users/liuyishou/.claude/hooks/cc-dashboard-tracker/index.js subagent-stop",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {},
+  "skipDangerousModePermissionPrompt": true,
+  "feedbackSurveyState": {
+    "lastShownTime": 1753946593229
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "idea_20260202_001",
+  "type": "series",
+  "series_id": "bilibili-up",
+  "series_subject": "峰哥亡命天涯",
+
+  "hook": "三句不离下三路的峰哥，书单把你吓到",
+  "angle": "粗俗人设 vs 深度阅读（王小波、黑格尔）",
+  "notes": "反差点非常强，适合封面",
+
+  "research": {
+    "dimensions": {
+      "人设反差": "表面油腻大叔，实际深度阅读者",
+      "经典语录": "文化人装流氓，流氓装文化人",
+      "老粉梗": "书单、王小波、黑格尔",
+      "隐藏技能": "历史典故信手拈来"
+    },
+    "sources": ["B站", "知乎"],
+    "researched_at": "2026-02-02"
+  },
+
+  "status": "published",
+  "created_at": "2026-02-02T10:00:00+08:00",
+  "updated_at": "2026-02-02T15:30:00+08:00",
+  "created_by": "research-agent"
+}

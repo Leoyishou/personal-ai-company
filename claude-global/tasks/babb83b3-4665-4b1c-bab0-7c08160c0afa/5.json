@@ -1,0 +1,9 @@
+{
+  "id": "5",
+  "subject": "了解小红书薯店商品创建页面结构",
+  "description": "通过 CDP 打开 ark.xiaohongshu.com/app-item/good/create，截图了解需要填写哪些字段",
+  "activeForm": "探索小红书商品创建页面",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

@@ -1,0 +1,31 @@
+{
+  "segments": [
+    {
+      "id": 1,
+      "startMs": 0,
+      "endMs": 4280,
+      "topic": "传统开发痛点",
+      "content": "还在用传统的VS Code配合一堆AI插件写代码吗？",
+      "imageFile": "tech-01.jpg",
+      "promptHint": "展示传统编程的痛点：程序员面对多个窗口、插件图标混乱、红色警示表示效率低"
+    },
+    {
+      "id": 2,
+      "startMs": 4280,
+      "endMs": 9280,
+      "topic": "效率差距",
+      "content": "那您可能已经慢了别人一步，大家好我是您的技术向导",
+      "imageFile": "tech-02.jpg",
+      "promptHint": "对比图：左侧传统程序员(慢、红色)，右侧AI程序员(快、蓝绿色)，中间箭头"
+    },
+    {
+      "id": 3,
+      "startMs": 9280,
+      "endMs": 15800,
+      "topic": "Cursor介绍",
+      "content": "今天我们要聊的是一款正在让程序工程师疯狂的作弊神器Cursor",
+      "imageFile": "tech-03.jpg",
+      "promptHint": "Cursor编辑器界面草图，AI聊天气泡，代码自动生成效果，绿色打勾表示成功"
+    }
+  ]
+}

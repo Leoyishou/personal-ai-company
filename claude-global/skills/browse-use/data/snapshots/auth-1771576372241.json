@@ -1,0 +1,115 @@
+{
+  "cookies": [
+    {
+      "name": "__hs_notify_banner_dismiss",
+      "value": "rue",
+      "domain": ".feedly.com",
+      "path": "/",
+      "expires": 1787126979.0,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__hssc",
+      "value": "35826846.1.1771574975456",
+      "domain": ".feedly.com",
+      "path": "/",
+      "expires": 1771576775.0,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__hssrc",
+      "value": "\u0017\u001f\ufffddk\ufffd\"\u0016$\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\u001f\u007f>7\u0011!\ufffda6SaW\ufffd\u00101",
+      "domain": ".feedly.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__hstc",
+      "value": "35826846.12cf1c50a9f62812778cc405408d15b0.1771574975456.1771574975456.1771574975456.1",
+      "domain": ".feedly.com",
+      "path": "/",
+      "expires": 1787126975.0,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "A1.1.34093797.1771574976",
+      "domain": ".feedly.com",
+      "path": "/",
+      "expires": 1806134975.9090137,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ga_75485CJCK3",
+      "value": "S2.1.s1771574975$o1$g1$t1771574977$j58$l0$h0",
+      "domain": ".feedly.com",
+      "path": "/",
+      "expires": 1806134977.286852,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "None"
+    },
+    {
+      "name": "_gcl_au",
+      "value": ".1.1958488379.1771574975",
+      "domain": ".feedly.com",
+      "path": "/",
+      "expires": 1779350975.0,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "None"
+    },
+    {
+      "name": "feedly.token.auth",
+      "value": "yJraWQiOiJhdXQiLCJ2IjoiMSIsImFsZyI6ImRpciIsImVuYyI6IkEyNTZHQ00ifQ..X1k1omFjvC0-oC5S.WAf7l1ArzwIy5iAr5U3t7piITNCoQKa6FEl2r_992rN0elMoc1z3NCL7s6APYlpMCgr_ZXF8Xda3QDRudjG2OIcwAeMTbpT5r68hNagmBbbE_otczqn-Rm9OsZugEIWBc1MjtyrQ-vYEOEjOFhte6TIuxWMTiAwg84rUbzkKCOaosX7NZhwbn9INfJV_vVeWXs7iSDv1qUvyPC_kdl62oHtmicciOm3O52tq9fmgGFPyMG1h-O-RhdnLvUh9-AbTqYlTfwznlQ.9_5k10BCoA5UEMp3FaOznQ",
+      "domain": ".feedly.com",
+      "path": "/v3/auth",
+      "expires": 1772179772.5368881,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "hubspotutk",
+      "value": "2cf1c50a9f62812778cc405408d15b0",
+      "domain": ".feedly.com",
+      "path": "/",
+      "expires": 1787126975.0,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "mp_08ec115c8ead663134637b6167db2a1c_mixpanel",
+      "value": "7B%22distinct_id%22%3A%2275f95732-b28e-405e-a0ef-ee0514737b78%22%2C%22%24device_id%22%3A%229ac27a55-01da-4b34-8d49-4eda6c10d9da%22%2C%22%24search_engine%22%3A%22google%22%2C%22%24initial_referrer%22%3A%22https%3A%2F%2Fwww.google.com%2F%22%2C%22%24initial_referring_domain%22%3A%22www.google.com%22%2C%22__mps%22%3A%7B%7D%2C%22__mpso%22%3A%7B%7D%2C%22__mpus%22%3A%7B%7D%2C%22__mpa%22%3A%7B%7D%2C%22__mpu%22%3A%7B%7D%2C%22__mpr%22%3A%5B%5D%2C%22__mpap%22%3A%5B%5D%2C%22%24user_id%22%3A%2275f95732-b28e-405e-a0ef-ee0514737b78%22%2C%22Feedly%20Version%22%3A%2231.0.2955%22%2C%22Is%20Logged%20In%22%3Atrue%7D",
+      "domain": ".feedly.com",
+      "path": "/",
+      "expires": 1803110976.0,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "None"
+    },
+    {
+      "name": "feedly.authed",
+      "value": "\ufffd-\ufffdY\u0013h\u0011-\u0000\ufffd1aap\ufffd\ufffd\ufffd\ufffdO\ufffd6>2\ufffd\ufffdb\ufffd\u007f\ufffd\u0019\u076e1",
+      "domain": "feedly.com",
+      "path": "/",
+      "expires": 1803110975.0,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "None"
+    }
+  ],
+  "origins": []
+}

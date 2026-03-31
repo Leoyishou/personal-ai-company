@@ -1,0 +1,9 @@
+{
+  "id": "4",
+  "subject": "Update crontab entries",
+  "description": "Comment out 3 broken cron entries and add new ones pointing to ~/.claude/scripts/",
+  "activeForm": "Updating crontab",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

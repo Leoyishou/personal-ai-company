@@ -1,0 +1,37 @@
+{
+  "generated": "2026-02-02",
+  "database": {
+    "url": "postgresql://postgres:postgres@127.0.0.1:54322/postgres",
+    "host": "127.0.0.1",
+    "port": 54322,
+    "user": "postgres",
+    "password": "postgres",
+    "database": "postgres"
+  },
+  "api": {
+    "url": "http://127.0.0.1:54321",
+    "rest": "http://127.0.0.1:54321/rest/v1",
+    "graphql": "http://127.0.0.1:54321/graphql/v1",
+    "functions": "http://127.0.0.1:54321/functions/v1"
+  },
+  "keys": {
+    "anon": "sb_publishable_ACJWlzQHlZjBrEguHvfOxg_3BJgxAaH",
+    "service": "<SUPABASE_SERVICE_KEY>"
+  },
+  "storage": {
+    "url": "http://127.0.0.1:54321/storage/v1/s3",
+    "access_key": "625729a08b95bf1b7ff351a663f3a23c",
+    "secret_key": "<SUPABASE_SECRET_KEY>",
+    "region": "local"
+  },
+  "tools": {
+    "studio": "http://127.0.0.1:54323",
+    "mailpit": "http://127.0.0.1:54324"
+  },
+  "commands": {
+    "start": "cd ~/.claude/agents/xhs-account-ops && npx supabase start --ignore-health-check",
+    "stop": "cd ~/.claude/agents/xhs-account-ops && npx supabase stop",
+    "reset": "cd ~/.claude/agents/xhs-account-ops && npx supabase db reset",
+    "status": "cd ~/.claude/agents/xhs-account-ops && npx supabase status"
+  }
+}

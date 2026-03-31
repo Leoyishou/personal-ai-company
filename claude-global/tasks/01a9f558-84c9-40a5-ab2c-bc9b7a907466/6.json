@@ -1,0 +1,9 @@
+{
+  "id": "6",
+  "subject": "Fix daily-insight.mjs saveToSupabase schema mismatch",
+  "description": "Map AI-generated fields to actual AI50 daily_personal_reviews columns: okr_alignment, one_line_summary, insights, tomorrow_suggestions, raw_report, agent_sessions, agent_messages",
+  "activeForm": "Fixing daily saveToSupabase schema",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

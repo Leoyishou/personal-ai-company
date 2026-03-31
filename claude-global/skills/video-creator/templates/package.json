@@ -1,0 +1,22 @@
+{
+  "name": "video-project",
+  "version": "1.0.0",
+  "description": "Video project created with video-creator skill",
+  "scripts": {
+    "start": "npx remotion studio",
+    "build": "npx remotion render MainVideo out/video.mp4",
+    "render": "npx remotion render MainVideo"
+  },
+  "dependencies": {
+    "@remotion/captions": "4.0.411",
+    "@remotion/cli": "4.0.411",
+    "@remotion/media": "4.0.411",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "4.0.411"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "typescript": "^5.0.0"
+  }
+}

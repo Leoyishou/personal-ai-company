@@ -1,0 +1,12 @@
+# Environment files
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Output files
+*.mp3
+*.wav
+*.pcm

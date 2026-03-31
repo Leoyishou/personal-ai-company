@@ -1,0 +1,22 @@
+{
+  "query": "What are the most popular and widely installed Claude Code skills and extensions in 2025? Include community-developed skills, MCP servers, and automation tools. Focus on GitHub repositories, npm packages, and community discussions.",
+  "timestamp": "2026-02-04T08:11:45.061Z",
+  "summary": {
+    "total": 1,
+    "success": 0,
+    "partial": 0,
+    "failed": 1,
+    "platforms": {
+      "gemini": {
+        "status": "not_logged_in"
+      }
+    }
+  },
+  "results": [
+    {
+      "platform": "gemini",
+      "status": "not_logged_in",
+      "error": "Not logged in to Gemini. Please login in the Debug Chrome."
+    }
+  ]
+}

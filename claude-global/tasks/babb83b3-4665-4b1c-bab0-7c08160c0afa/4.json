@@ -1,0 +1,9 @@
+{
+  "id": "4",
+  "subject": "截取 NotebookLM 笔记本产品截图",
+  "description": "通过 CDP 连接 debug Chrome，截取 NotebookLM 笔记本的多角度截图作为商品素材：主页面、Sources 列表、Studio 功能区、Chat 对话等",
+  "activeForm": "截取 NotebookLM 产品截图",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

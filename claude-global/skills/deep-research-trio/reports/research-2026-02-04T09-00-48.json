@@ -1,0 +1,115 @@
+{
+  "query": "热门 Claude MCP servers",
+  "timestamp": "2026-02-04T09:00:48.835Z",
+  "summary": {
+    "total": 1,
+    "success": 1,
+    "partial": 0,
+    "failed": 0,
+    "platforms": {
+      "gemini": {
+        "name": "Gemini",
+        "status": "success",
+        "duration": 1
+      }
+    }
+  },
+  "results": [
+    {
+      "platform": "gemini",
+      "name": "Gemini",
+      "status": "success",
+      "timing": {
+        "startTime": 1770195563895,
+        "endTime": 1770195648834,
+        "durationMinutes": 1
+      },
+      "content": {
+        "summary": "我这就开始。研究完成后，我会告诉你。在此期间，你可以离开这个对话。\n热门 Claude MCP 服务器列表Researching 25 websites...",
+        "fullText": "我这就开始。研究完成后，我会告诉你。在此期间，你可以离开这个对话。\n热门 Claude MCP 服务器列表Researching 25 websites...",
+        "citations": [
+          {
+            "title": "anthropic.skilljar.comIntroduction to Model Context Protocol - Anthropic Courses",
+            "url": "https://anthropic.skilljar.com/introduction-to-model-context-protocol"
+          },
+          {
+            "title": "modelcontextprotocol.ioModel Context Protocol",
+            "url": "https://modelcontextprotocol.io/"
+          },
+          {
+            "title": "code.claude.comConnect Claude Code to tools via MCP",
+            "url": "https://code.claude.com/docs/en/mcp"
+          },
+          {
+            "title": "anthropic.comIntroducing the Model Context Protocol - Anthropic",
+            "url": "https://www.anthropic.com/news/model-context-protocol"
+          },
+          {
+            "title": "modelcontextprotocol.ioArchitecture overview - Model Context Protocol",
+            "url": "https://modelcontextprotocol.io/docs/learn/architecture"
+          },
+          {
+            "title": "github.comappcypher/awesome-mcp-servers - GitHub",
+            "url": "https://github.com/appcypher/awesome-mcp-servers"
+          },
+          {
+            "title": "reddit.comGitHub - awesome-mcp-servers: A collection of MCP servers : r/ClaudeAI - Reddit",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1h36xzl/github_awesomemcpservers_a_collection_of_mcp/"
+          },
+          {
+            "title": "github.comwin4r/Awesome-Claude-MCP-Servers - GitHub",
+            "url": "https://github.com/win4r/Awesome-Claude-MCP-Servers"
+          },
+          {
+            "title": "github.comA curated list of awesome skills, hooks, slash-commands, agent orchestrators, applications, and plugins for Claude Code by Anthropic - GitHub",
+            "url": "https://github.com/hesreallyhim/awesome-claude-code"
+          },
+          {
+            "title": "github.compunkpeye/awesome-mcp-servers: A collection of MCP servers. - GitHub",
+            "url": "https://github.com/punkpeye/awesome-mcp-servers"
+          },
+          {
+            "title": "reddit.comThe Best MCP Servers That Actually Can Change How You Code : r/ClaudeAI - Reddit",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1pu51t7/the_best_mcp_servers_that_actually_can_change_how/"
+          },
+          {
+            "title": "reddit.comSelf Discovering MCP servers, no more token overload or semantic loss",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1qsrpu1/self_discovering_mcp_servers_no_more_token/"
+          },
+          {
+            "title": "reddit.comWhat's the best claude code setup (mcp servers, agents, tools, models) for the best UI/UX across web & mobile (Next.js + shadcn)? : r/vibecoding - Reddit",
+            "url": "https://www.reddit.com/r/vibecoding/comments/1o97iws/whats_the_best_claude_code_setup_mcp_servers/"
+          },
+          {
+            "title": "reddit.comWhen working on solo projects with claude code, which MCP servers do you feel are most impactful? : r/ClaudeAI - Reddit",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1lc8eei/when_working_on_solo_projects_with_claude_code/"
+          },
+          {
+            "title": "reddit.comWhat is the best MCP with Claude Code? : r/ClaudeAI - Reddit",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1m6c8m2/what_is_the_best_mcp_with_claude_code/"
+          },
+          {
+            "title": "reddit.comWhat MCPs is everyone using with Claude? : r/mcp - Reddit",
+            "url": "https://www.reddit.com/r/mcp/comments/1lzfa9r/what_mcps_is_everyone_using_with_claude/"
+          },
+          {
+            "title": "roobia.medium.comThe 10 Must-Have MCP Servers for Claude Code (2025 Developer Edition)",
+            "url": "https://roobia.medium.com/the-10-must-have-mcp-servers-for-claude-code-2025-developer-edition-43dc3c15c887"
+          },
+          {
+            "title": "mcpmarket.comTop 100 MCP Servers Leaderboard",
+            "url": "https://mcpmarket.com/leaderboards"
+          },
+          {
+            "title": "deployhq.com6 Must-Have MCP Servers for Web Developers in 2025 - DeployHQ",
+            "url": "https://www.deployhq.com/blog/6-must-have-mcp-servers-for-web-developers-in-2025"
+          },
+          {
+            "title": "youtube.com5 MCP Servers That Make Claude Code 10x More Powerful (Full-Stack App Build)",
+            "url": "https://www.youtube.com/watch?v=M5CsRj6zSCA"
+          }
+        ]
+      }
+    }
+  ]
+}

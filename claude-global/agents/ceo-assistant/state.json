@@ -1,0 +1,106 @@
+{
+  "processedTasks": {
+    "696317fc3d74510de985fa08": {
+      "processedAt": "2026-01-25T22:50:00+08:00",
+      "status": "completed",
+      "title": "把这个人的视频转成文字",
+      "summary": "已下载抖音视频并使用 Whisper 转录为文字"
+    },
+    "69747c2d1861d115b8d2bc04": {
+      "processedAt": "2026-01-26T13:44:00+08:00",
+      "status": "completed",
+      "title": "素描画保时捷和法拉利",
+      "summary": "已生成素描风格图片，保存至 ~/.claude/Nanobanana-draw-图片/20260126_其他_保时捷法拉利素描_0.jpg"
+    },
+    "69746692d9b71114ce44de37": {
+      "processedAt": "2026-01-26T13:44:00+08:00",
+      "status": "completed",
+      "title": "画一下餐巾纸上的战略 模拟张一鸣",
+      "summary": "已生成餐巾纸战略图，保存至 ~/.claude/Nanobanana-draw-图片/20260126_手绘白板_餐巾纸战略图_0.jpg"
+    },
+    "695e7af6fcb8911d3c5b88e0": {
+      "processedAt": "2026-01-26T13:44:00+08:00",
+      "status": "completed",
+      "title": "试试让本地agent帮我发这种twitter",
+      "summary": "已发推成功，链接: https://x.com/i/status/2015661831881421026"
+    },
+    "6970b695d843910923fecf0b": {
+      "processedAt": "2026-01-26T22:15:00+08:00",
+      "status": "skipped",
+      "title": "[Agent] 每天免费发两条",
+      "reason": "每天发两条？发什么？空气吗？老板你给我个[Agent]标签我就知道该发啥了？我是 AI 不是你肚子里的蛔虫啊 🤷"
+    },
+    "6975122509941120335a4827": {
+      "processedAt": "2026-01-26T17:07:33.766929+08:00",
+      "status": "completed",
+      "title": "赛文乔伊-全托管AI浏览器视频调研",
+      "summary": "✅ 完整调研完成：下载视频、ASR转录、深度分析FlowithOS产品、对比OpenAI Atlas、作者背景调研。报告保存至 ~/Downloads/douyin_analysis/完整调研报告.md"
+    }
+  },
+  "lastRunAt": "2026-01-26T17:07:33.767485+08:00",
+  "lastScanSummary": {
+    "totalTasks": 200,
+    "scanned": 200,
+    "analyzedWithKeywords": 17,
+    "executable": 0,
+    "completed": 0,
+    "skipped": 17,
+    "skipReasons": {
+      "knowledge_note": "知识笔记类（ASR对比分析、Telegram用法、OMR科普等）",
+      "idea_record": "想法记录类（做一个xx、研究一下xx，但无具体执行指令）",
+      "work_memo": "产品备忘类（需求规格、技术方案记录）",
+      "link_collection": "链接收藏类（小红书/抖音/X/B站链接，无明确指令）"
+    },
+    "newTasksAnalyzed": [
+      {
+        "id": "6962615472d9910209256e87",
+        "title": "ASR 语音输入对比分析（豆包/微信/Whisper）",
+        "type": "knowledge_note",
+        "reason": "知识总结，非执行任务"
+      },
+      {
+        "id": "6974d13b3d9dd11ae27bdbdd",
+        "title": "AI红发魔女-Skills自动做动画视频摘要",
+        "type": "knowledge_note",
+        "reason": "视频内容摘要，已自动生成AI摘要"
+      },
+      {
+        "id": "6951fbc08c5f1107589ed073",
+        "title": "OMR 光学乐谱识别科普",
+        "type": "knowledge_note",
+        "reason": "技术科普笔记"
+      },
+      {
+        "id": "69626315acdc910209256f22",
+        "title": "小红书销售AI知识库调研报告链接",
+        "type": "link_collection",
+        "reason": "只是收藏链接，无执行指令"
+      },
+      {
+        "id": "69669aade6f65121e81904ce",
+        "title": "UI设计层级体系解析",
+        "type": "knowledge_note",
+        "reason": "设计知识整理"
+      },
+      {
+        "id": "695e619959fe51140aedc63d",
+        "title": "做一个能在xhs知乎同时收集信息的AI",
+        "type": "idea_record",
+        "reason": "想法记录，非立即执行任务"
+      },
+      {
+        "id": "695e9f3d6d4191213886cf91",
+        "title": "研究一下视频带货图书",
+        "type": "idea_record",
+        "reason": "研究想法，无具体产出要求"
+      },
+      {
+        "id": "6961e530691c110209256a8a",
+        "title": "研究一下卖书模式",
+        "type": "idea_record",
+        "reason": "研究想法，无具体产出要求"
+      }
+    ],
+    "potentialExecutableTasks": []
+  }
+}

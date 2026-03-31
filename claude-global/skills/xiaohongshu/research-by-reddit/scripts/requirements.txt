@@ -1,0 +1,13 @@
+# Reddit API 调研工具依赖
+
+# Reddit API 客户端
+praw>=7.7.1
+
+# HTTP 请求（用于 OpenRouter API）
+requests>=2.31.0
+
+# 可选：环境变量管理
+python-dotenv>=1.0.0
+
+# 可选：进度条显示
+tqdm>=4.66.0

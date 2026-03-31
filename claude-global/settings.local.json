@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(openrouter-chat)",
+      "Skill(nanobanana-draw)"
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+# 使用国内镜像代理
+# 原始镜像会通过 docker.1ms.run 代理拉取
+
+services:
+  studio:
+    image: docker.1ms.run/supabase/studio:2026.01.27-sha-6aa59ff
+  kong:
+    image: docker.1ms.run/library/kong:2.8.1
+  auth:
+    image: docker.1ms.run/supabase/gotrue:v2.185.0
+  rest:
+    image: docker.1ms.run/postgrest/postgrest:v12.2.11
+  realtime:
+    image: docker.1ms.run/supabase/realtime:v2.72.0
+  storage:
+    image: docker.1ms.run/supabase/storage-api:v1.33.5
+  imgproxy:
+    image: docker.1ms.run/darthsim/imgproxy:v3.30.1
+  meta:
+    image: docker.1ms.run/supabase/postgres-meta:v0.95.2
+  functions:
+    image: docker.1ms.run/supabase/edge-runtime:v1.70.0
+  analytics:
+    image: docker.1ms.run/supabase/logflare:1.30.3
+  db:
+    image: docker.1ms.run/supabase/postgres:15.8.1.085
+  vector:
+    image: docker.1ms.run/timberio/vector:0.28.1-alpine
+  supavisor:
+    image: docker.1ms.run/supabase/supavisor:2.7.4

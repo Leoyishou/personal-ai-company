@@ -1,0 +1,9 @@
+{
+  "id": "3",
+  "subject": "Create monthly-insight.mjs script",
+  "description": "Create ~/.claude/scripts/monthly-insight.mjs that collects monthly data, generates monthly theme analysis, creates Odyssey monthly file",
+  "activeForm": "Creating monthly-insight.mjs",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

@@ -1,0 +1,64 @@
+{
+  "query": "最近被安装最多的 Claude Code skills 调研：包括 MCP servers、community extensions、GitHub 上的热门项目。分析哪些工具最受欢迎，为什么受欢迎。",
+  "timestamp": "2026-02-04T08:30:19.542Z",
+  "summary": {
+    "total": 3,
+    "success": 1,
+    "partial": 1,
+    "failed": 1,
+    "platforms": {
+      "gemini": {
+        "name": "Gemini",
+        "status": "success",
+        "duration": 1
+      },
+      "chatgpt": {
+        "name": "ChatGPT",
+        "status": "failed"
+      },
+      "claude": {
+        "name": "Claude",
+        "status": "timeout",
+        "duration": 15
+      }
+    }
+  },
+  "results": [
+    {
+      "platform": "gemini",
+      "name": "Gemini",
+      "status": "success",
+      "timing": {
+        "startTime": 1770192905156,
+        "endTime": 1770192960229,
+        "durationMinutes": 1
+      },
+      "content": {
+        "summary": "在 2026 年的 Claude 生态中，Model Context Protocol (MCP) 的爆发彻底改变了 AI 程序员的工作流。通过调研热门的 MCP Server、社区扩展以及 GitHub 趋势，我们可以清晰地看到 Claude Code 正从一个“对话框”演变成一个“拥有完整工具链的数字员工”。以下是目前安装量最高、最受开发者欢迎的工具分析：1. 最受欢迎的 MCP ServersMCP 是 Claude 扩展能力的核心。目前最热门的 Server 集中在代码管理、实时文档获取和浏览器自动化三个维度。类别热门 MCP Server功能亮点受欢迎原因版本控制GitHub MCP自动管理 Issue、PR、代码搜索及提交。深度集成 GitHub，让 Claude 能自主处理代码审查和协作流。知识增强Context7实时注入最新库/框架的文档。解决了 AI 训练数据滞后的痛点，确保 Claude 建议的代码不落后。基础设施Docker MCP在沙箱容器内运行代码、检查日志。提供安全的执行环境，支持在独立容器中进行调试和任务隔离。数据搜索Brave Search / Exa具...",
+        "fullText": "在 2026 年的 Claude 生态中，Model Context Protocol (MCP) 的爆发彻底改变了 AI 程序员的工作流。通过调研热门的 MCP Server、社区扩展以及 GitHub 趋势，我们可以清晰地看到 Claude Code 正从一个“对话框”演变成一个“拥有完整工具链的数字员工”。以下是目前安装量最高、最受开发者欢迎的工具分析：1. 最受欢迎的 MCP ServersMCP 是 Claude 扩展能力的核心。目前最热门的 Server 集中在代码管理、实时文档获取和浏览器自动化三个维度。类别热门 MCP Server功能亮点受欢迎原因版本控制GitHub MCP自动管理 Issue、PR、代码搜索及提交。深度集成 GitHub，让 Claude 能自主处理代码审查和协作流。知识增强Context7实时注入最新库/框架的文档。解决了 AI 训练数据滞后的痛点，确保 Claude 建议的代码不落后。基础设施Docker MCP在沙箱容器内运行代码、检查日志。提供安全的执行环境，支持在独立容器中进行调试和任务隔离。数据搜索Brave Search / Exa具备“互联网搜索”能力的工具集。使 Claude 能够获取实时技术新闻、API 变更和 Stack Overflow 讨论。思维逻辑Sequential Thinking开启“分步思考”模式，展示推理链路。显著提升 Claude 处理复杂算法和大规模重构时的逻辑严密性。Export to Sheets2. GitHub 上的热门项目与社区扩展GitHub 上的生态项目主要围绕“效率增强”和“特定领域垂直化”展开。热门项目 (Top Repositories)awesome-mcp-servers: 目前该领域最核心的导航仓库。它收集了从数据库连接（Postgres, MongoDB）到协作工具（Slack, Notion）的各类 Server，是开发者寻找“技能”的首选入口。Claude-Code-MCP-List: 针对 Linux 和 macOS 桌面用户优化的工具集合，特别强调了本地文件系统集成和命令行工具自动化。beads (Agent Memory Upgrade): 一个通过 AI 压缩技术为 Claude 提供“长期记忆”的插件，能自动记录和检索之前的对话上下文，避免大型项目中的遗忘。IDE 与浏览器扩展Claude Code VS Code Extension: 虽然 CLI 很火，但 VS Code 端的原生扩展安装量依然最大。它支持可视化 Diff 查看、Side Bar 聊天和自动接受修改建议。Claude for Chrome (Beta): 该扩展允许 Claude 在浏览器内直接操作 Slack、Gmail 和 GitHub，甚至可以跨标签页执行复杂的多步骤规划任务。3. 为什么这些工具受欢迎？（核心逻辑分析）A. 解决“信息孤岛”问题在 MCP 出现前，Claude 无法接触到私有库以外的实时数据。Context7 和 GitHub MCP 的流行，标志着开发者希望 AI 能“读懂”动态更新的世界和团队的协作状态，而不仅仅是写一段孤立的代码。B. 从“代码生成”转向“任务执行”受欢迎的工具大多具备写权限（如 create_pr 或 edit_form）。开发者不再满足于让 AI 提供代码参考，而是希望它像一个初级工程师一样，完成从“写代码”到“提 PR”再到“测逻辑”的闭环。C. 安全与环境隔离Docker MCP 和 Sequential Thinking 的流行反映了开发者对 AI 可控性的关注。前者提供了安全的沙箱防止系统被误改，后者则通过透明化的思维过程提升了对 AI 决策的信任度。4. 如何开始使用？如果你想快速武装你的 Claude Code，可以尝试以下步骤：添加 GitHub 支持：Bashclaude mcp add github --scope user -- npx -y @modelcontextprotocol/server-github\n提升逻辑能力：安装 sequential-thinking Server 以增强复杂任务的推理。集成团队工具：如果你使用 Linear 或 Slack，安装对应的 MCP Server 可以让 Claude 自动同步开发进度。您想针对某个特定的开发场景（例如：前端 UI 自动构建、或后端数据库调试），让我为您推荐一套完整的 MCP 工具链配置吗？",
+        "citations": []
+      }
+    },
+    {
+      "platform": "chatgpt",
+      "name": "ChatGPT",
+      "status": "failed",
+      "error": "Could not find ChatGPT input field"
+    },
+    {
+      "platform": "claude",
+      "name": "Claude",
+      "status": "timeout",
+      "timing": {
+        "startTime": 1770192905156,
+        "endTime": 1770193819538,
+        "durationMinutes": 15
+      },
+      "content": {
+        "summary": "",
+        "fullText": "",
+        "citations": []
+      }
+    }
+  ]
+}

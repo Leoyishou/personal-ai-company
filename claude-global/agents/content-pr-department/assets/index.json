@@ -1,0 +1,80 @@
+{
+  "version": "1.1",
+  "updated": "2026-01-28",
+  "categories": {
+    "bgm": {
+      "description": "背景音乐",
+      "path": "audio/bgm",
+      "items": [
+        {
+          "name": "口播背景_轻柔",
+          "file": "calm/口播背景_轻柔.mp3",
+          "tags": ["calm", "口播", "轻柔"],
+          "source": "剪映"
+        }
+      ]
+    },
+    "sfx": {
+      "description": "音效",
+      "path": "audio/sfx",
+      "items": [
+        {
+          "name": "铅笔书写声",
+          "file": "pencil_writing.mp3",
+          "duration": "10s",
+          "tags": ["pencil", "writing", "wipe"],
+          "source": "Orange Free Sounds",
+          "license": "CC BY-NC 4.0"
+        }
+      ]
+    },
+    "voices": {
+      "description": "配音样本",
+      "path": "audio/voices",
+      "items": []
+    },
+    "fonts": {
+      "description": "字体",
+      "path": "fonts",
+      "items": []
+    },
+    "backgrounds": {
+      "description": "背景图",
+      "path": "images/backgrounds",
+      "items": []
+    },
+    "templates": {
+      "description": "视频模板",
+      "path": "templates",
+      "items": [
+        {
+          "name": "铅笔白板风",
+          "id": "pencil-whiteboard",
+          "description": "手绘简笔画 + 铅笔音效擦除动画 + 配音解说",
+          "path": "pencil-whiteboard",
+          "features": [
+            "Nanobanana 手绘白板图片",
+            "Wipe 从左到右擦除动画",
+            "铅笔音效配合动画",
+            "配音与铅笔声不重叠",
+            "Ken Burns 微缩放",
+            "Fade 转场"
+          ],
+          "適用": ["知识科普", "产品对比", "列表盘点", "流程说明"]
+        }
+      ]
+    }
+  },
+  "tags": [
+    "upbeat", "calm", "tech", "emotional",
+    "transition", "whoosh", "notification",
+    "pencil", "writing", "wipe"
+  ],
+  "usage_notes": {
+    "bgm_volume": "背景音乐音量建议 8-15%",
+    "sfx_volume": "音效音量建议 50%",
+    "tts_padding": "TTS 音频首尾加静音（开头 0.8s，结尾 1s）",
+    "video_format": "竖版视频 1080x1920，横版 1920x1080",
+    "naming": "{YYYYMMDD}_{风格}_{主题}.mp4"
+  }
+}

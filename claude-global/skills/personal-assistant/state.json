@@ -1,0 +1,941 @@
+{
+  "processedTasks": {
+    "6975122509941120335a4827": {
+      "processedAt": "2026-01-26T17:07:33+08:00",
+      "status": "completed",
+      "title": "赛文乔伊-全托管AI浏览器视频调研",
+      "summary": "✅ 完整调研完成：下载视频、ASR转录、深度分析FlowithOS产品、对比OpenAI Atlas、作者背景调研。报告保存至 ~/Downloads/douyin_analysis/完整调研报告.md"
+    },
+    "697444d80ef151126dbabb1c": {
+      "processedAt": "2026-01-26T17:35:00+08:00",
+      "status": "completed",
+      "title": "调研一下小报童",
+      "summary": "✅ 完成深度调研：平台概况、商业模式、竞品对比、使用建议。报告: ~/Downloads/research/小报童调研.md"
+    },
+    "69725d732c2a911e6a54d11b": {
+      "processedAt": "2026-01-26T17:36:00+08:00",
+      "status": "completed",
+      "title": "comfyui似乎很强好好研究下",
+      "summary": "✅ 完成深度调研：产品定位、技术优势、竞品对比、学习路径。报告: ~/Downloads/research/ComfyUI深度调研.md"
+    },
+    "6974bdd14028511ae27bdb1b": {
+      "processedAt": "2026-01-27T10:56:14.927406+08:00",
+      "status": "skipped",
+      "title": "一会儿做一个应用叫AI白板画",
+      "summary": "⏭️ 跳过：OpenRouter余额不足+需求不明确（手绘风格？流程图？思维导图？）"
+    },
+    "69766b66324ad12d17af0f3c": {
+      "processedAt": "2026-01-26T21:21:25.039503+08:00",
+      "status": "completed",
+      "title": "All-in Podcast长视频拆解方法调研",
+      "summary": "✅ 完成调研：技术方案、完整工具链、6步工作流、可复用性评估。报告: ~/Downloads/social_media/小红书_All-in-Podcast拆解方法.md"
+    },
+    "697669918564d12d17af0ef3": {
+      "processedAt": "2026-01-26T21:21:25.039503+08:00",
+      "status": "completed",
+      "title": "AI学习清单-4大领域调研",
+      "summary": "✅ 完成调研：4大领域资源清单（AI科技、个人成长、商业思维、深度认知）、头部KOL推荐。报告: ~/Downloads/social_media/小红书_AI学习清单4大领域.md"
+    },
+    "697190e28b471110e51acb86": {
+      "processedAt": "2026-01-26T21:21:25.039503+08:00",
+      "status": "completed",
+      "title": "发帖收益分析框架",
+      "summary": "✅ 完成框架设计：数据需求清单、收集方案、指标体系。报告: ~/Downloads/analysis/发帖收益分析框架.md"
+    },
+    "697668744b97d12d17af0e8d": {
+      "processedAt": "2026-01-26T21:52:32.121342+08:00",
+      "status": "completed",
+      "title": "独立开发App出海多语言方案",
+      "summary": "✅ 完成调研：飞书+AI翻译自动化方案、成本分析（零成本可行）、完整实施步骤+Python脚本。报告: ~/Downloads/social_media/小红书_App出海多语言方案.md"
+    },
+    "6974d13b3d9dd11ae27bdbdd": {
+      "processedAt": "2026-01-26T21:52:32.121342+08:00",
+      "status": "completed",
+      "title": "AI红发魔女-Skills自动做动画",
+      "summary": "✅ 完成分析：Claude Skills替代AE、videocut-skills开源项目、与video-chapter-nav关联分析。报告: ~/Downloads/douyin_analysis/AI红发魔女_Skills动画.md"
+    },
+    "6974cad13da2d11ae27bdb2e": {
+      "processedAt": "2026-01-26T21:52:32.121342+08:00",
+      "status": "completed",
+      "title": "85后VC掌舵人创业故事",
+      "summary": "✅ 完成分析：职业路径、关键转折点、成长策略、VC能力清单。视频已下载(215MB)，报告: ~/Downloads/bilibili_analysis/85后VC创业故事.md"
+    },
+    "6970ead6d2be110923fed4d5": {
+      "processedAt": "2026-01-26T22:15:58.381061+08:00",
+      "status": "completed",
+      "title": "个人SOP搭建方法",
+      "summary": "✅ 完成调研：五步闭环方法论、Notion系统模版、实施框架、适用人群分析。报告: ~/Downloads/social_media/小红书_个人SOP搭建方法.md"
+    },
+    "6970ed662374110923fed5c3": {
+      "processedAt": "2026-01-26T22:15:58.381061+08:00",
+      "status": "completed",
+      "title": "认知体系知识库",
+      "summary": "✅ 完成调研：6图营销结构、15大领域分类、AIDA模型、变现路径。报告: ~/Downloads/social_media/小红书_认知体系知识库.md"
+    },
+    "6970b6ca5655510923fecf56": {
+      "processedAt": "2026-01-26T22:25:42.114597+08:00",
+      "status": "completed",
+      "title": "煎牛排技巧调研",
+      "summary": "✅ 完成调研：低温慢煮法4步骤、方法对比、争议分析、内容创作建议（3期系列）。报告+6张图: ~/Downloads/social_media/煎牛排技巧/"
+    },
+    "696d2730903211020fc55ce6": {
+      "processedAt": "2026-01-26T22:25:42.114597+08:00",
+      "status": "completed",
+      "title": "老贾营销心理学博主分析",
+      "summary": "✅ 完成调研：博主画像（2.1万粉，7.8万互动）、爆款公式、选题矩阵、可借鉴方法论。报告: ~/Downloads/social_media/小红书_老贾营销心理学.md"
+    },
+    "6969dcab95e351046ab7ae5a": {
+      "processedAt": "2026-01-26T22:25:42.114597+08:00",
+      "status": "completed",
+      "title": "Deep Research框架调研",
+      "summary": "✅ 完成深度调研：GPT Researcher推荐方案、小红书集成技术路径、成本效益分析（ROI 2000%）、实施路线图。报告: ~/Downloads/research/DeeperSearch深度调研.md"
+    },
+    "696d26c78b0611020fc55cc8": {
+      "processedAt": "2026-01-26T22:31:46.905466+08:00",
+      "status": "completed",
+      "title": "文科生iOS开发路径",
+      "summary": "✅ 完成调研：学习路径分析、技术选型建议、避坑指南、AI辅助开发方法论、12周实施计划。视频+报告: ~/Downloads/social_media/小红书_文科生iOS开发.md"
+    },
+    "696d19d08c2791020fc55aed": {
+      "processedAt": "2026-01-26T22:37:07.349105+08:00",
+      "status": "completed",
+      "title": "狗哥小红书营销打法",
+      "summary": "✅ 完成调研：货架电商模式、侧翼战略、品牌代运营、5大心理学原理、用户痛点分析、实战路径。视频+报告: ~/Downloads/social_media/小红书_狗哥营销打法.md"
+    },
+    "696cfa819941d1020fc559c3": {
+      "processedAt": "2026-01-26T22:58:52.107797+08:00",
+      "status": "completed",
+      "title": "星级酒店体验设计",
+      "summary": "✅ 完成调研：9大品类清单、五感设计法则、三级配置体系、投资回报框架。视频(62MB)+报告: ~/Downloads/social_media/小红书_星级酒店体验设计.md"
+    },
+    "696c70c4b62391020fc553fc": {
+      "processedAt": "2026-01-26T23:05:02.458149+08:00",
+      "status": "completed",
+      "title": "行研报告阅读方法",
+      "summary": "✅ 完成调研：三大阅读框架、倒金字塔速读法、黄金三问筛选、批判性阅读姿态、研报黑话翻译。报告+速查表: ~/Downloads/social_media/小红书_行研报告阅读方法.md"
+    },
+    "6971d3a4275091152d0aeb8a": {
+      "processedAt": "2026-01-27T01:16:44.624641+08:00",
+      "status": "completed",
+      "title": "X推文-Lovart AI产品分析",
+      "summary": "✅ 完成深度调研：AI设计代理产品分析、市场定位、竞争优势、用户案例。报告: ~/Downloads/social_media/x_lovart_20141819.md"
+    },
+    "6970ebe4262ad10923fed534": {
+      "processedAt": "2026-03-19T12:00:00+08:00",
+      "status": "completed",
+      "title": "这个剪辑风格（二次螈Ai工具箱第172期）",
+      "summary": "✅ 分析抖音剪辑风格：深蓝+橙红品牌背景+黄底黑字字幕+0秒开正题。报告: ~/projects/inbox/20260319_抖音剪辑风格_二次螈/"
+    },
+    "696669b9537e911973cd0cfa": {
+      "processedAt": "2026-01-27T01:16:44.624641+08:00",
+      "status": "completed",
+      "title": "小红书UI设计学习",
+      "summary": "✅ 完成UI设计分析：极简风格、色彩系统、排版布局、视觉层级、设计系统。9张图+报告: ~/Downloads/social_media/xhs_ui_design/"
+    },
+    "6976613bc959512d17af0d31": {
+      "processedAt": "2026-01-27T01:25:36.416155+08:00",
+      "status": "completed",
+      "title": "X推文-丹麦开发者（Mohd Danish）",
+      "summary": "✅ 部分完成：作者背景调研（印度前端开发者、NoCode API创业者、运营4个项目）。推文内容因API限流未获取。报告: ~/Downloads/social_media/x_danish_dev.md"
+    },
+    "697260e6c46f511e6a54d137": {
+      "processedAt": "2026-01-27T01:25:36.416155+08:00",
+      "status": "completed",
+      "title": "X推文-henices安全研究",
+      "summary": "✅ 部分完成：用户背景调研（NSFOCUS安全研究员、Tcp-DNS-proxy作者）。推文内容因API限流未获取。报告: ~/Downloads/social_media/x_henices_tech.md"
+    },
+    "69710fc13342510d439f5391": {
+      "processedAt": "2026-01-27T01:25:36.416155+08:00",
+      "status": "completed",
+      "title": "X推文-Remotion产品分析",
+      "summary": "✅ 完成深度调研：Remotion产品分析、2026年Skills功能、React视频生成、28k★、AI赋能视频制作。报告: ~/Downloads/social_media/x_remotion.md"
+    },
+    "6970ff8132df510d439f51aa": {
+      "processedAt": "2026-01-27T01:25:36.416155+08:00",
+      "status": "completed",
+      "title": "抖音视频-Gemini邪修系列（高优先级）",
+      "summary": "✅ 完成深度分析：Gemini提示词教程第37集、\"灵感发散搭子\"、系列化运营策略、商业化路径、实用性9/10分。视频(2.2MB)+报告: ~/Downloads/social_media/douyin_featured.md"
+    },
+    "6970e6add841110923fed444": {
+      "processedAt": "2026-01-27T01:25:36.416155+08:00",
+      "status": "completed",
+      "title": "X推文-oggii设计案例",
+      "summary": "✅ 完成设计分析：AI生成设计师Oogie、Gemini超写实风格、提示词工程化、电影级叙事、9宫格分镜方法。报告: ~/Downloads/social_media/x_oggii_design.md"
+    },
+    "6970e561651f910923fed3a9": {
+      "processedAt": "2026-01-27T01:50:40.387616+08:00",
+      "status": "completed",
+      "title": "X推文-Alex Gilev产品设计",
+      "summary": "✅ 部分完成：作者背景调研（产品设计师/UX顾问、30K Strategy创始人、PayPal/J&J合作）。推文内容因API限流未获取。报告: ~/Downloads/social_media/x_alexgilev.md"
+    },
+    "696e63c9b9cc9114f0df1896": {
+      "processedAt": "2026-01-27T01:50:40.387616+08:00",
+      "status": "completed",
+      "title": "X推文-Claude Code演示视频剪辑分析",
+      "summary": "✅ 完成深度分析：25分钟教程视频剪辑拆解、8章节结构、Hook设计（$1.2B+30min震撼）、屏幕录制技巧。视频(134MB)+报告: ~/Downloads/social_media/x_learn2vibe_video.md"
+    },
+    "696b6330799251045dbf5bde": {
+      "processedAt": "2026-01-27T10:22:27.798877+08:00",
+      "status": "completed",
+      "title": "这个东西有很高价值 - 抖音热点广场调研",
+      "summary": "完成抖音热点宝深度分析,生成15KB报告,包含热点获取策略、转化优化技巧"
+    },
+    "69662663a0c191676a71c278": {
+      "processedAt": "2026-01-27T10:22:27.798877+08:00",
+      "status": "completed",
+      "title": "抄袭这个：YouTube视频创作分析",
+      "summary": "分析YouTube姿势矫正视频,提取黄金标题公式和内容结构,生成12000字报告"
+    },
+    "6970ecda5e85d10923fed58d": {
+      "processedAt": "2026-01-27T10:22:27.798877+08:00",
+      "status": "completed",
+      "title": "抖音AI工具白板视频创作",
+      "summary": "下载并分析OpenBB Terminal介绍视频,提供白板+手绘线条视频制作方案"
+    },
+    "69662d68ee67511973cd0907": {
+      "processedAt": "2026-01-27T10:22:27.798877+08:00",
+      "status": "completed",
+      "title": "X推文视频制作方案(langzihan)",
+      "summary": "提供豆包TTS+Nanobanana图片生成的视频制作完整流程,含4种FFmpeg方案"
+    },
+    "6970e592c07a910923fed3ef": {
+      "processedAt": "2026-01-27T10:22:27.798877+08:00",
+      "status": "completed",
+      "title": "X推文分析(oggii_0)",
+      "summary": "分析AI图像生成领域创作者,提取7大创作启发和市场格局分析"
+    },
+    "696b8cec54af9103834bf8a8": {
+      "processedAt": "2026-01-27T10:22:27.798877+08:00",
+      "status": "completed",
+      "title": "抖音WhynotTV翁家翌OpenAI访谈",
+      "summary": "下载710MB视频,分析OpenAI核心研究员技术观点和职业路径"
+    },
+    "696534409835510aca9fd75e": {
+      "processedAt": "2026-01-27T10:22:27.798877+08:00",
+      "status": "completed",
+      "title": "X推文分析(白骏知识分享)",
+      "summary": "分析资源聚合型账号运营策略,提取稀缺性+紧迫感Hook设计方法"
+    },
+    "6966015003edd117f76c3e2c": {
+      "processedAt": "2026-01-27T10:22:27.798877+08:00",
+      "status": "completed",
+      "title": "X推文分析(thisguyknowsai)",
+      "summary": "分析AI实践者内容策略,提取技术揭秘型Hook模板和信息差价值"
+    },
+    "69647f4e11f551017f6126f6": {
+      "processedAt": "2026-01-27T10:22:27.798877+08:00",
+      "status": "completed",
+      "title": "抖音卖书视频分析+B站助手推广方案",
+      "summary": "深度拆解卖书视频套路,生成B站助手完整推广方案(含3套脚本+30天计划)"
+    },
+    "6962c24eaa29510de985f7bb": {
+      "processedAt": "2026-01-27T10:22:27.798877+08:00",
+      "status": "completed",
+      "title": "抖音恋爱关系视频深度分析",
+      "summary": "使用faster-whisper转录,生成13000字心理学分析报告,科学性评分4/10"
+    },
+    "696317eb3e96110de985f97b": {
+      "processedAt": "2026-01-27T10:22:27.798877+08:00",
+      "status": "completed",
+      "title": "抖音脱单视频(重复任务)",
+      "summary": "确认为重复任务,生成说明文档"
+    },
+    "69647ea4d0c891017f6126d8": {
+      "processedAt": "2026-01-27T10:22:27.798877+08:00",
+      "status": "completed",
+      "title": "小红书OneCup视频制作方案",
+      "summary": "抓取小红书笔记+138条评论,生成75秒痛点共鸣型视频完整脚本"
+    },
+    "6963235fa954110de985fc38": {
+      "processedAt": "2026-03-19T11:00:00+08:00",
+      "status": "completed",
+      "title": "直接把文案包装成知识库",
+      "summary": "✅ 分析@cj3214567667文案知识库思路：三层模型+飞书+小报童变现。报告: ~/projects/inbox/20260319_文案知识库/分析报告.md"
+    },
+    "696317fc3d74510de985fa08": {
+      "processedAt": "2026-01-27T10:22:27.798877+08:00",
+      "status": "completed",
+      "title": "抖音视频转文字(已完成确认)",
+      "summary": "确认之前已完成转录,生成完成标记"
+    },
+    "697824d005ced13dfb9ef43b": {
+      "processedAt": "2026-01-27T10:56:14.927406+08:00",
+      "status": "completed",
+      "title": "X推文-Andrej Karpathy AI编程观点",
+      "summary": "✅ 完成深度分析：Karpathy \"从未感到如此落后\"，编程职业重构、10X生产力、新抽象层。15000字报告+行动建议"
+    },
+    "6977a4119309113acb1d98cf": {
+      "processedAt": "2026-01-27T10:56:14.927406+08:00",
+      "status": "skipped",
+      "title": "让新来的实习生帮我做这个开源项目",
+      "summary": "⏭️ 跳过：做\"这个\"开源项目？哪个项目？链接呢？需求呢？"
+    },
+    "69779ce3f419d1337c53542e": {
+      "processedAt": "2026-01-27T10:56:14.927406+08:00",
+      "status": "skipped",
+      "title": "把这个写个公众号发朋友圈",
+      "summary": "⏭️ 跳过：写\"这个\"？这个是什么？空气吗？至少得给个主题或链接吧"
+    },
+    "69777b4c40ef11337c535332": {
+      "processedAt": "2026-01-27T10:56:14.927406+08:00",
+      "status": "skipped",
+      "title": "mac+cc+launchagent永不断电方案",
+      "summary": "⏭️ 跳过：看起来是技术方案想法，但具体要做什么？写文档？做视频？开发工具？"
+    },
+    "6974ba0b668f911ae27bda57": {
+      "processedAt": "2026-01-27T10:56:14.927406+08:00",
+      "status": "skipped",
+      "title": "写一个skill发布到优管",
+      "summary": "⏭️ 跳过：\"优管\"是YouTube吗？什么skill？功能？目标用户？"
+    },
+    "69747c2d1861d115b8d2bc04": {
+      "processedAt": "2026-01-27T10:56:14.927406+08:00",
+      "status": "skipped",
+      "title": "素描画保时捷和法拉利",
+      "summary": "⏭️ 跳过：OpenRouter余额不足（$1.60）+需求不明确（风格？角度？）"
+    },
+    "69746692d9b71114ce44de37": {
+      "processedAt": "2026-01-27T10:56:14.927406+08:00",
+      "status": "skipped",
+      "title": "画一下餐巾纸上的战略 模拟张一鸣",
+      "summary": "⏭️ 跳过：具体是什么战略？字节跳动？飞书？抖音？OpenRouter余额不足"
+    },
+    "697440e1177bd1126dbaba5e": {
+      "processedAt": "2026-01-27T10:56:14.927406+08:00",
+      "status": "skipped",
+      "title": "每天可以根据看到的内容做播客了",
+      "summary": "⏭️ 跳过：这是想法不是任务。需要：主题定位、内容来源、制作流程、发布平台"
+    },
+    "697764c07a6411337c53520d": {
+      "processedAt": "2026-01-27T10:56:14.927406+08:00",
+      "status": "skipped",
+      "title": "baoyu-skills中文Skills安装建议",
+      "summary": "✅ 已添加安装说明：jimliu开发的中文Skills合集（小红书、微信、文章配图）"
+    },
+    "6973dd7fcd9b9110891f4dfd": {
+      "processedAt": "2026-01-27T11:51:54.526587+08:00",
+      "status": "completed",
+      "title": "Obsidian Git工作流优化调研",
+      "summary": "✅ 完成深度调研：手机端方案（iOS Working Copy/Android Termux）、.gitignore模板、日维度commit工作流、Diff查看插件、避坑指南"
+    },
+    "69783a2941ea513f00302554": {
+      "processedAt": "2026-01-27T12:52:21.799463+08:00",
+      "status": "completed",
+      "title": "X推文-unicodeveloper开源Palantir",
+      "summary": "✅ 完成深度调研：周末项目分析、作者背景（尼日利亚顶级开发者）、OSINT地理情报、技术栈、开发者启发。34KB报告"
+    },
+    "6973bb3cfe21110e2d9f0cdd": {
+      "processedAt": "2026-01-27T12:52:21.799463+08:00",
+      "status": "completed",
+      "title": "Mac mini雷电桥接方案",
+      "summary": "✅ 完成深度调研：Thunderbolt Bridge配置、64G内存计算节点、VS Code Remote SSH、Unison/Syncthing数据同步、完整实施指南"
+    },
+    "6973aa9e89d6910e2d9f0a81": {
+      "processedAt": "2026-01-27T12:52:21.799463+08:00",
+      "status": "skipped",
+      "title": "再生成一个运营的",
+      "summary": "⏭️ 跳过：\"再生成一个运营的\"？运营的什么？文案？方案？报告？图表？"
+    },
+    "69734773934b110221a67abc": {
+      "processedAt": "2026-01-27T12:52:21.799463+08:00",
+      "status": "skipped",
+      "title": "剪映章节切分+Whisper+FMPAIL",
+      "summary": "✅ 已添加建议：剪映可以切分、Whisper推荐faster-whisper、FMPAIL术语不明。需更多上下文"
+    },
+    "697261f8f6acd11e6a54d199": {
+      "processedAt": "2026-01-27T13:50:41.474012+08:00",
+      "status": "completed",
+      "title": "用鹅厂和宇宙厂表示 网传腾讯某工区楼下健身房...",
+      "summary": "✅ 完成调研 | 生成报告 ~/Downloads/research/腾讯健身房事件调研.md | 包含事件真相、传播动力、背景趋势、内容创作价值"
+    },
+    "69706e841c271102263ab05f": {
+      "processedAt": "2026-01-27T13:50:41.474012+08:00",
+      "status": "completed",
+      "title": "专门开一个课教从code到 product",
+      "summary": "✅ 完成课程策划 | 生成方案 ~/Downloads/research/从Code到Product课程方案.md | 包含课程大纲、平台发布指南、运营策略"
+    },
+    "696fa1a7c2a9910f340f69c6": {
+      "processedAt": "2026-01-27T13:50:41.474012+08:00",
+      "status": "completed",
+      "title": "发一个招实习生的视频",
+      "summary": "✅ 完成视频策划 | 生成脚本 ~/Downloads/research/招实习生视频脚本.md | 包含3个版本脚本、拍摄建议、发布策略"
+    },
+    "6961cdb5ec0b1102ce24e0bf": {
+      "processedAt": "2026-01-27T13:50:41.474012+08:00",
+      "status": "completed",
+      "title": "https://x.com/dontbesilent12/status/2009678653345664350",
+      "summary": "✅ 完成分析 | 报告: ~/Downloads/social_media/x_dontbesilent12_分析.md | 作者定位:实用主义创业博主,专注低成本变现+AI工具"
+    },
+    "6961406708f411027fd2dca0": {
+      "processedAt": "2026-01-27T13:50:41.474012+08:00",
+      "status": "completed",
+      "title": "https://x.com/liangwenhao3/status/2009590958212419584",
+      "summary": "✅ 完成分析 | 报告: ~/Downloads/social_media/x_liangwenhao3_1_分析.md | 作者定位:AI工具分享者,MCP Server专家"
+    },
+    "69612475b3e511027fd2db66": {
+      "processedAt": "2026-01-27T13:50:41.474012+08:00",
+      "status": "completed",
+      "title": "https://x.com/jackywine/status/2009085893626515952",
+      "summary": "✅ 完成分析 | 报告: ~/Downloads/social_media/x_jackywine_分析.md | 作者项目:Bella AI开源数字伴侣系统"
+    },
+    "695f9ba6bf5011028bda0d4f": {
+      "processedAt": "2026-01-27T13:50:41.474012+08:00",
+      "status": "completed",
+      "title": "https://x.com/liangwenhao3/status/2009213496798437376",
+      "summary": "✅ 完成分析 | 报告: ~/Downloads/social_media/x_liangwenhao3_2_分析.md | 技术工具分享,内容实用导向"
+    },
+    "695f8e5da2e911028bda0d1f": {
+      "processedAt": "2026-01-27T13:50:41.474012+08:00",
+      "status": "completed",
+      "title": "https://x.com/vista8/status/2009217313376264531",
+      "summary": "✅ 完成分析 | 报告: ~/Downloads/social_media/x_vista8_分析.md | 作者:向阳乔木,产品经理,Claude生态布道者,69.5K粉丝"
+    },
+    "696123169536d102141d4e9f": {
+      "processedAt": "2026-01-27T13:50:41.474012+08:00",
+      "status": "skipped",
+      "title": "抄一下这个人的。 1000粉啦 · 感谢关注",
+      "summary": "⏭️ 跳过 | 小红书链接不完整,需要提供完整链接才能获取内容"
+    },
+    "696d282d8012d1020fc55da9": {
+      "processedAt": "2026-01-27T14:25:02.235865+08:00",
+      "status": "completed",
+      "title": "不会写代码的文科生，如何用AI写出自己的 APP？",
+      "summary": "✅ 完成视频策划 | 报告: ~/Downloads/research/文科生AI写APP视频脚本.md | 3秒Hook+75秒脚本+分镜+多平台适配+执行清单"
+    },
+    "6967b86297e1910a54ec5494": {
+      "processedAt": "2026-01-27T14:25:02.235865+08:00",
+      "status": "completed",
+      "title": "写一份行程助手的 review 发给陈刚",
+      "summary": "✅ 完成产品评测 | 报告: ~/Downloads/research/行程助手Review_给陈刚.md | 功能分析+用户体验+竞品对比+改进建议+综合评分70.65/100"
+    },
+    "696f7f3431561108cdba7ad7": {
+      "processedAt": "2026-01-27T14:25:02.235865+08:00",
+      "status": "completed",
+      "title": "做一个免费的obsidian项目营",
+      "summary": "✅ 完成项目营策划 | 报告: ~/Downloads/research/Obsidian项目营策划方案.md | 7天课程+7大项目模板+社群运营+招生文案+预期500人报名"
+    },
+    "696e619e4d109114f0df17d0": {
+      "processedAt": "2026-01-27T14:25:02.235865+08:00",
+      "status": "completed",
+      "title": "要事第一的话，每天必须写下来",
+      "summary": "✅ 完成产品方案 | 报告: ~/Downloads/research/要事第一产品方案.md | 痛点分析+差异化定位+MVP功能+技术栈+商业模式+9000字完整方案"
+    },
+    "69666fd7f92791676a71c5cd": {
+      "processedAt": "2026-01-27T14:25:02.235865+08:00",
+      "status": "completed",
+      "title": "口播类视频生成和剪辑的思路",
+      "summary": "✅ 完成技术方案 | 报告: ~/Downloads/research/口播视频自动生成技术方案.md | 完整架构+Python代码+NLP提取+Nanobanana生成+FFmpeg合成+100s处理2分钟视频"
+    },
+    "6962ad61808191676a718624": {
+      "processedAt": "2026-01-27T14:54:14.455752+08:00",
+      "status": "completed",
+      "title": "用 get 笔记拿到这个剪辑系列所有的知识",
+      "summary": "✅ 完成B站剪辑系列分析 | 报告: ~/Downloads/social_media/b站_剪辑系列知识.md | UP主:南门录像厅,7年商业剪辑师,《剪辑思维》系列40+集,5个素材挑选技巧"
+    },
+    "6961cdb5ec0b910209256965": {
+      "processedAt": "2026-01-27T14:54:14.455752+08:00",
+      "status": "completed",
+      "title": "https://x.com/dontbesilent12/status/2009678653345673632",
+      "summary": "✅ 完成分析 | 报告: ~/Downloads/social_media/x_dontbesilent12_2_分析.md | 3500字深度分析,内容运营专家,师承咪蒙,技术驱动自动化,小红书变现"
+    },
+    "6961406708f41102987df4a1": {
+      "processedAt": "2026-01-27T14:54:14.455752+08:00",
+      "status": "completed",
+      "title": "试试做一个ob插件 【最强大的AI插件｜上下文感知｜自动补全🔥-哔哩哔哩】 [最强大的AI插件｜上下文感知｜自动补全🔥_哔哩哔哩_bilibili](https",
+      "summary": "✅ 完成OB插件分析 | 报告: ~/Downloads/social_media/B站_OB_AI插件分析.md | Alt自动补全插件,免费+本地+AI,竞品分析+开发建议+商业化路径"
+    },
+    "696137923203d135d704b357": {
+      "processedAt": "2026-01-27T14:54:14.455752+08:00",
+      "status": "completed",
+      "title": "https://x.com/liangwenhao3/status/2009590958212419888",
+      "summary": "✅ 部分完成 | 报告: ~/Downloads/social_media/x_liangwenhao3_3_分析.md | 推文无法访问,基于账号背景分析,技术工具分享账号,MCP/AI工具推荐"
+    },
+    "69612475b3e55135d704b0b9": {
+      "processedAt": "2026-01-27T14:54:14.455752+08:00",
+      "status": "completed",
+      "title": "https://x.com/jackywine/status/2009085893626515952",
+      "summary": "✅ 部分完成 | 报告: ~/Downloads/social_media/x_jackywine_2_分析.md | 推文无法访问,4285字作者分析,Bella开源项目,跨学科设计师+独立开发者"
+    },
+    "696123169536d135d704b07d": {
+      "processedAt": "2026-01-27T15:29:42.157045+08:00",
+      "status": "completed",
+      "title": "小红书1000粉啦分析",
+      "summary": "✅ 完成分析 | 报告: ~/Downloads/social_media/xhs_1000粉啦_分析.md | UX设计Rey博主,38天1000粉,提取平台机制+账号定位+内容策略+爆款公式"
+    },
+    "695f9ba6bf5091284bfdf38d": {
+      "processedAt": "2026-01-27T15:29:42.157045+08:00",
+      "status": "completed",
+      "title": "https://x.com/liangwenhao3/status/2009213496798437788",
+      "summary": "✅ 完成分析 | 报告: ~/Downloads/social_media/x_liangwenhao3_4_分析.md | RSS/RSS3专家,6800字深度分析,Podcasting 2.0+V4V模式+Web3信息网络"
+    },
+    "695f8e5da2e991284bfdf366": {
+      "processedAt": "2026-01-27T15:29:42.157045+08:00",
+      "status": "completed",
+      "title": "https://x.com/vista8/status/2009217313376264531",
+      "summary": "✅ 完成分析 | 报告: ~/Downloads/social_media/x_vista8_2_分析.md | AI图像生成专家,Nano Banana贡献者,DeepSeek时代背景分析"
+    },
+    "695e7d5cf3d1111d3c5b8962": {
+      "processedAt": "2026-01-27T15:29:42.157045+08:00",
+      "status": "completed",
+      "title": "学习如何做iPad应用",
+      "summary": "✅ 完成分析 | 报告: ~/Downloads/social_media/x_nicekate_ipad开发_完整分析.md | 1480字技术分析,SwiftUI+多任务+Apple Pencil+2026趋势"
+    },
+    "695e7c4099cb911d3c5b8915": {
+      "processedAt": "2026-01-27T15:29:42.157045+08:00",
+      "status": "completed",
+      "title": "https://x.com/mrblock/status/2008604350470647822",
+      "summary": "✅ 部分完成 | 报告: ~/Downloads/social_media/x_mrblock_分析.md | 推文无法访问,1450字作者分析,台湾加密货币KOL,33个投资组合"
+    },
+    "695e7af6fcb8911d3c5b88e0": {
+      "processedAt": "2026-01-28T12:35:06.091661+08:00",
+      "status": "skipped",
+      "title": "试试让我的本地agent帮我发这种twitter。让manus收集材料",
+      "summary": "⏭️ 跳过：任务描述太模糊（不知道发什么内容，不知道manus是谁）"
+    },
+    "68e34c81cd4751c6fe3f2f7e": {
+      "processedAt": "2026-01-28T18:41:00.694041+08:00",
+      "status": "completed",
+      "title": "如何让大模型稳定输出JSON格式",
+      "summary": "✅ 完成小红书内容分析 | 下载封面图+生成分析报告 | 4层技术方案(提示词/约束解码/JSON Schema/XGrammar) | 评分4.6/5.0 | 产出: ~/Downloads/social_media/"
+    },
+    "695911d55fcbd1195e40f61d": {
+      "processedAt": "2026-01-28T19:02:47.103451+08:00",
+      "status": "skipped",
+      "title": "X推文 @op7418/status/2006937416125526499",
+      "summary": "⏭️ 跳过：X/Twitter推文需要登录才能访问,WebFetch和Perplexity都无法获取内容。仅获得作者背景:贺师俊(TC39首位中国代表,360前端专家)"
+    },
+    "6959190e6e24911a5cb5501a": {
+      "processedAt": "2026-01-28T19:31:14.693646+08:00",
+      "status": "skipped",
+      "title": "X推文 @elliotchen100/status/2007366828641976483",
+      "summary": "⏭️ 跳过：X/Twitter推文需要登录才能访问(同上一任务的技术限制)"
+    },
+    "6935111d439bd1020f5ecde3": {
+      "processedAt": "2026-01-28T20:09:33.102927+08:00",
+      "status": "completed",
+      "title": "抖音-正戎Zane-男性能量管理",
+      "summary": "✅ 完成深度调研 | 使用Perplexity Deep Research生成1.2万字报告 | 涵盖博主背景+方法论(生活方式/心理管理/专业治疗)+实用性评分4/5 | 产出: ~/Downloads/social_media/"
+    },
+    "68ff950c0e3a510b654da5c3": {
+      "processedAt": "2026-01-28T20:55:54.026629+08:00",
+      "status": "completed",
+      "title": "小红书-产品大佬的商业sense",
+      "summary": "✅ 完成深度调研 | 使用Perplexity生成15KB完整报告 | 五大核心要素(价值机制/成本意识/因果/共赢/数据)+30天培养计划 | 实用性评分9.1/10 | 产出: ~/Downloads/social_media/"
+    },
+    "6922946ce69a110f00d40a9e": {
+      "processedAt": "2026-01-28T21:24:40.785287+08:00",
+      "status": "completed",
+      "title": "小红书-高德生成式推荐大模型",
+      "summary": "✅ 完成深度调研 | 下载5张技术图+生成1.9万字报告 | Spacetime-GR架构+DPO对齐+多模态POI表征 | CTR提升5-15% | 产出: ~/Downloads/social_media/"
+    },
+    "697a519e520611020eda3913": {
+      "processedAt": "2026-01-29T03:24:33.456145+08:00",
+      "status": "completed",
+      "title": "抖音-鸣姐AI进阶-DeepSeek训练方法",
+      "summary": "✅ 完成深度调研 | 下载2.3MB视频+生成3份报告(27KB) | DeepSeek四阶段训练+业务上下文层+提示词工程+企业级应用框架 | 评分4/5"
+    },
+    "697a442e0e0011020eda383a": {
+      "processedAt": "2026-01-29T03:52:40.365260+08:00",
+      "status": "completed",
+      "title": "抖音-Luogen-头部博主视频制作方法",
+      "summary": "✅ 完成深度调研 | 下载5.2MB视频+生成2份报告 | 5大核心方法(黄金三秒+内容结构+视觉呈现+话题优化+互动引导) | 平台适配策略(抖音/B站/小红书)"
+    },
+    "6941902834e09124a60fc5f6": {
+      "processedAt": "2026-01-29T13:27:16.357498+08:00",
+      "status": "completed",
+      "title": "把段子做成科比视频",
+      "summary": "✅ 完成素材下载+完整制作方案，包含3平台适配（小红书/B站/抖音）、8个经典场景、视觉风格设计。草稿待 CEO 审批"
+    },
+    "6947e8e44490910730c852fc": {
+      "processedAt": "2026-01-29T18:59:18.555562+08:00",
+      "status": "completed",
+      "title": "大模型算法秋招心得 - B站视频调研",
+      "summary": "✅ 完成B站视频下载(33MB) + Perplexity深度调研 + 完整分析报告。应届硕士60-100万/年，AI岗位供过于求，适合顶级名校+项目经验者。实用性评分8.5/10"
+    },
+    "694bf7d9fda79127f04ccabc": {
+      "processedAt": "2026-01-30T08:29:45.776803+08:00",
+      "status": "completed",
+      "title": "和这个文字分镜成片对比一下",
+      "summary": "✅ 完成小红书AI漫剧教程情报分析，核心发现：并非真正AI一键生成，而是AI静态分镜+人工后期方案"
+    },
+    "697a64fb855151020eda3aa5": {
+      "processedAt": "2026-01-30T09:02:04.591556+08:00",
+      "status": "completed",
+      "title": "好的管理，从学会\"偷懒\"开始",
+      "summary": "✅ 完成抖音视频分析，德鲁克三步时间管理法：诊断（记录3-4周）→清除低效活动（三问题测试）→集中时间（90分钟整块）"
+    },
+    "697d711f6f63912a33050212": {
+      "processedAt": "2026-01-31T11:16:33.545143+08:00",
+      "status": "completed",
+      "title": "产品老曾-优秀管理者特质",
+      "summary": "✅ 完成深度调研：下载视频(4.1MB) + Perplexity分析 + 完整报告。揭示\"结果导向+权力认知+不完美管理\"核心哲学，整理十大管理者特质体系"
+    },
+    "6956074e094a1102c0c84fb9": {
+      "processedAt": "2026-02-01T01:29:59.180191+08:00",
+      "status": "skipped",
+      "title": "把这个所有回答爬取下来 然后用nl做视频",
+      "summary": "⏭️ 跳过：知乎反爬虫403 + 需求不明确(用nl做视频是什么风格？多长？哪个平台？)"
+    },
+    "69593b0034ff911cf5851523": {
+      "processedAt": "2026-02-01T03:31:28.099638+08:00",
+      "status": "completed",
+      "title": "对话梁昌霖：叮咚买菜的复盘和自救",
+      "summary": "✅ 完成播客深度分析：战略收缩换生存案例，37城退守25城，2年实现首次全年盈利（4.2亿）"
+    },
+    "6958c3794ab51105bf15e688": {
+      "processedAt": "2026-02-01T04:02:48.723663+08:00",
+      "status": "completed",
+      "title": "知乎回答-小红书vs知乎平台差异分析",
+      "summary": "✅ 完成深度分析：解构型vs建构型平台框架、搜索日活数据验证、作者可信度评估、高赞传播机理分析"
+    },
+    "69679ad00b09d109f03c7b2b": {
+      "processedAt": "2026-02-01T10:31:48.695277+08:00",
+      "status": "completed",
+      "title": "知乎回答-4536251和弦",
+      "summary": "✅ 完成深度调研：知乎回答+Perplexity补充，4536251和弦进行解析(F-G-Em-Am-Dm-G-C)，流行音乐常用套路，实用性4.2/5"
+    },
+    "695d02e84151510fc868f63c": {
+      "processedAt": "2026-02-02T07:29:48.429974",
+      "status": "completed",
+      "title": "X推文-vista8向阳乔木Claude生态分析",
+      "summary": "✅ 完成深度调研：Vibe Coding理念、2026年1月Claude生态核心动态（MCP Apps发布、企业工具集成、Salesforce/ServiceNow合作）、1.5万字报告"
+    },
+    "695d03b45bce510fc868f6b1": {
+      "processedAt": "2026-02-02T07:58:35.751465",
+      "status": "completed",
+      "title": "X推文-shao__meng邵萌AI专家",
+      "summary": "✅ 完成深度调研：AI团队顾问/企业AI培训专家，23K粉丝，专注上下文工程、开源AI项目推荐、AIGC应用开发"
+    },
+    "696358d869eb51676a719bfa": {
+      "processedAt": "2026-02-03T12:30:45.891234+08:00",
+      "status": "completed",
+      "title": "写一个工具，遍历滴答清单笔记，排榜推文，每天自动发布",
+      "summary": "✅ 完成开发：滴答清单推文自动发布工具，智能评分+去重+定时发布。项目: /Users/liuyishou/usr/projects/inbox/dida-twitter-bot/"
+    },
+    "6967b86297e1910aa2d56213": {
+      "processedAt": "2026-02-03T05:58:16.097155",
+      "status": "skipped",
+      "title": "写一份行程助手的 review 发给陈刚（重复）",
+      "summary": "⏭️ 跳过：重复任务，1月27日已完成。报告: ~/Downloads/research/行程助手Review_给陈刚.md"
+    },
+    "695e619959fe51140aedc63d": {
+      "processedAt": "2026-02-03T06:28:35.123460",
+      "status": "completed",
+      "title": "做一个能在xhs 知乎 同时收集信息然后回答的ai",
+      "summary": "✅ 开发完成多平台信息聚合 AI 助手（MVP），小红书+知乎并发搜索，AI综合分析。项目: /Users/liuyishou/usr/projects/inbox/multi-platform-ai-assistant/"
+    },
+    "6962cb2deac2510de985f958": {
+      "processedAt": "2026-02-03T07:04:01.395460",
+      "status": "completed",
+      "title": "做一个AI native的东西（AI记忆外脑产品方案）",
+      "summary": "✅ 产品部完成深度调研：痛点分析+竞品对比+5大杀手功能+MVP路线图。核心差异：AI-native而非AI-added。建议从Dogfooding开始验证"
+    },
+    "697ba72e6a4a512185a1a336": {
+      "processedAt": "2026-03-19T10:30:00+08:00",
+      "status": "completed",
+      "title": "学习一下这个笔和字体怎么做",
+      "summary": "✅ 分析小红书Excalidraw白板风格，复现工具：Excalidraw。报告: ~/projects/inbox/20260319_xhs_笔和字体风格/分析报告.md"
+    },
+    "6982aa4b3bbb9110e22b07ed": {
+      "processedAt": "2026-03-24T12:00:00+08:00",
+      "status": "skipped",
+      "title": "录视频开咸鱼网店",
+      "summary": "⏭️ 跳过：录什么视频？卖什么品类？店开了没有？内容框架呢？没法从空气里变出视频脚本。"
+    },
+    "697351b20e20d10221a67b4a": {
+      "processedAt": "2026-03-24T12:30:00+08:00",
+      "status": "skipped",
+      "title": "试一下陈明的方法，我感觉这个和辩论还有点像",
+      "summary": "⏭️ 跳过：陈明是谁？什么方法？缺少关键信息，无法执行。"
+    },
+    "69816589b401912e89207560": {
+      "processedAt": "2026-03-24T12:30:00+08:00",
+      "status": "skipped",
+      "title": "（空标题 inbox 子任务）",
+      "summary": "⏭️ 跳过：非可执行任务（通知/提醒/空标题/笔记片段）"
+    },
+    "68b320c68a3d511ada3c1d4b": {
+      "processedAt": "2026-03-24T12:30:00+08:00",
+      "status": "skipped",
+      "title": "（空标题图片 inbox 任务）",
+      "summary": "⏭️ 跳过：非可执行任务（通知/提醒/空标题/笔记片段）"
+    },
+    "68b3218da5d5511ada3c1dfe": {
+      "processedAt": "2026-03-24T12:30:00+08:00",
+      "status": "skipped",
+      "title": "每次订阅的时候在 inbox 的订阅里写一下",
+      "summary": "⏭️ 跳过：非可执行任务（通知/提醒/空标题/笔记片段）"
+    },
+    "68b430916f4fd1073a617b44": {
+      "processedAt": "2026-03-24T12:30:00+08:00",
+      "status": "skipped",
+      "title": "ZABank 订阅提醒通知",
+      "summary": "⏭️ 跳过：非可执行任务（通知/提醒/空标题/笔记片段）"
+    },
+    "68e4af0d5933d1cee270d960": {
+      "processedAt": "2026-03-24T12:30:00+08:00",
+      "status": "skipped",
+      "title": "技术路径笔记片段（保存内容非任务）",
+      "summary": "⏭️ 跳过：非可执行任务（通知/提醒/空标题/笔记片段）"
+    },
+    "69706901d9259178c31026a5": {
+      "processedAt": "2026-03-24T13:00:00+08:00",
+      "status": "skipped",
+      "title": "美股助手，可以加一个川普事件",
+      "summary": "⏭️ 跳过：哪个助手？加在哪里？呈现什么形式？信息不足。"
+    },
+    "6973009eb7f2510221a677f1": {
+      "processedAt": "2026-03-24T13:00:00+08:00",
+      "status": "skipped",
+      "title": "嘲讽美国也是一个赛道",
+      "summary": "⏭️ 跳过：仅是想法，无具体内容/平台/形式。"
+    },
+    "694f8bcc6ed491022aeb4d2a": {
+      "processedAt": "2026-03-24T13:00:00+08:00",
+      "status": "skipped",
+      "title": "#视频 结合roadmap录一期我对管理的理解 领导力",
+      "summary": "⏭️ 跳过：roadmap 未提供，无法制作视频。"
+    },
+    "697dc65a266fd104249c51ec": {
+      "processedAt": "2026-03-24T13:00:00+08:00",
+      "status": "skipped",
+      "title": "做一个 ob 高端社群，条件是 100 篇以上的笔记",
+      "summary": "⏭️ 跳过：缺少执行细节（平台/定价/运营方式）。"
+    },
+    "68e518cd59c491cee27207e0": {
+      "processedAt": "2026-03-24T13:00:00+08:00",
+      "status": "skipped",
+      "title": "PC（保存的内容）",
+      "summary": "⏭️ 跳过：保存的参考资料，非可执行任务。"
+    },
+    "68fed483614d11011cb85e12": {
+      "processedAt": "2026-03-24T13:00:00+08:00",
+      "status": "skipped",
+      "title": "机票酒店只出卡片…（产品设计笔记）",
+      "summary": "⏭️ 跳过：产品设计思路记录，无明确执行动词。"
+    },
+    "6902d04f1c71d11d86ee698b": {
+      "processedAt": "2026-03-24T13:00:00+08:00",
+      "status": "skipped",
+      "title": "知识➕心情等于成功",
+      "summary": "⏭️ 跳过：一句话感悟，不是任务。"
+    },
+    "690f12034d88110de0655d73": {
+      "processedAt": "2026-03-24T13:00:00+08:00",
+      "status": "skipped",
+      "title": "答题卡和美团的订单model一样缩到chat内部",
+      "summary": "⏭️ 跳过：产品设计笔记，无明确执行指令。"
+    },
+    "691381c2d9b2110f94b2eac6": {
+      "processedAt": "2026-03-24T13:00:00+08:00",
+      "status": "skipped",
+      "title": "意图识别错误（含图片截图）",
+      "summary": "⏭️ 跳过：截图存档，无动词指令，不知道要做什么。"
+    },
+    "691860c33638110ecac6affb": {
+      "processedAt": "2026-03-28T23:20:41+08:00",
+      "status": "skipped",
+      "title": "起一个agent实验室系列的行动",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "6921d6d237c311023d71e3ba": {
+      "processedAt": "2026-03-28T23:20:41+08:00",
+      "status": "skipped",
+      "title": "不硬性隔断每天（产品设计想法）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "6921d994148c11023d71e3fd": {
+      "processedAt": "2026-03-28T23:20:41+08:00",
+      "status": "skipped",
+      "title": "规划本身随着模型能力上涨即可（产品想法）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "6921f567ed00d1023d71e500": {
+      "processedAt": "2026-03-28T23:20:41+08:00",
+      "status": "skipped",
+      "title": "酒店的这个地图可以复用（设计参考）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "6921f67d149991023d71e547": {
+      "processedAt": "2026-03-28T23:20:41+08:00",
+      "status": "skipped",
+      "title": "导航效果（截图笔记）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "6921f6c57ed151023d71e557": {
+      "processedAt": "2026-03-28T23:20:41+08:00",
+      "status": "skipped",
+      "title": "趣系列榜单全面接入chat（产品想法）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "6921f91f178551023d71e57b": {
+      "processedAt": "2026-03-28T23:20:41+08:00",
+      "status": "skipped",
+      "title": "diy点了确定以后不能点其他选项卡了（Bug记录）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "6921fa0a3eb911023d71e5e9": {
+      "processedAt": "2026-03-28T23:20:41+08:00",
+      "status": "skipped",
+      "title": "景点diy直接从趣玩榜勾选（产品想法）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "6921fa8ded27d1023d71e5f2": {
+      "processedAt": "2026-03-28T23:20:41+08:00",
+      "status": "skipped",
+      "title": "对于xx地哪里好玩的tool（产品想法）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "6922004b11c411023d71e6e1": {
+      "processedAt": "2026-03-28T23:20:41+08:00",
+      "status": "skipped",
+      "title": "（空标题截图）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "69220094d68f11023d71e6f9": {
+      "processedAt": "2026-03-28T23:20:41+08:00",
+      "status": "skipped",
+      "title": "（空标题截图）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "69244391ce9511087cd7caa1": {
+      "processedAt": "2026-03-28T23:20:41+08:00",
+      "status": "skipped",
+      "title": "加一个评价总结的按钮（产品需求）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "6924482f294051087cd7cb2f": {
+      "processedAt": "2026-03-28T23:20:41+08:00",
+      "status": "skipped",
+      "title": "加一个 看看别人怎么玩（产品需求）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "692485be94261102aa67f0d0": {
+      "processedAt": "2026-03-28T23:20:41+08:00",
+      "status": "skipped",
+      "title": "问一下AI怎么整理文案比较好（产品想法）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "692486019ee79102aa67f92c": {
+      "processedAt": "2026-03-28T23:35:31+08:00",
+      "status": "skipped",
+      "title": "这个景点和酒店分开（Qunar产品设计）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "69248a676933910d393821c9": {
+      "processedAt": "2026-03-28T23:35:31+08:00",
+      "status": "skipped",
+      "title": "起一个需求加入路线缓存逻辑（Qunar产品）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "69248ce1f3d1910d39382232": {
+      "processedAt": "2026-03-28T23:35:31+08:00",
+      "status": "skipped",
+      "title": "目的地复用这个页面添加的按钮（Qunar产品）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "69248d85c1a4d10d39382277": {
+      "processedAt": "2026-03-28T23:35:31+08:00",
+      "status": "skipped",
+      "title": "客服schema跳转逻辑写成if else（Qunar产品）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "69249517586311116e943f7d": {
+      "processedAt": "2026-03-28T23:35:31+08:00",
+      "status": "skipped",
+      "title": "AB一下两种新建会话的样式（Qunar产品）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "6924997c27fc91116e9440a3": {
+      "processedAt": "2026-03-28T23:35:31+08:00",
+      "status": "skipped",
+      "title": "让UI增加一个搜索类型的样式（Qunar产品）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "6924a7d2b93d51136da866f8": {
+      "processedAt": "2026-03-28T23:35:31+08:00",
+      "status": "skipped",
+      "title": "攻略的大搜增加AI按钮（Qunar产品）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "6924aa80b62851136da8675f": {
+      "processedAt": "2026-03-28T23:35:31+08:00",
+      "status": "skipped",
+      "title": "答题卡变成半浮层（Qunar产品）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "6925ea828111d103d235a86e": {
+      "processedAt": "2026-03-28T23:35:31+08:00",
+      "status": "skipped",
+      "title": "酒店订单量除以8000个酒店会话（Qunar数据）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "69270b4a38861131c1ef0488": {
+      "processedAt": "2026-03-28T23:35:31+08:00",
+      "status": "skipped",
+      "title": "如果有出发时间加最低价机票（Qunar产品）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "69273576e2dc513709cbfb9d": {
+      "processedAt": "2026-03-28T23:35:31+08:00",
+      "status": "skipped",
+      "title": "提供一个快速P图的功能键（Qunar产品）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "692742b895305103d235adcc": {
+      "processedAt": "2026-03-28T23:35:31+08:00",
+      "status": "skipped",
+      "title": "基于apple备忘录设计领队助手（Qunar产品思考）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "6928025b61bb514b681e8601": {
+      "processedAt": "2026-03-28T23:35:31+08:00",
+      "status": "skipped",
+      "title": "ai定制师入口默认弹起（Qunar产品）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "692c72a1515e510a9392baaa": {
+      "processedAt": "2026-03-28T23:35:31+08:00",
+      "status": "skipped",
+      "title": "新增poi只展示最重要的（Qunar产品）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "6933ef78e858511e4a1978f0": {
+      "processedAt": "2026-03-28T23:35:31+08:00",
+      "status": "skipped",
+      "title": "给一条小红书路线修改成目标天数（Qunar产品）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "6936400cdcc19109a5259cdc": {
+      "processedAt": "2026-03-28T23:35:31+08:00",
+      "status": "skipped",
+      "title": "xxx酒店附近有啥好玩的（Qunar产品）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "6938396ba14ed11c13c4dc1c": {
+      "processedAt": "2026-03-28T23:35:31+08:00",
+      "status": "skipped",
+      "title": "行程卡片总览地图按数字优先级放置（Qunar产品）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "69403a8b5d2e1117810b621d": {
+      "processedAt": "2026-03-28T23:35:31+08:00",
+      "status": "skipped",
+      "title": "放开成自由生成路线（Qunar产品）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "694136b76d54512074439d2b": {
+      "processedAt": "2026-03-28T23:35:31+08:00",
+      "status": "skipped",
+      "title": "（Qunar空标题截图）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    },
+    "694ab3f51a1e911c90e9cd71": {
+      "processedAt": "2026-03-28T23:35:31+08:00",
+      "status": "skipped",
+      "title": "添加地点搜索框+榜单（Qunar产品）",
+      "summary": "Qunar产品inbox快速记录，非AI可执行任务"
+    }
+  },
+  "lastRunAt": "2026-03-28T23:35:31+08:00"
+}

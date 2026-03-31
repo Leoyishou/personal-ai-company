@@ -1,0 +1,9 @@
+{
+  "id": "2",
+  "subject": "Create weekly-insight.mjs script",
+  "description": "Create ~/.claude/scripts/weekly-insight.mjs that collects weekly data, generates OKR weekly analysis, writes to Odyssey weekly file",
+  "activeForm": "Creating weekly-insight.mjs",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

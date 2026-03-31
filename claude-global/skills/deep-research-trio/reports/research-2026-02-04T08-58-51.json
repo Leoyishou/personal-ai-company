@@ -1,0 +1,24 @@
+{
+  "query": "最热门的 Claude Code skills",
+  "timestamp": "2026-02-04T08:58:51.650Z",
+  "summary": {
+    "total": 1,
+    "success": 0,
+    "partial": 0,
+    "failed": 1,
+    "platforms": {
+      "gemini": {
+        "name": "Gemini",
+        "status": "failed"
+      }
+    }
+  },
+  "results": [
+    {
+      "platform": "gemini",
+      "name": "Gemini",
+      "status": "failed",
+      "error": "page.waitForTimeout: Target page, context or browser has been closed"
+    }
+  ]
+}

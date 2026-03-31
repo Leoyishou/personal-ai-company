@@ -1,0 +1,9 @@
+{
+  "id": "2",
+  "subject": "ASR 转录视频音频",
+  "description": "使用火山引擎 ASR 将2小时3分的访谈视频转换为文字，当前正在发送 73651 个音频块",
+  "activeForm": "转录音频中",
+  "status": "in_progress",
+  "blocks": [],
+  "blockedBy": []
+}

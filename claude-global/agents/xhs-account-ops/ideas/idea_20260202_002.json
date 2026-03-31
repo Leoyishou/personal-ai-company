@@ -1,0 +1,26 @@
+{
+  "id": "idea_20260202_002",
+  "type": "series",
+  "series_id": "bilibili-up",
+  "series_subject": "影视飓风",
+
+  "hook": "圆通之子，凭亿近人",
+  "angle": "老板荒岛求生 vs 员工头等舱",
+  "notes": "富二代反差，职场梗容易出圈",
+
+  "research": {
+    "dimensions": {
+      "人设反差": "草根创业人设，实际圆通速递总裁之子",
+      "经典语录": "悲观者总是正确的，乐观者正在前行",
+      "老粉梗": "凭亿近人、每年送iPhone、无限进步",
+      "隐藏技能": "帮截肢粉丝实现奔跑梦、送卫星上天"
+    },
+    "sources": ["B站", "微博", "知乎"],
+    "researched_at": "2026-02-02"
+  },
+
+  "status": "researched",
+  "created_at": "2026-02-02T10:00:00+08:00",
+  "updated_at": "2026-02-02T12:00:00+08:00",
+  "created_by": "research-agent"
+}
